@@ -1,6 +1,6 @@
 {
   "registry_version": "0.2",
-  "updated": "2026-05-17T10:00:00Z",
+  "updated": "2026-05-18T10:00:00Z",
   "domains": [
     {
       "id": "writing-basic",
@@ -10,10 +10,22 @@
       "spec_version": "0.2",
       "status": "basic",
       "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["writing", "clarity", "editing", "structure"],
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "writing",
+        "clarity",
+        "editing",
+        "structure"
+      ],
       "description": "Basic writing cognition — clarity, structure, and reader focus.",
       "core_insight": "Clarity is the writer's only obligation. Every sentence must earn its place.",
       "file_count": 2,
@@ -28,10 +40,22 @@
       "spec_version": "0.2",
       "status": "basic",
       "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["speaking", "presentation", "audience", "public speaking"],
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "speaking",
+        "presentation",
+        "audience",
+        "public speaking"
+      ],
       "description": "Basic speaking and presentation cognition — audience focus, structure, and delivery.",
       "core_insight": "The audience's takeaway is the only measure of success.",
       "file_count": 2,
@@ -46,10 +70,22 @@
       "spec_version": "0.2",
       "status": "basic",
       "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["management", "leadership", "delegation", "feedback"],
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "management",
+        "leadership",
+        "delegation",
+        "feedback"
+      ],
       "description": "Basic management cognition — upstream diagnosis, system thinking, and clarity.",
       "core_insight": "Execution problems are created upstream of where they appear.",
       "file_count": 2,
@@ -64,10 +100,22 @@
       "spec_version": "0.2",
       "status": "experimental",
       "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["business", "growth", "pricing", "monetization"],
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "business",
+        "growth",
+        "pricing",
+        "monetization"
+      ],
       "description": "Domain cognition for business growth — value proposition, pricing, trust building.",
       "core_insight": "Value proposition is the foundation of all business growth.",
       "file_count": 6,
@@ -82,10 +130,22 @@
       "spec_version": "0.2",
       "status": "experimental",
       "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["communication", "conflict", "needs", "strategy"],
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "communication",
+        "conflict",
+        "needs",
+        "strategy"
+      ],
       "description": "Domain cognition for conflict resolution, needs diagnosis, and communication strategy.",
       "core_insight": "Intent is more important than words; state comes before strategy.",
       "file_count": 6,
@@ -100,10 +160,22 @@
       "spec_version": "0.2",
       "status": "experimental",
       "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["sales", "trust", "negotiation", "b2b"],
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "sales",
+        "trust",
+        "negotiation",
+        "b2b"
+      ],
       "description": "Domain cognition for sales judgment — price objections as certainty deficits.",
       "core_insight": "Price objections are certainty deficits, not price problems.",
       "file_count": 6,
@@ -118,30 +190,24 @@
       "spec_version": "0.2",
       "status": "experimental",
       "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["management", "execution", "delegation", "team"],
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "management",
+        "execution",
+        "delegation",
+        "team"
+      ],
       "description": "Domain cognition for management judgment — execution failures as system outputs.",
       "core_insight": "Execution failure is a system output, not a motivation failure.",
-      "file_count": 6,
-      "created": "2026-05-01",
-      "updated": "2026-05-17"
-    },
-    {
-      "id": "silver-age",
-      "name": "Silver Age Service KDNA",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-silver-age",
-      "spec_version": "0.2",
-      "status": "experimental",
-      "access": "open",
-      "language": ["en"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["silver-age", "elder", "dignity", "engagement"],
-      "description": "Domain cognition for silver-age service — psychological entry cost, dignity preservation.",
-      "core_insight": "Psychological entry cost is more critical than activity quality.",
       "file_count": 6,
       "created": "2026-05-01",
       "updated": "2026-05-17"
@@ -154,10 +220,22 @@
       "spec_version": "0.2",
       "status": "experimental",
       "access": "open",
-      "language": ["zh"],
-      "author": { "name": "KDNA Team", "id": "kdna-team" },
-      "license": { "type": "CC-BY-4.0" },
-      "keywords": ["product", "decision", "hypothesis", "validation"],
+      "language": [
+        "zh"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "product",
+        "decision",
+        "hypothesis",
+        "validation"
+      ],
       "description": "Domain cognition for product decision-making — hypothesis validation over feature delivery.",
       "core_insight": "Validate hypotheses before delivering features.",
       "file_count": 6,
