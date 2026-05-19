@@ -1,13 +1,13 @@
 {
-  "registry_version": "0.2",
-  "updated": "2026-05-18T10:00:00Z",
+  "registry_version": "0.3",
+  "updated": "2026-05-19T02:56:55Z",
   "domains": [
     {
       "id": "writing-basic",
       "name": "Writing Basic KDNA",
-      "version": "0.2.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-writing-basic",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "basic",
       "access": "open",
       "language": [
@@ -30,14 +30,15 @@
       "core_insight": "Clarity is the writer's only obligation. Every sentence must earn its place.",
       "file_count": 2,
       "created": "2026-05-17",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "basic"
     },
     {
       "id": "speaking-basic",
       "name": "Speaking Basic KDNA",
-      "version": "0.2.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-speaking-basic",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "basic",
       "access": "open",
       "language": [
@@ -60,14 +61,15 @@
       "core_insight": "The audience's takeaway is the only measure of success.",
       "file_count": 2,
       "created": "2026-05-17",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "basic"
     },
     {
       "id": "management-basic",
       "name": "Management Basic KDNA",
-      "version": "0.2.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-management-basic",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "basic",
       "access": "open",
       "language": [
@@ -90,14 +92,15 @@
       "core_insight": "Execution problems are created upstream of where they appear.",
       "file_count": 2,
       "created": "2026-05-17",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "basic"
     },
     {
       "id": "business-growth",
       "name": "Business Growth KDNA",
-      "version": "0.1.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-business-growth",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "experimental",
       "access": "open",
       "language": [
@@ -120,14 +123,15 @@
       "core_insight": "Value proposition is the foundation of all business growth.",
       "file_count": 6,
       "created": "2026-05-01",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "experimental"
     },
     {
       "id": "communication",
       "name": "Communication KDNA",
-      "version": "0.1.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-communication",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "experimental",
       "access": "open",
       "language": [
@@ -150,14 +154,15 @@
       "core_insight": "Intent is more important than words; state comes before strategy.",
       "file_count": 6,
       "created": "2026-05-01",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "experimental"
     },
     {
       "id": "sales",
       "name": "Sales KDNA",
-      "version": "0.1.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-sales",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "experimental",
       "access": "open",
       "language": [
@@ -180,14 +185,15 @@
       "core_insight": "Price objections are certainty deficits, not price problems.",
       "file_count": 6,
       "created": "2026-05-13",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "experimental"
     },
     {
       "id": "management",
       "name": "Management KDNA",
-      "version": "0.1.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-management",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "experimental",
       "access": "open",
       "language": [
@@ -210,14 +216,15 @@
       "core_insight": "Execution failure is a system output, not a motivation failure.",
       "file_count": 6,
       "created": "2026-05-01",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "experimental"
     },
     {
       "id": "product-decision",
       "name": "Product Decision KDNA",
-      "version": "0.1.0",
+      "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-product-decision",
-      "spec_version": "0.2",
+      "spec_version": "0.3",
       "status": "experimental",
       "access": "open",
       "language": [
@@ -240,7 +247,8 @@
       "core_insight": "Validate hypotheses before delivering features.",
       "file_count": 6,
       "created": "2026-05-01",
-      "updated": "2026-05-17"
+      "updated": "2026-05-19",
+      "quality_badge": "experimental"
     }
   ]
 }
