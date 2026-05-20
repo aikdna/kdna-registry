@@ -200,6 +200,54 @@
       "updated": "2026-05-20",
       "test_count": 0,
       "quality_badge": "experimental"
+    },
+    {
+      "id": "decision_state",
+      "name": "Decision State KDNA",
+      "version": "0.4.0",
+      "repo": "https://github.com/knowledge-dna/kdna-decision_state",
+      "spec_version": "0.4",
+      "status": "experimental",
+      "access": "open",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "decision",
+        "meeting",
+        "discussion",
+        "commitment"
+      ],
+      "description": "Judge whether a meeting has produced an actionable decision — or just discussion.",
+      "core_insight": "Discussion is not decision. Broad agreement is not commitment.",
+      "file_count": 2,
+      "created": "2026-05-19",
+      "updated": "2026-05-20",
+      "eval_score": 97,
+      "test_count": 30,
+      "quality_badge": "validated",
+      "evaluation_history": [
+        {
+          "version": "0.4.0",
+          "eval_score": 97,
+          "test_count": 30,
+          "benchmark_id": "decision-state-benchmark-v2",
+          "evaluated_at": "2026-05-19T00:00:00Z",
+          "metrics": {
+            "state_accuracy": 96.7,
+            "false_actionization_errors": 0,
+            "scenarios_count": 30,
+            "model": "claude-3-5-sonnet-20241022"
+          }
+        }
+      ]
     }
   ]
 }
