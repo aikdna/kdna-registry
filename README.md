@@ -15,7 +15,8 @@ kdna search "writing"     # Search domains by keyword (coming soon)
 1. Create a standalone KDNA-compatible repo named `kdna-<domain>` with `KDNA_Core.json`, `KDNA_Patterns.json`, and `kdna.json` manifest.
 2. Open a PR adding your domain entry to `domains.json`.
 3. Run `node scripts/validate-registry.js`.
-4. After review and validation, your domain will be discoverable via `kdna list --available`.
+4. Before submitting, run `node scripts/validate-registry.js --remote` to verify each GitHub repo and remote `kdna.json` manifest.
+5. After review and validation, your domain will be discoverable via `kdna list --available`.
 
 See [registry policy](https://github.com/knowledge-dna/KDNA/blob/main/docs/registry-policy.md) for inclusion criteria.
 
@@ -23,8 +24,9 @@ See [registry policy](https://github.com/knowledge-dna/KDNA/blob/main/docs/regis
 
 ```
 kdna-registry/
+├── .github/workflows/validate.yml
 ├── domains.json       # Machine-readable index of all registered domains
-├── packages/          # Tarball packages for offline/distribution installs
+├── scripts/validate-registry.js
 ├── README.md
 └── README.zh.md
 ```

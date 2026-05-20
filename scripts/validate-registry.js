@@ -1,21 +1,25 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const registryPath = path.join(__dirname, '..', 'domains.json');
 const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+const checkRemote = process.argv.includes('--remote');
 
 const errors = [];
 const warnings = [];
 const seen = new Set();
 
 const legacyIds = new Set([
-  'writing',
-  'knowledge_management',
-  'prompt_diagnosis',
-  'agent_safety',
-  'open_source_project',
-  'content_strategy',
+  'business-growth',
+  'communication',
+  'sales',
+  'management',
+  'product-decision',
+  'writing-basic',
+  'speaking-basic',
+  'management-basic',
   'test_domain',
 ]);
 
@@ -25,6 +29,54 @@ function fail(message) {
 
 function warn(message) {
   warnings.push(message);
+}
+
+function readJson(file) {
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+function fetchJson(url) {
+  const raw = execFileSync('curl', ['-fsSL', url], {
+    encoding: 'utf8',
+    timeout: 30000,
+  });
+  return JSON.parse(raw);
+}
+
+function repoNameFromUrl(repoUrl) {
+  return repoUrl.replace(/\.git$/, '').split('/').pop();
+}
+
+function rawManifestUrl(repoUrl) {
+  const match = repoUrl.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+?)(?:\.git)?$/);
+  if (!match) return null;
+  return `https://raw.githubusercontent.com/${match[1]}/${match[2]}/main/kdna.json`;
+}
+
+function validateManifest(id, domain, manifest) {
+  if (!manifest) {
+    fail(`${id}: kdna.json manifest not found or invalid`);
+    return;
+  }
+  if (manifest.name !== id) {
+    fail(`${id}: manifest name "${manifest.name || 'missing'}" does not match registry id`);
+  }
+  if (manifest.version !== domain.version) {
+    fail(`${id}: manifest version "${manifest.version || 'missing'}" does not match registry version "${domain.version}"`);
+  }
+  if (manifest.status !== domain.status) {
+    fail(`${id}: manifest status "${manifest.status || 'missing'}" does not match registry status "${domain.status}"`);
+  }
+  if (manifest.file_count !== domain.file_count) {
+    fail(`${id}: manifest file_count "${manifest.file_count || 'missing'}" does not match registry file_count "${domain.file_count}"`);
+  }
+  if (manifest.kdna_spec !== domain.spec_version) {
+    fail(`${id}: manifest kdna_spec "${manifest.kdna_spec || 'missing'}" does not match registry spec_version "${domain.spec_version}"`);
+  }
 }
 
 if (!registry.registry_version) fail('registry_version is required');
@@ -56,6 +108,29 @@ for (const domain of registry.domains || []) {
     }
     if (domain.repo.includes('/KDNA/tree/') || domain.repo.includes('/KDNA/')) {
       fail(`${id}: repo must not point into the protocol repository`);
+    }
+
+    const localRepo = path.join(__dirname, '..', '..', repoNameFromUrl(domain.repo));
+    if (fs.existsSync(localRepo)) {
+      validateManifest(id, domain, readJson(path.join(localRepo, 'kdna.json')));
+    }
+
+    if (checkRemote) {
+      try {
+        execFileSync('git', ['ls-remote', '--heads', domain.repo, 'main'], {
+          encoding: 'utf8',
+          timeout: 30000,
+        });
+      } catch {
+        fail(`${id}: remote repository is not reachable or has no main branch`);
+      }
+
+      try {
+        const manifestUrl = rawManifestUrl(domain.repo);
+        validateManifest(id, domain, fetchJson(manifestUrl));
+      } catch {
+        fail(`${id}: remote kdna.json could not be fetched or parsed`);
+      }
     }
   }
 
