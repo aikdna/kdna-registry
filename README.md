@@ -6,15 +6,16 @@ Static registry for KDNA domain cognition packages. Used by the `kdna` CLI for d
 
 ```bash
 kdna list --available     # Browse all registered domains
-kdna install sales        # Install a domain (clone repo to ~/.kdna/domains/)
+kdna install writing      # Install a domain (clone repo to ~/.kdna/domains/)
 kdna search "writing"     # Search domains by keyword (coming soon)
 ```
 
 ## Add a Domain
 
-1. Create a KDNA-compatible repo with `KDNA_Core.json`, `KDNA_Patterns.json`, and `kdna.json` manifest.
+1. Create a standalone KDNA-compatible repo named `kdna-<domain>` with `KDNA_Core.json`, `KDNA_Patterns.json`, and `kdna.json` manifest.
 2. Open a PR adding your domain entry to `domains.json`.
-3. After review and validation, your domain will be discoverable via `kdna list --available`.
+3. Run `node scripts/validate-registry.js`.
+4. After review and validation, your domain will be discoverable via `kdna list --available`.
 
 See [registry policy](https://github.com/knowledge-dna/KDNA/blob/main/docs/registry-policy.md) for inclusion criteria.
 
