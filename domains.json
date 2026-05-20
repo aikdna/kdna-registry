@@ -1,254 +1,136 @@
 {
-  "registry_version": "0.3",
-  "updated": "2026-05-19T02:56:55Z",
+  "registry_version": "0.5.0",
+  "updated": "2026-05-20T00:00:00Z",
   "domains": [
     {
-      "id": "writing-basic",
-      "name": "Writing Basic KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-writing-basic",
-      "spec_version": "0.3",
-      "status": "basic",
+      "id": "writing",
+      "name": "Writing KDNA",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-writing",
+      "spec_version": "0.4",
+      "status": "experimental",
       "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "writing",
-        "clarity",
-        "editing",
-        "structure"
-      ],
-      "description": "Basic writing cognition — clarity, structure, and reader focus.",
-      "core_insight": "Clarity is the writer's only obligation. Every sentence must earn its place.",
+      "language": ["en"],
+      "author": { "name": "KDNA Team", "id": "kdna-team" },
+      "license": { "type": "CC-BY-4.0" },
+      "keywords": ["writing", "editing", "editorial", "content", "argument", "judgment"],
+      "description": "Editorial writing judgment — diagnose whether content has a real argument, a cognitive hook, and evidence density. Not copy editing.",
+      "core_insight": "Most writing problems are structural and argument-level, not language-level.",
       "file_count": 2,
-      "created": "2026-05-17",
-      "updated": "2026-05-19",
-      "quality_badge": "basic"
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
     },
     {
-      "id": "speaking-basic",
-      "name": "Speaking Basic KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-speaking-basic",
-      "spec_version": "0.3",
-      "status": "basic",
+      "id": "knowledge_management",
+      "name": "Knowledge Management KDNA",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-knowledge_management",
+      "spec_version": "0.4",
+      "status": "experimental",
       "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "speaking",
-        "presentation",
-        "audience",
-        "public speaking"
-      ],
-      "description": "Basic speaking and presentation cognition — audience focus, structure, and delivery.",
-      "core_insight": "The audience's takeaway is the only measure of success.",
+      "language": ["en"],
+      "author": { "name": "KDNA Team", "id": "kdna-team" },
+      "license": { "type": "CC-BY-4.0" },
+      "keywords": ["knowledge management", "pkm", "notes", "knowledge base", "raw material"],
+      "description": "Knowledge management judgment — distinguish knowledge assets from raw material. A saved note is not knowledge without proposition, boundary, counter-example, and evolution record.",
+      "core_insight": "Most 'knowledge bases' are raw material collections. Knowledge requires testing, not just saving.",
       "file_count": 2,
-      "created": "2026-05-17",
-      "updated": "2026-05-19",
-      "quality_badge": "basic"
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
     },
     {
-      "id": "management-basic",
-      "name": "Management Basic KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-management-basic",
-      "spec_version": "0.3",
-      "status": "basic",
+      "id": "prompt_diagnosis",
+      "name": "Prompt Diagnosis KDNA",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-prompt_diagnosis",
+      "spec_version": "0.4",
+      "status": "experimental",
       "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "management",
-        "leadership",
-        "delegation",
-        "feedback"
-      ],
-      "description": "Basic management cognition — upstream diagnosis, system thinking, and clarity.",
-      "core_insight": "Execution problems are created upstream of where they appear.",
+      "language": ["en"],
+      "author": { "name": "KDNA Team", "id": "kdna-team" },
+      "license": { "type": "CC-BY-4.0" },
+      "keywords": ["prompt engineering", "prompt diagnosis", "prompt optimization", "task mixing", "goal ambiguity"],
+      "description": "Prompt diagnosis judgment — identify why a prompt failed (task mixing, goal ambiguity, context gap), not just suggest format improvements.",
+      "core_insight": "Most prompt failures are task mixing and goal ambiguity, not missing format elements. Fix the cognitive conflict before the formatting.",
       "file_count": 2,
-      "created": "2026-05-17",
-      "updated": "2026-05-19",
-      "quality_badge": "basic"
-    },
-    {
-      "id": "business-growth",
-      "name": "Business Growth KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-business-growth",
-      "spec_version": "0.3",
-      "status": "experimental",
-      "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "business",
-        "growth",
-        "pricing",
-        "monetization"
-      ],
-      "description": "Domain cognition for business growth — value proposition, pricing, trust building.",
-      "core_insight": "Value proposition is the foundation of all business growth.",
-      "file_count": 6,
-      "created": "2026-05-01",
-      "updated": "2026-05-19",
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
       "quality_badge": "experimental"
     },
     {
-      "id": "communication",
-      "name": "Communication KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-communication",
-      "spec_version": "0.3",
+      "id": "agent_safety",
+      "name": "Agent Safety Judgment KDNA",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-agent_safety",
+      "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "communication",
-        "conflict",
-        "needs",
-        "strategy"
-      ],
-      "description": "Domain cognition for conflict resolution, needs diagnosis, and communication strategy.",
-      "core_insight": "Intent is more important than words; state comes before strategy.",
-      "file_count": 6,
-      "created": "2026-05-01",
-      "updated": "2026-05-19",
+      "language": ["en"],
+      "author": { "name": "KDNA Team", "id": "kdna-team" },
+      "license": { "type": "CC-BY-4.0" },
+      "keywords": ["agent safety", "irreversible actions", "authorization", "safety gate", "agent judgment"],
+      "description": "Agent safety judgment — halt before irreversible actions, verify authorization, backup, and reversibility. Recommend before executing.",
+      "core_insight": "Tools make agents capable. Safety judgment makes agents cautious before irreversible action.",
+      "file_count": 2,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
       "quality_badge": "experimental"
     },
     {
-      "id": "sales",
-      "name": "Sales KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-sales",
-      "spec_version": "0.3",
+      "id": "open_source_project",
+      "name": "Open-source Project KDNA",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-open_source_project",
+      "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "sales",
-        "trust",
-        "negotiation",
-        "b2b"
-      ],
-      "description": "Domain cognition for sales judgment — price objections as certainty deficits.",
-      "core_insight": "Price objections are certainty deficits, not price problems.",
-      "file_count": 6,
-      "created": "2026-05-13",
-      "updated": "2026-05-19",
+      "language": ["en"],
+      "author": { "name": "KDNA Team", "id": "kdna-team" },
+      "license": { "type": "CC-BY-4.0" },
+      "keywords": ["open source", "adoption", "developer tools", "repo review", "project growth"],
+      "description": "Open-source project judgment — diagnose why a project is not gaining adoption. The root cause is usually value-entry clarity, not documentation or feature gaps.",
+      "core_insight": "Adoption failure is a value-entry problem: visitors cannot determine in 30 seconds what problem this solves and why it is better.",
+      "file_count": 2,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
       "quality_badge": "experimental"
     },
     {
-      "id": "management",
-      "name": "Management KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-management",
-      "spec_version": "0.3",
+      "id": "content_strategy",
+      "name": "Content Strategy KDNA",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-content_strategy",
+      "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "management",
-        "execution",
-        "delegation",
-        "team"
-      ],
-      "description": "Domain cognition for management judgment — execution failures as system outputs.",
-      "core_insight": "Execution failure is a system output, not a motivation failure.",
-      "file_count": 6,
-      "created": "2026-05-01",
-      "updated": "2026-05-19",
-      "quality_badge": "experimental"
-    },
-    {
-      "id": "product-decision",
-      "name": "Product Decision KDNA",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-product-decision",
-      "spec_version": "0.3",
-      "status": "experimental",
-      "access": "open",
-      "language": [
-        "zh"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "product",
-        "decision",
-        "hypothesis",
-        "validation"
-      ],
-      "description": "Domain cognition for product decision-making — hypothesis validation over feature delivery.",
-      "core_insight": "Validate hypotheses before delivering features.",
-      "file_count": 6,
-      "created": "2026-05-01",
-      "updated": "2026-05-19",
+      "language": ["en"],
+      "author": { "name": "KDNA Team", "id": "kdna-team" },
+      "license": { "type": "CC-BY-4.0" },
+      "keywords": ["content strategy", "content marketing", "topic selection", "editorial judgment", "creator economy"],
+      "description": "Content strategy judgment — evaluate whether a topic is worth writing based on specific audience, cognitive contrast, discussability, and comprehension barrier. Not topic generation.",
+      "core_insight": "Ideas are cheap. Worthiness is rare. Filter topics by who they are for and what assumption they challenge.",
+      "file_count": 2,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
       "quality_badge": "experimental"
     }
+  ],
+  "legacy": [
+    { "id": "business-growth", "deprecated": true, "note": "Early experimental domain. Superseded by first-wave official domains." },
+    { "id": "communication", "deprecated": true, "note": "Early experimental domain. Superseded by first-wave official domains." },
+    { "id": "sales", "deprecated": true, "note": "Early experimental domain. Superseded by first-wave official domains." },
+    { "id": "management", "deprecated": true, "note": "Early experimental domain. Superseded by first-wave official domains." },
+    { "id": "product-decision", "deprecated": true, "note": "Early experimental domain. Superseded by first-wave official domains." },
+    { "id": "writing-basic", "deprecated": true, "note": "Superseded by kdna-writing." },
+    { "id": "speaking-basic", "deprecated": true, "note": "Superseded by first-wave official domains." },
+    { "id": "management-basic", "deprecated": true, "note": "Superseded by first-wave official domains." }
   ]
 }
