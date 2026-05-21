@@ -33,7 +33,13 @@
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "domain_field": [
+        "agent-safety"
+      ],
+      "judgment_patterns": [
+        "safety-gate"
+      ]
     },
     {
       "id": "content_strategy",
@@ -66,7 +72,13 @@
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "domain_field": [
+        "content-creation"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ]
     },
     {
       "id": "decision_state",
@@ -114,6 +126,12 @@
             "model": "claude-3-5-sonnet-20241022"
           }
         }
+      ],
+      "domain_field": [
+        "collaboration"
+      ],
+      "judgment_patterns": [
+        "classification"
       ]
     },
     {
@@ -147,7 +165,13 @@
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "domain_field": [
+        "meta-cognition"
+      ],
+      "judgment_patterns": [
+        "boundary-detection"
+      ]
     },
     {
       "id": "knowledge_management",
@@ -180,7 +204,13 @@
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "domain_field": [
+        "knowledge-management"
+      ],
+      "judgment_patterns": [
+        "boundary-detection"
+      ]
     },
     {
       "id": "open_source_project",
@@ -213,7 +243,13 @@
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "domain_field": [
+        "collaboration"
+      ],
+      "judgment_patterns": [
+        "value-diagnosis"
+      ]
     },
     {
       "id": "prompt_diagnosis",
@@ -246,7 +282,14 @@
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "domain_field": [
+        "content-creation"
+      ],
+      "judgment_patterns": [
+        "classification",
+        "value-diagnosis"
+      ]
     },
     {
       "id": "writing",
@@ -280,7 +323,13 @@
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "domain_field": [
+        "content-creation"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ]
     }
   ]
 }
