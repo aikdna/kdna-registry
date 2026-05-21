@@ -318,13 +318,15 @@
     {
       "id": "animation",
       "name": "Animation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "repo": "https://github.com/knowledge-dna/kdna-animation",
       "cluster": true,
       "spec_version": "0.4",
       "status": "reference",
       "access": "open",
-      "language": ["en"],
+      "language": [
+        "en"
+      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team"
@@ -344,8 +346,14 @@
       ],
       "description": "World-class animation judgment cluster: seven domains teaching agents what quality means, what to reject, and when to choose restraint — before they write a line of code.",
       "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem. Tools teach syntax; KDNA teaches direction.",
-      "domain_field": ["creative", "software-engineering"],
-      "judgment_patterns": ["quality-assessment", "value-diagnosis"],
+      "domain_field": [
+        "creative",
+        "software-engineering"
+      ],
+      "judgment_patterns": [
+        "quality-assessment",
+        "value-diagnosis"
+      ],
       "sub_domains": [
         "motion_design_master",
         "gsap_master",
@@ -355,7 +363,7 @@
         "ai_animation_workflow",
         "animation_review_master"
       ],
-      "file_count": 49,
+      "file_count": 50,
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "eval_score": null,
