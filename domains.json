@@ -1,25 +1,43 @@
 {
-  "registry_version": "1.0-rc",
-  "updated": "2026-05-21T00:00:00Z",
+  "schema_version": "2.0",
+  "registry_version": "2.0",
+  "updated": "2026-05-22T19:00:00Z",
+  "_note": "v2.0 schema — see SCHEMA.md. v1.0 conditions: 9 standalone domains were named bare (writing, code_review, ...) under repo-only entries. v0.7 breaking change: all domains now under @aikdna/ scope, distributed as .kdna files with sha256+signature.",
+  "scopes": {
+    "@aikdna": {
+      "type": "official",
+      "description": "Official KDNA domains maintained by the KDNA Team.",
+      "trust_pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe",
+      "registry_url": null,
+      "verified": true
+    }
+  },
   "domains": [
     {
-      "id": "decision_state",
-      "name": "Decision State",
-      "version": "0.4.0",
-      "repo": "https://github.com/knowledge-dna/kdna-decision_state",
+      "name": "@aikdna/decision_state",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-decision_state/releases/download/v0.7.0/decision_state-0.7.0.kdna",
+      "sha256": "a0c1749f1d33b51d316c50f0f000890fa752a6760245dfe55eab721e2ca17a6a",
+      "signature": "ed25519:66cebfb21f20d2f124bbda2b41091b7e2c261e637f80c8304a4861b293a411912706ee3817354c5f9797191a05ad0ccef82bb4a48279ee656061196795183c02",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-decision_state",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Judge whether a meeting or discussion produced an actionable decision — or just discussion.",
+      "core_insight": "Discussion is not decision. Broad agreement is not commitment.",
       "keywords": [
         "decision",
         "meeting",
@@ -27,8 +45,6 @@
         "commitment",
         "execution"
       ],
-      "description": "Judge whether a meeting or discussion produced an actionable decision — or just discussion.",
-      "core_insight": "Discussion is not decision. Broad agreement is not commitment.",
       "domain_field": [
         "collaboration"
       ],
@@ -36,30 +52,40 @@
         "classification"
       ],
       "file_count": 4,
-      "created": "2026-05-19",
-      "updated": "2026-05-19",
       "eval_score": 97,
       "test_count": 30,
-      "quality_badge": "validated"
+      "quality_badge": "validated",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-19",
+      "updated": "2026-05-19"
     },
     {
-      "id": "agent_safety",
-      "name": "Agent Safety",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-agent_safety",
+      "name": "@aikdna/agent_safety",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-agent_safety/releases/download/v0.7.0/agent_safety-0.7.0.kdna",
+      "sha256": "8d3e0e739cdcdcd0affeb1e01d461a092f2246b554b06c7c6f60c150fc9d7700",
+      "signature": "ed25519:ec8a7ab0f5ecd781f0c0ae1b30980be1f0cefd70811eaf566b6a255eaed14b751ba60e4114d735d63566e572b36e39492f59a6392848b8fb8be3750428956d0b",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-agent_safety",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Halt before irreversible actions — verify authorization, backup, and reversibility.",
+      "core_insight": "Tools make agents capable. Safety judgment makes agents cautious before irreversible action.",
       "keywords": [
         "agent safety",
         "irreversible",
@@ -67,8 +93,6 @@
         "safety gate",
         "sandbox"
       ],
-      "description": "Halt before irreversible actions — verify authorization, backup, and reversibility.",
-      "core_insight": "Tools make agents capable. Safety judgment makes agents cautious before irreversible action.",
       "domain_field": [
         "agent-safety"
       ],
@@ -76,29 +100,39 @@
         "safety-gate"
       ],
       "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
     },
     {
-      "id": "writing",
-      "name": "Writing",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-writing",
+      "name": "@aikdna/writing",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-writing/releases/download/v0.7.0/writing-0.7.0.kdna",
+      "sha256": "9ab1775fe118d5b6c4b5d6989cafdd356dd06d30c9d0d1753ed6b5c2d997cf6a",
+      "signature": "ed25519:a07d583499f12c87bbbb9d9aa4d4258c816d1b2e5ea3d26a0b900c0064a20bb906ad8a89ca4151693539f87cc7b1b6ccda4f06937e02b5b15e63af0732e88907",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-writing",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Diagnose whether content has a real argument, a cognitive hook, and evidence density — not just language polish.",
+      "core_insight": "Most writing problems are structural and argument-level, not language-level.",
       "keywords": [
         "writing",
         "editing",
@@ -106,8 +140,6 @@
         "structure",
         "clarity"
       ],
-      "description": "Diagnose whether content has a real argument, a cognitive hook, and evidence density — not just language polish.",
-      "core_insight": "Most writing problems are structural and argument-level, not language-level.",
       "domain_field": [
         "content-creation"
       ],
@@ -115,29 +147,39 @@
         "quality-assessment"
       ],
       "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
     },
     {
-      "id": "content_strategy",
-      "name": "Content Strategy",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-content_strategy",
+      "name": "@aikdna/content_strategy",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-content_strategy/releases/download/v0.7.0/content_strategy-0.7.0.kdna",
+      "sha256": "e40d392d1fbab8f616d776e37e110537ac59dc20e8bc62c932d4cb2dedb112b4",
+      "signature": "ed25519:ddf0cfa5767f830512c3cd4cd729c2f556e9947a1bc9ed9e1d3051725dc48c110c10fc6d6f1b943095c5fa66efcdbf5219eb0bc2e8007b4cd6d586576b51e907",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-content_strategy",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Evaluate topic worthiness — specific audience, cognitive contrast, discussability, and comprehension barrier.",
+      "core_insight": "Ideas are cheap. Worthiness is rare. Filter topics by who they are for and what assumption they challenge.",
       "keywords": [
         "content strategy",
         "topic selection",
@@ -145,8 +187,6 @@
         "marketing",
         "creator"
       ],
-      "description": "Evaluate topic worthiness — specific audience, cognitive contrast, discussability, and comprehension barrier.",
-      "core_insight": "Ideas are cheap. Worthiness is rare. Filter topics by who they are for and what assumption they challenge.",
       "domain_field": [
         "content-creation"
       ],
@@ -154,29 +194,39 @@
         "quality-assessment"
       ],
       "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
     },
     {
-      "id": "prompt_diagnosis",
-      "name": "Prompt Diagnosis",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-prompt_diagnosis",
+      "name": "@aikdna/prompt_diagnosis",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-prompt_diagnosis/releases/download/v0.7.0/prompt_diagnosis-0.7.0.kdna",
+      "sha256": "44a19001d50bba8c1259883af75dc9c5cabb9af929f2ec2f71036b0f89b0f497",
+      "signature": "ed25519:5b0ef0643df3419965e3789b5201158510360235b38618750a9d26809902cb1a549410c1002ceb55c4a803ed27c188ffa40634591db9b1738a71b83e2129aa0c",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-prompt_diagnosis",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Diagnose why a prompt failed — root cause is task mixing, goal ambiguity, or context gap — not just format issues.",
+      "core_insight": "Most prompt failures are task mixing and goal ambiguity, not missing format elements.",
       "keywords": [
         "prompt",
         "diagnosis",
@@ -184,39 +234,46 @@
         "task mixing",
         "goal ambiguity"
       ],
-      "description": "Diagnose why a prompt failed — root cause is task mixing, goal ambiguity, or context gap — not just format issues.",
-      "core_insight": "Most prompt failures are task mixing and goal ambiguity, not missing format elements.",
       "domain_field": [
-        "content-creation"
+        "ai-engineering"
       ],
       "judgment_patterns": [
-        "classification",
-        "value-diagnosis"
+        "diagnosis"
       ],
       "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
     },
     {
-      "id": "knowledge_management",
-      "name": "Knowledge Management",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-knowledge_management",
+      "name": "@aikdna/knowledge_management",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-knowledge_management/releases/download/v0.7.0/knowledge_management-0.7.0.kdna",
+      "sha256": "8dc6dcdb6557ef1c5a3b358d59296314df569408387b81e4aa540e25a2c58cfb",
+      "signature": "ed25519:03992e9496a1c42389fc31f340e3ac73ad3f8865df98918b57517ef4c90cafad033527307ea1d89563bf961964b3ae9d3c588cf6ead9beafd32f4a66fcd54207",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-knowledge_management",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Distinguish knowledge assets from raw material — knowledge needs proposition, boundary, counter-example, and evolution record.",
+      "core_insight": "Most 'knowledge bases' are raw material collections. Knowledge requires testing, not just saving.",
       "keywords": [
         "knowledge",
         "curation",
@@ -224,76 +281,92 @@
         "boundary",
         "taxonomy"
       ],
-      "description": "Distinguish knowledge assets from raw material — knowledge needs proposition, boundary, counter-example, and evolution record.",
-      "core_insight": "Most 'knowledge bases' are raw material collections. Knowledge requires testing, not just saving.",
       "domain_field": [
         "knowledge-management"
       ],
       "judgment_patterns": [
-        "boundary-detection"
+        "classification"
       ],
       "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
     },
     {
-      "id": "kdna_authoring",
-      "name": "KDNA Authoring",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-authoring",
+      "name": "@aikdna/kdna_authoring",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-authoring/releases/download/v0.7.0/kdna_authoring-0.7.0.kdna",
+      "sha256": "f87ded3251efab2f677043228eb3de7d0a6deb7631538820d6f44771e8fc66c7",
+      "signature": "ed25519:15ad01227ca8556402e08275603f2904670447cf9fe8d7b859de52bcfe2bde140aaabc778ce0b4271741c72b87d2b999674e4065b83bc13dae0e69107a633a06",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-authoring",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Meta-cognition — teach agents how to author high-quality KDNA through interview-first authoring and quality auditing.",
+      "core_insight": "KDNA encodes judgment, not information. Expert distinctions extracted through interview are the only valid raw material.",
       "keywords": [
         "kdna authoring",
         "meta-cognition",
         "expert interview",
         "quality audit"
       ],
-      "description": "Meta-cognition — teach agents how to author high-quality KDNA through interview-first authoring and quality auditing.",
-      "core_insight": "KDNA encodes judgment, not information. Expert distinctions extracted through interview are the only valid raw material.",
       "domain_field": [
         "meta-cognition"
       ],
       "judgment_patterns": [
-        "boundary-detection"
+        "quality-assessment"
       ],
       "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
     },
     {
-      "id": "open_source_project",
-      "name": "Open Source Project",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-open_source_project",
+      "name": "@aikdna/open_source_project",
+      "type": "domain",
+      "version": "0.7.0",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-open_source_project/releases/download/v0.7.0/open_source_project-0.7.0.kdna",
+      "sha256": "baacc195820dd78a1f083165a0cff8a2b6ee7aef2c2b57724a22d39f9b1c4764",
+      "signature": "ed25519:22fb0fd486ad20f80308c0b349f6590a6acf6b57a2f0493c44a4f513402df8560580f972265e65f41800671fd8f664742c0e1f4da3ea2128e284b5b6de527a08",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-open_source_project",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Diagnose why a project isn't gaining adoption — root cause is value-entry clarity, not documentation or feature gaps.",
+      "core_insight": "Adoption failure is a value-entry problem: visitors cannot determine the problem and alternative in 30 seconds.",
       "keywords": [
         "open source",
         "adoption",
@@ -301,19 +374,20 @@
         "community",
         "onboarding"
       ],
-      "description": "Diagnose why a project isn't gaining adoption — root cause is value-entry clarity, not documentation or feature gaps.",
-      "core_insight": "Adoption failure is a value-entry problem: visitors cannot determine the problem and alternative in 30 seconds.",
       "domain_field": [
-        "collaboration"
+        "product"
       ],
       "judgment_patterns": [
-        "value-diagnosis"
+        "diagnosis"
       ],
       "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental"
+      "quality_badge": "experimental",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
     },
     {
       "id": "animation",
@@ -378,24 +452,30 @@
       "spec_version": "1.0-rc",
       "status": "reference",
       "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-code_review/releases/download/v0.7.0/code_review-0.7.0.kdna",
+      "sha256": "546439170b281faa977ac63666b868f65a7564a5705d3d92d5d2e2c62de10ddb",
+      "signature": "ed25519:09a8041c33ac9e8f85525ddfc1e2696e75ca9d19c7e071ea42c9fdd01c607a3620f7f71f8e78124c29fccdebd3c0c03d382b50b79c2e82a0b39f6c6051e68d00",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-code_review",
       "language": [
         "en"
       ],
       "author": {
         "name": "KDNA Team",
-        "id": "kdna-team"
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
       },
       "license": {
         "type": "CC-BY-4.0"
       },
+      "description": "Reference domain for code review judgment — behavior-first review, comment classification, and anti-rubber-stamp principles.",
+      "core_insight": "Every review comment that requests a change must cite a specific failure mode.",
       "keywords": [
         "code review",
         "pull request",
         "software engineering",
         "review quality"
       ],
-      "description": "Reference domain for code review judgment — behavior-first review, comment classification, and anti-rubber-stamp principles.",
-      "core_insight": "Every review comment that requests a change must cite a specific failure mode.",
       "domain_field": [
         "software-engineering"
       ],
@@ -403,10 +483,395 @@
         "quality-assessment"
       ],
       "file_count": 2,
-      "created": "2026-05-21",
-      "updated": "2026-05-21",
       "test_count": 0,
-      "quality_badge": "reference"
+      "quality_badge": "reference",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-20"
+    },
+    {
+      "name": "@aikdna/animation",
+      "type": "cluster",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": null,
+      "sha256": null,
+      "signature": null,
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "World-class animation judgment cluster: seven domains teaching agents what quality means, what to reject, and when to choose restraint — before they write a line of code.",
+      "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem.",
+      "keywords": [
+        "animation",
+        "motion design",
+        "GSAP",
+        "Motion Canvas",
+        "web animation",
+        "performance",
+        "motion system"
+      ],
+      "cluster": {
+        "domains": [
+          "@aikdna/motion_design_master",
+          "@aikdna/gsap_master",
+          "@aikdna/motion_canvas_master",
+          "@aikdna/web_animation_performance",
+          "@aikdna/frontend_motion_system",
+          "@aikdna/ai_animation_workflow",
+          "@aikdna/animation_review_master"
+        ],
+        "composition_rules": [
+          {
+            "task": "web_interaction_motion",
+            "load": [
+              "@aikdna/motion_design_master",
+              "@aikdna/gsap_master",
+              "@aikdna/web_animation_performance",
+              "@aikdna/frontend_motion_system"
+            ]
+          },
+          {
+            "task": "programmatic_video_explainer",
+            "load": [
+              "@aikdna/motion_design_master",
+              "@aikdna/motion_canvas_master",
+              "@aikdna/animation_review_master"
+            ]
+          },
+          {
+            "task": "agent_generated_animation",
+            "load": [
+              "@aikdna/ai_animation_workflow",
+              "@aikdna/motion_design_master",
+              "@aikdna/animation_review_master"
+            ]
+          }
+        ]
+      },
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/motion_design_master",
+      "type": "domain",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-animation/releases/download/v0.3.0/motion_design_master-0.3.0.kdna",
+      "sha256": "720427305a6bb0a4444309b230a9688ae56f12a14a7c3e58fa976413869cce12",
+      "signature": "ed25519:3beae2adee2175d0c685cf733faae82c2cbe9e0f48b410b7536af277d387dc932a3c1a5a70a7ac1685c55f36fa6a987dcca9c38225e953bb25fc30a0ea06f709",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "Motion design master domain — taste, timing, restraint judgment for UI animation.",
+      "keywords": [
+        "motion design",
+        "animation",
+        "easing",
+        "timing",
+        "restraint"
+      ],
+      "domain_field": [
+        "design"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "part_of_cluster": "@aikdna/animation",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/gsap_master",
+      "type": "domain",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-animation/releases/download/v0.3.0/gsap_master-0.3.0.kdna",
+      "sha256": "9d519d2711639d0b2b270141620091808318ff17dd5b470a258db9f1d7a68fba",
+      "signature": "ed25519:8e9e2b5b92d83fdf3543bca99cfff0d2dec15ca2a9c4a24aa48b0b07d6f815a2a1b0be7bc602ffbbb213fdf9f1676ea595171ec965c880615976506cf7aa6805",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "GSAP mastery — ScrollTrigger, timeline, tween, stagger judgment.",
+      "keywords": [
+        "GSAP",
+        "ScrollTrigger",
+        "timeline",
+        "tween",
+        "stagger"
+      ],
+      "domain_field": [
+        "frontend"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "part_of_cluster": "@aikdna/animation",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/motion_canvas_master",
+      "type": "domain",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-animation/releases/download/v0.3.0/motion_canvas_master-0.3.0.kdna",
+      "sha256": "8f3be860a0c2ec9f796c5a1927d659e6cb1eb61bc36c41b69814fc3ac61373be",
+      "signature": "ed25519:181bee04f44436d052d8a8cf5183911b8542bc2381d6c9d9a14bfd466a61ee862a865e95919e61a17f940b7671afa01a50d809a5f9f9198d3829a3286556aa0d",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "Motion Canvas mastery — programmatic video, scene composition, explainer animation judgment.",
+      "keywords": [
+        "Motion Canvas",
+        "programmatic video",
+        "explainer",
+        "scene"
+      ],
+      "domain_field": [
+        "design"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "part_of_cluster": "@aikdna/animation",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/web_animation_performance",
+      "type": "domain",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-animation/releases/download/v0.3.0/web_animation_performance-0.3.0.kdna",
+      "sha256": "39ab3105a3d19f6a537c347b5a547f15e70638f78672af48cbd73b8a3d5c6276",
+      "signature": "ed25519:d2e2659b756468da93cec8341788ae5fcc8bfe45f787fc696a5e75c5039be82af8965e0fd71962c914ac3ae594558b46761bf75da75865c4426929136f2c1e0a",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "Web animation performance — jank diagnosis, frame rate, GPU composition judgment.",
+      "keywords": [
+        "web animation",
+        "performance",
+        "jank",
+        "frame rate",
+        "GPU"
+      ],
+      "domain_field": [
+        "frontend"
+      ],
+      "judgment_patterns": [
+        "diagnosis"
+      ],
+      "part_of_cluster": "@aikdna/animation",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/frontend_motion_system",
+      "type": "domain",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-animation/releases/download/v0.3.0/frontend_motion_system-0.3.0.kdna",
+      "sha256": "b6d36514d1a88f14004ec8dede9379d73614cbc2e3f893491ba2dfcb4540022e",
+      "signature": "ed25519:140362963a6ee9e97e7e421984e09460f9a38fc7b5ef25f56da1eb470bb8875f3d393ed7c612da2d8620f764c6c2ef419337159da7045b502e0319bcb3638f03",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "Frontend motion system — design tokens, motion primitives, system-level consistency judgment.",
+      "keywords": [
+        "motion system",
+        "design tokens",
+        "motion primitive",
+        "consistency"
+      ],
+      "domain_field": [
+        "frontend"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "part_of_cluster": "@aikdna/animation",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/ai_animation_workflow",
+      "type": "domain",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-animation/releases/download/v0.3.0/ai_animation_workflow-0.3.0.kdna",
+      "sha256": "270d1ca853068d75f191335b32646f834998d2b27f5414786db4e31b7d521d45",
+      "signature": "ed25519:6fd442e4300f14de10676ce24e5618039bdba00af4f676dd4aff7879079140117ee4046fcfb4228b1eecf6ce24a15191b2a50026adc0ff474fc1a5b6439c9702",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "AI animation workflow — agent-generated animation quality judgment.",
+      "keywords": [
+        "AI animation",
+        "agent-generated",
+        "workflow",
+        "quality"
+      ],
+      "domain_field": [
+        "ai-engineering"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "part_of_cluster": "@aikdna/animation",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/animation_review_master",
+      "type": "domain",
+      "version": "0.3.0",
+      "spec_version": "0.4",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-animation/releases/download/v0.3.0/animation_review_master-0.3.0.kdna",
+      "sha256": "13774c4635a5ccba1681dd87fa6e523194b44b0893eeb75b105821849316441f",
+      "signature": "ed25519:5619768a8eab7791f73b91a50f7c28de1e344906ca90ec52b9dc95016941b00e7296fba1e1bb053977217cb60e65760caeb8d8dd3737cc313607b97d0a957b0a",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-animation",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "MIT"
+      },
+      "description": "Animation review master — critique, diagnosis, quality assessment judgment.",
+      "keywords": [
+        "animation review",
+        "critique",
+        "diagnosis",
+        "quality assessment"
+      ],
+      "domain_field": [
+        "design"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "part_of_cluster": "@aikdna/animation",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-21",
+      "updated": "2026-05-21"
     }
   ]
 }
