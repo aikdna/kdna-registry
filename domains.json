@@ -1,88 +1,10 @@
 {
-  "registry_version": "0.5.0",
-  "updated": "2026-05-20T00:00:00Z",
+  "registry_version": "1.0-rc",
+  "updated": "2026-05-21T00:00:00Z",
   "domains": [
     {
-      "id": "agent_safety",
-      "name": "Agent Safety Judgment KDNA",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-agent_safety",
-      "spec_version": "0.4",
-      "status": "experimental",
-      "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "agent safety",
-        "irreversible actions",
-        "authorization",
-        "safety gate",
-        "agent judgment"
-      ],
-      "description": "Agent safety judgment — halt before irreversible actions, verify authorization, backup, and reversibility. Recommend before executing.",
-      "core_insight": "Tools make agents capable. Safety judgment makes agents cautious before irreversible action.",
-      "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
-      "test_count": 0,
-      "quality_badge": "experimental",
-      "domain_field": [
-        "agent-safety"
-      ],
-      "judgment_patterns": [
-        "safety-gate"
-      ]
-    },
-    {
-      "id": "content_strategy",
-      "name": "Content Strategy KDNA",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-content_strategy",
-      "spec_version": "0.4",
-      "status": "experimental",
-      "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "content strategy",
-        "content marketing",
-        "topic selection",
-        "editorial judgment",
-        "creator economy"
-      ],
-      "description": "Content strategy judgment — evaluate whether a topic is worth writing based on specific audience, cognitive contrast, discussability, and comprehension barrier. Not topic generation.",
-      "core_insight": "Ideas are cheap. Worthiness is rare. Filter topics by who they are for and what assumption they challenge.",
-      "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
-      "test_count": 0,
-      "quality_badge": "experimental",
-      "domain_field": [
-        "content-creation"
-      ],
-      "judgment_patterns": [
-        "quality-assessment"
-      ]
-    },
-    {
       "id": "decision_state",
-      "name": "Decision State KDNA",
+      "name": "Decision State",
       "version": "0.4.0",
       "repo": "https://github.com/knowledge-dna/kdna-decision_state",
       "spec_version": "0.4",
@@ -102,37 +24,219 @@
         "decision",
         "meeting",
         "discussion",
-        "commitment"
+        "commitment",
+        "execution"
       ],
-      "description": "Judge whether a meeting has produced an actionable decision — or just discussion.",
+      "description": "Judge whether a meeting or discussion produced an actionable decision — or just discussion.",
       "core_insight": "Discussion is not decision. Broad agreement is not commitment.",
-      "file_count": 2,
-      "created": "2026-05-19",
-      "updated": "2026-05-20",
-      "eval_score": 97,
-      "test_count": 30,
-      "quality_badge": "validated",
-      "evaluation_history": [
-        {
-          "version": "0.4.0",
-          "eval_score": 97,
-          "test_count": 30,
-          "benchmark_id": "decision-state-benchmark-v2",
-          "evaluated_at": "2026-05-19T00:00:00Z",
-          "metrics": {
-            "state_accuracy": 96.7,
-            "false_actionization_errors": 0,
-            "scenarios_count": 30,
-            "model": "claude-3-5-sonnet-20241022"
-          }
-        }
-      ],
       "domain_field": [
         "collaboration"
       ],
       "judgment_patterns": [
         "classification"
-      ]
+      ],
+      "file_count": 4,
+      "created": "2026-05-19",
+      "updated": "2026-05-19",
+      "eval_score": 97,
+      "test_count": 30,
+      "quality_badge": "validated"
+    },
+    {
+      "id": "agent_safety",
+      "name": "Agent Safety",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-agent_safety",
+      "spec_version": "0.4",
+      "status": "experimental",
+      "access": "open",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "agent safety",
+        "irreversible",
+        "authorization",
+        "safety gate",
+        "sandbox"
+      ],
+      "description": "Halt before irreversible actions — verify authorization, backup, and reversibility.",
+      "core_insight": "Tools make agents capable. Safety judgment makes agents cautious before irreversible action.",
+      "domain_field": [
+        "agent-safety"
+      ],
+      "judgment_patterns": [
+        "safety-gate"
+      ],
+      "file_count": 6,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
+    },
+    {
+      "id": "writing",
+      "name": "Writing",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-writing",
+      "spec_version": "0.4",
+      "status": "experimental",
+      "access": "open",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "writing",
+        "editing",
+        "argument",
+        "structure",
+        "clarity"
+      ],
+      "description": "Diagnose whether content has a real argument, a cognitive hook, and evidence density — not just language polish.",
+      "core_insight": "Most writing problems are structural and argument-level, not language-level.",
+      "domain_field": [
+        "content-creation"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "file_count": 6,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
+    },
+    {
+      "id": "content_strategy",
+      "name": "Content Strategy",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-content_strategy",
+      "spec_version": "0.4",
+      "status": "experimental",
+      "access": "open",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "content strategy",
+        "topic selection",
+        "editorial",
+        "marketing",
+        "creator"
+      ],
+      "description": "Evaluate topic worthiness — specific audience, cognitive contrast, discussability, and comprehension barrier.",
+      "core_insight": "Ideas are cheap. Worthiness is rare. Filter topics by who they are for and what assumption they challenge.",
+      "domain_field": [
+        "content-creation"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "file_count": 6,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
+    },
+    {
+      "id": "prompt_diagnosis",
+      "name": "Prompt Diagnosis",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-prompt_diagnosis",
+      "spec_version": "0.4",
+      "status": "experimental",
+      "access": "open",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "prompt",
+        "diagnosis",
+        "failure mode",
+        "task mixing",
+        "goal ambiguity"
+      ],
+      "description": "Diagnose why a prompt failed — root cause is task mixing, goal ambiguity, or context gap — not just format issues.",
+      "core_insight": "Most prompt failures are task mixing and goal ambiguity, not missing format elements.",
+      "domain_field": [
+        "content-creation"
+      ],
+      "judgment_patterns": [
+        "classification",
+        "value-diagnosis"
+      ],
+      "file_count": 6,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
+    },
+    {
+      "id": "knowledge_management",
+      "name": "Knowledge Management",
+      "version": "0.1.0",
+      "repo": "https://github.com/knowledge-dna/kdna-knowledge_management",
+      "spec_version": "0.4",
+      "status": "experimental",
+      "access": "open",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "keywords": [
+        "knowledge",
+        "curation",
+        "verification",
+        "boundary",
+        "taxonomy"
+      ],
+      "description": "Distinguish knowledge assets from raw material — knowledge needs proposition, boundary, counter-example, and evolution record.",
+      "core_insight": "Most 'knowledge bases' are raw material collections. Knowledge requires testing, not just saving.",
+      "domain_field": [
+        "knowledge-management"
+      ],
+      "judgment_patterns": [
+        "boundary-detection"
+      ],
+      "file_count": 6,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
     },
     {
       "id": "kdna_authoring",
@@ -153,68 +257,28 @@
         "type": "CC-BY-4.0"
       },
       "keywords": [
-        "kdna",
-        "authoring",
+        "kdna authoring",
         "meta-cognition",
-        "quality",
-        "interview"
+        "expert interview",
+        "quality audit"
       ],
-      "description": "Meta-cognition domain: help AI agents turn human expertise into high-quality KDNA domains.",
+      "description": "Meta-cognition — teach agents how to author high-quality KDNA through interview-first authoring and quality auditing.",
       "core_insight": "KDNA encodes judgment, not information. Expert distinctions extracted through interview are the only valid raw material.",
-      "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
-      "test_count": 0,
-      "quality_badge": "experimental",
       "domain_field": [
         "meta-cognition"
       ],
       "judgment_patterns": [
         "boundary-detection"
-      ]
-    },
-    {
-      "id": "knowledge_management",
-      "name": "Knowledge Management KDNA",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-knowledge_management",
-      "spec_version": "0.4",
-      "status": "experimental",
-      "access": "open",
-      "language": [
-        "en"
       ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "knowledge management",
-        "pkm",
-        "notes",
-        "knowledge base",
-        "raw material"
-      ],
-      "description": "Knowledge management judgment — distinguish knowledge assets from raw material. A saved note is not knowledge without proposition, boundary, counter-example, and evolution record.",
-      "core_insight": "Most 'knowledge bases' are raw material collections. Knowledge requires testing, not just saving.",
       "file_count": 6,
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "test_count": 0,
-      "quality_badge": "experimental",
-      "domain_field": [
-        "knowledge-management"
-      ],
-      "judgment_patterns": [
-        "boundary-detection"
-      ]
+      "quality_badge": "experimental"
     },
     {
       "id": "open_source_project",
-      "name": "Open-source Project KDNA",
+      "name": "Open Source Project",
       "version": "0.1.0",
       "repo": "https://github.com/knowledge-dna/kdna-open_source_project",
       "spec_version": "0.4",
@@ -233,31 +297,31 @@
       "keywords": [
         "open source",
         "adoption",
-        "developer tools",
-        "repo review",
-        "project growth"
+        "value proposition",
+        "community",
+        "onboarding"
       ],
-      "description": "Open-source project judgment — diagnose why a project is not gaining adoption. The root cause is usually value-entry clarity, not documentation or feature gaps.",
-      "core_insight": "Adoption failure is a value-entry problem: visitors cannot determine in 30 seconds what problem this solves and why it is better.",
-      "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
-      "test_count": 0,
-      "quality_badge": "experimental",
+      "description": "Diagnose why a project isn't gaining adoption — root cause is value-entry clarity, not documentation or feature gaps.",
+      "core_insight": "Adoption failure is a value-entry problem: visitors cannot determine the problem and alternative in 30 seconds.",
       "domain_field": [
         "collaboration"
       ],
       "judgment_patterns": [
         "value-diagnosis"
-      ]
+      ],
+      "file_count": 6,
+      "created": "2026-05-20",
+      "updated": "2026-05-20",
+      "test_count": 0,
+      "quality_badge": "experimental"
     },
     {
-      "id": "prompt_diagnosis",
-      "name": "Prompt Diagnosis KDNA",
+      "id": "code_review",
+      "name": "Code Review",
       "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-prompt_diagnosis",
-      "spec_version": "0.4",
-      "status": "experimental",
+      "repo": "https://github.com/knowledge-dna/kdna-code_review",
+      "spec_version": "1.0-rc",
+      "status": "reference",
       "access": "open",
       "language": [
         "en"
@@ -270,66 +334,24 @@
         "type": "CC-BY-4.0"
       },
       "keywords": [
-        "prompt engineering",
-        "prompt diagnosis",
-        "prompt optimization",
-        "task mixing",
-        "goal ambiguity"
+        "code review",
+        "pull request",
+        "software engineering",
+        "review quality"
       ],
-      "description": "Prompt diagnosis judgment — identify why a prompt failed (task mixing, goal ambiguity, context gap), not just suggest format improvements.",
-      "core_insight": "Most prompt failures are task mixing and goal ambiguity, not missing format elements. Fix the cognitive conflict before the formatting.",
-      "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
-      "test_count": 0,
-      "quality_badge": "experimental",
+      "description": "Reference domain for code review judgment — behavior-first review, comment classification, and anti-rubber-stamp principles.",
+      "core_insight": "Every review comment that requests a change must cite a specific failure mode.",
       "domain_field": [
-        "content-creation"
-      ],
-      "judgment_patterns": [
-        "classification",
-        "value-diagnosis"
-      ]
-    },
-    {
-      "id": "writing",
-      "name": "Writing KDNA",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-writing",
-      "spec_version": "0.4",
-      "status": "experimental",
-      "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "keywords": [
-        "writing",
-        "editing",
-        "editorial",
-        "content",
-        "argument",
-        "judgment"
-      ],
-      "description": "Editorial writing judgment — diagnose whether content has a real argument, a cognitive hook, and evidence density. Not copy editing.",
-      "core_insight": "Most writing problems are structural and argument-level, not language-level.",
-      "file_count": 6,
-      "created": "2026-05-20",
-      "updated": "2026-05-20",
-      "test_count": 0,
-      "quality_badge": "experimental",
-      "domain_field": [
-        "content-creation"
+        "software-engineering"
       ],
       "judgment_patterns": [
         "quality-assessment"
-      ]
+      ],
+      "file_count": 2,
+      "created": "2026-05-21",
+      "updated": "2026-05-21",
+      "test_count": 0,
+      "quality_badge": "reference"
     }
   ]
 }
