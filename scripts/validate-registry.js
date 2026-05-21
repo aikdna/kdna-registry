@@ -145,6 +145,22 @@ for (let i = 0; i < registry.domains.length; i++) {
     fail(`${where}: release_status "${d.release_status}" invalid`);
   }
 
+  // v2.1: yank/deprecation coherence
+  if (d.yanked === true) {
+    if (!d.yanked_reason) {
+      warn(`${where}: yanked is true but yanked_reason is missing (v2.1 expects a short reason)`);
+    }
+    if (!d.yanked_at) {
+      warn(`${where}: yanked is true but yanked_at timestamp is missing (v2.1)`);
+    }
+  }
+  if (d.deprecated === true && !d.replaced_by) {
+    warn(`${where}: deprecated is true but replaced_by is null (consider naming a successor)`);
+  }
+  if (d.judgment_version && !/^\d{4}\.\d{2}(\.\d+)?$/.test(d.judgment_version)) {
+    warn(`${where}: judgment_version should be YYYY.MM or YYYY.MM.NN, got "${d.judgment_version}"`);
+  }
+
   // kdna_url + sha256 coherence
   if (d.kdna_url) {
     if (!/^https:\/\//.test(d.kdna_url)) {

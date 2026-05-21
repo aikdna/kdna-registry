@@ -141,8 +141,67 @@ CLI MAY accept bare names and expand them to `@aikdna/<name>` for the official s
 ## Deprecation lifecycle
 
 - `deprecated: true` — domain still installable but CLI warns; suggest `replaced_by`
-- `yanked: true` — specific version not recommended; CLI skips on fresh install but does not break existing installs
+- `yanked: true` — version not recommended; CLI **refuses** new installs of yanked versions but does not touch existing installs
+- `yanked_at: "<ISO timestamp>"` — when the yank decision was recorded (v2.1)
+- `yanked_reason: "<short text>"` — why; surfaced verbatim by CLI to the user (v2.1)
+- `replaced_by: "@scope/name"` — recommended successor (used by both deprecated and yanked)
 - Files are NEVER deleted from CDN (npm left-pad lesson)
+
+## v2.1 — Judgment-governance fields (recommended)
+
+v2.1 adds fields that let `kdna verify --judgment` measure whether a domain
+declares its boundaries, evidence, and failure modes. These fields are
+**recommended, not required** — old domains stay valid; CLI surfaces a
+quality score for whether they are present.
+
+Inside `KDNA_Core.json > axioms[]` and `KDNA_Patterns.json > misunderstandings[]`:
+
+```json
+{
+  "id": "axiom-1",
+  "one_sentence": "...",
+  "full_statement": "...",
+  "why": "...",
+
+  "confidence": "high" | "medium" | "low",
+  "evidence_type": [
+    "practice_pattern" | "case_observation" | "research_finding"
+    | "industry_consensus" | "personal_experience" | "working_hypothesis"
+  ],
+  "applies_when": [
+    "the buyer understands the offer but hesitates to commit"
+  ],
+  "does_not_apply_when": [
+    "the buyer truly lacks budget",
+    "the offer is irrelevant to the buyer"
+  ],
+  "failure_risk": "May over-diagnose psychological uncertainty and ignore real affordability."
+}
+```
+
+`KDNA_Core.json > ontology[]` and `stances[]` (object form) may carry
+`applies_when` / `does_not_apply_when`. `KDNA_Patterns.json > terminology.banned_terms[]`
+may carry `applies_when`.
+
+Rationale: KDNA encodes judgment frameworks. Saying "axiom X is true" without
+saying *when it stops being true* is the leading cause of judgment pollution.
+This contract surfaces the boundary so loaders and reviewers can detect it.
+
+## judgment_version (v2.1, optional)
+
+Inside each domain's `kdna.json`, separately from `version` (semver):
+
+```json
+{
+  "name": "@aikdna/writing",
+  "version": "0.7.1",
+  "judgment_version": "2026.05"
+}
+```
+
+`version` follows semver and tracks structure / wire format. `judgment_version`
+tracks when the encoded judgment was last revised (YYYY.MM). Used by
+`kdna diff` to surface judgment-level changes that semver may hide.
 
 ## Migration from v1.0
 
@@ -153,3 +212,6 @@ v1.0 used bare names (`writing`) and only the `repo` field. v0.7 breaking change
 - New entries: animation cluster + 7 sub-domains
 
 No backward compatibility. CLI bumped to v0.7.0 to signal break.
+
+v2.1 (2026-05+) adds judgment-governance fields without bumping
+`schema_version` — old `2.0` entries continue to work.

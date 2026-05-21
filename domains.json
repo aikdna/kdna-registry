@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "registry_version": "2.0",
-  "updated": "2026-05-22T20:00:00Z",
+  "updated": "2026-05-22T21:00:00Z",
   "_note": "v2.0 schema — see SCHEMA.md. v1.0 conditions: 9 standalone domains were named bare (writing, code_review, ...) under repo-only entries. v0.7 breaking change: all domains now under @aikdna/ scope, distributed as .kdna files with sha256+signature.",
   "scopes": {
     "@aikdna": {
@@ -111,13 +111,13 @@
     {
       "name": "@aikdna/writing",
       "type": "domain",
-      "version": "0.7.1",
+      "version": "0.7.2",
       "spec_version": "0.4",
       "status": "experimental",
       "access": "open",
-      "kdna_url": "https://github.com/knowledge-dna/kdna-writing/releases/download/v0.7.1/writing-0.7.1.kdna",
-      "sha256": "043f26ad5fb4edd8f6875ad203a0958efb5f4730fa5352873b199dc3eb2e6740",
-      "signature": "ed25519:358b6512ebb107b820f43d42181148794031d97bdfd17fda56ec488de534ac955ff0ff838f5e177759d00f4e4bf48ca18928fb1161bc0a692a97cf4772cb6a09",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-writing/releases/download/v0.7.2/writing-0.7.2.kdna",
+      "sha256": "9361e676b039b640c6c32c5b3dfa8728ca7a1135a808b0a4492e13606a20c284",
+      "signature": "ed25519:8d0c6c6080a9f574dfb8590e403ad3167a786d76263f627daf641a524ef2b1bceac336bc133c4ea5157dfd5c8416034b6c922eb8fd52d9cce2e1aee4aab9dc06",
       "release_status": "published_signed",
       "repo": "https://github.com/knowledge-dna/kdna-writing",
       "language": [
@@ -153,7 +153,8 @@
       "yanked": false,
       "replaced_by": null,
       "created": "2026-05-20",
-      "updated": "2026-05-20"
+      "updated": "2026-05-22",
+      "judgment_version": "2026.05"
     },
     {
       "name": "@aikdna/content_strategy",
