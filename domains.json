@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "registry_version": "2.0",
-  "updated": "2026-05-22T19:00:00Z",
+  "updated": "2026-05-22T19:30:00Z",
   "_note": "v2.0 schema — see SCHEMA.md. v1.0 conditions: 9 standalone domains were named bare (writing, code_review, ...) under repo-only entries. v0.7 breaking change: all domains now under @aikdna/ scope, distributed as .kdna files with sha256+signature.",
   "scopes": {
     "@aikdna": {
@@ -390,108 +390,6 @@
       "updated": "2026-05-20"
     },
     {
-      "id": "animation",
-      "name": "Animation",
-      "version": "0.2.0",
-      "repo": "https://github.com/knowledge-dna/kdna-animation",
-      "cluster": true,
-      "spec_version": "0.4",
-      "status": "reference",
-      "access": "open",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team"
-      },
-      "license": {
-        "type": "MIT"
-      },
-      "keywords": [
-        "animation",
-        "motion design",
-        "GSAP",
-        "Motion Canvas",
-        "performance",
-        "design system",
-        "review",
-        "AI workflow"
-      ],
-      "description": "World-class animation judgment cluster: seven domains teaching agents what quality means, what to reject, and when to choose restraint — before they write a line of code.",
-      "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem. Tools teach syntax; KDNA teaches direction.",
-      "domain_field": [
-        "creative",
-        "software-engineering"
-      ],
-      "judgment_patterns": [
-        "quality-assessment",
-        "value-diagnosis"
-      ],
-      "sub_domains": [
-        "motion_design_master",
-        "gsap_master",
-        "motion_canvas_master",
-        "web_animation_performance",
-        "frontend_motion_system",
-        "ai_animation_workflow",
-        "animation_review_master"
-      ],
-      "file_count": 50,
-      "created": "2026-05-21",
-      "updated": "2026-05-21",
-      "eval_score": null,
-      "test_count": 0,
-      "quality_badge": "reference"
-    },
-    {
-      "id": "code_review",
-      "name": "Code Review",
-      "version": "0.1.0",
-      "repo": "https://github.com/knowledge-dna/kdna-code_review",
-      "spec_version": "1.0-rc",
-      "status": "reference",
-      "access": "open",
-      "kdna_url": "https://github.com/knowledge-dna/kdna-code_review/releases/download/v0.7.0/code_review-0.7.0.kdna",
-      "sha256": "546439170b281faa977ac63666b868f65a7564a5705d3d92d5d2e2c62de10ddb",
-      "signature": "ed25519:09a8041c33ac9e8f85525ddfc1e2696e75ca9d19c7e071ea42c9fdd01c607a3620f7f71f8e78124c29fccdebd3c0c03d382b50b79c2e82a0b39f6c6051e68d00",
-      "release_status": "published_signed",
-      "repo": "https://github.com/knowledge-dna/kdna-code_review",
-      "language": [
-        "en"
-      ],
-      "author": {
-        "name": "KDNA Team",
-        "id": "kdna-team",
-        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
-      },
-      "license": {
-        "type": "CC-BY-4.0"
-      },
-      "description": "Reference domain for code review judgment — behavior-first review, comment classification, and anti-rubber-stamp principles.",
-      "core_insight": "Every review comment that requests a change must cite a specific failure mode.",
-      "keywords": [
-        "code review",
-        "pull request",
-        "software engineering",
-        "review quality"
-      ],
-      "domain_field": [
-        "software-engineering"
-      ],
-      "judgment_patterns": [
-        "quality-assessment"
-      ],
-      "file_count": 2,
-      "test_count": 0,
-      "quality_badge": "reference",
-      "deprecated": false,
-      "yanked": false,
-      "replaced_by": null,
-      "created": "2026-05-20",
-      "updated": "2026-05-20"
-    },
-    {
       "name": "@aikdna/animation",
       "type": "cluster",
       "version": "0.3.0",
@@ -872,6 +770,52 @@
       "replaced_by": null,
       "created": "2026-05-21",
       "updated": "2026-05-21"
+    },
+    {
+      "name": "@aikdna/code_review",
+      "type": "domain",
+      "version": "0.7.0",
+      "spec_version": "1.0",
+      "status": "reference",
+      "access": "open",
+      "kdna_url": "https://github.com/knowledge-dna/kdna-code_review/releases/download/v0.7.0/code_review-0.7.0.kdna",
+      "sha256": "546439170b281faa977ac63666b868f65a7564a5705d3d92d5d2e2c62de10ddb",
+      "signature": "ed25519:09a8041c33ac9e8f85525ddfc1e2696e75ca9d19c7e071ea42c9fdd01c607a3620f7f71f8e78124c29fccdebd3c0c03d382b50b79c2e82a0b39f6c6051e68d00",
+      "release_status": "published_signed",
+      "repo": "https://github.com/knowledge-dna/kdna-code_review",
+      "language": [
+        "en"
+      ],
+      "author": {
+        "name": "KDNA Team",
+        "id": "kdna-team",
+        "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+      },
+      "license": {
+        "type": "CC-BY-4.0"
+      },
+      "description": "Reference domain for code review judgment — behavior-first review, comment classification, and anti-rubber-stamp principles.",
+      "core_insight": "Every review comment that requests a change must cite a specific failure mode.",
+      "keywords": [
+        "code review",
+        "pull request",
+        "software engineering",
+        "review quality"
+      ],
+      "domain_field": [
+        "software-engineering"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ],
+      "file_count": 2,
+      "test_count": 0,
+      "quality_badge": "reference",
+      "deprecated": false,
+      "yanked": false,
+      "replaced_by": null,
+      "created": "2026-05-20",
+      "updated": "2026-05-22"
     }
   ]
 }
