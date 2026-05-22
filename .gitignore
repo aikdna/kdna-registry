@@ -4,3 +4,8 @@
 node_modules/
 *.bak
 *.tmp
+
+# Added by security audit
+
+dist/
+build/
