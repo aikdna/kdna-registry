@@ -52,9 +52,8 @@
         "classification"
       ],
       "file_count": 6,
-      "eval_score": 97,
-      "test_count": 30,
-      "quality_badge": "validated",
+      "test_count": 10,
+      "quality_badge": "tested",
       "deprecated": false,
       "yanked": false,
       "replaced_by": null,
@@ -151,8 +150,8 @@
         "quality-assessment"
       ],
       "file_count": 6,
-      "test_count": 0,
-      "quality_badge": "untested",
+      "test_count": 10,
+      "quality_badge": "tested",
       "deprecated": false,
       "yanked": false,
       "replaced_by": null,
@@ -249,8 +248,8 @@
         "diagnosis"
       ],
       "file_count": 6,
-      "test_count": 0,
-      "quality_badge": "untested",
+      "test_count": 10,
+      "quality_badge": "tested",
       "deprecated": false,
       "yanked": false,
       "replaced_by": null,
