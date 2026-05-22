@@ -51,7 +51,7 @@
       "judgment_patterns": [
         "classification"
       ],
-      "file_count": 3,
+      "file_count": 6,
       "eval_score": 97,
       "test_count": 30,
       "quality_badge": "validated",
@@ -59,9 +59,9 @@
       "yanked": false,
       "replaced_by": null,
       "created": "2026-05-19",
-      "updated": "2026-05-19",
+      "updated": "2026-05-22",
       "judgment_version": "2026.05",
-      "kdna_file_count": 3
+      "kdna_file_count": 6
     },
     {
       "name": "@aikdna/agent_safety",
@@ -255,7 +255,7 @@
       "yanked": false,
       "replaced_by": null,
       "created": "2026-05-20",
-      "updated": "2026-05-20",
+      "updated": "2026-05-22",
       "judgment_version": "2026.05",
       "kdna_file_count": 6
     },
