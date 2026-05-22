@@ -838,7 +838,7 @@
       "judgment_patterns": [
         "quality-assessment"
       ],
-      "file_count": 2,
+      "file_count": 6,
       "test_count": 0,
       "quality_badge": "untested",
       "deprecated": false,
@@ -847,7 +847,7 @@
       "created": "2026-05-20",
       "updated": "2026-05-22",
       "judgment_version": "2026.05",
-      "kdna_file_count": 2
+      "kdna_file_count": 6
     }
   ]
 }
