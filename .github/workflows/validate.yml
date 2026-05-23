@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6AM UTC — detect URL drift
 
 jobs:
   validate:
@@ -13,5 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Validate registry metadata and remote manifests
+      - name: Validate registry metadata
+        run: node scripts/validate-registry.js
+      - name: Validate remote URLs and checksums
         run: node scripts/validate-registry.js --remote
