@@ -46,7 +46,8 @@
         },
         "zh-CN": {
           "display_name": "决策状态判断",
-          "description": "判断一次会议或讨论是否产生了可执行的决策——而不只是讨论。"
+          "description": "判断一次会议或讨论是否产生了可执行的决策——而不只是讨论。",
+          "core_insight": "讨论不是决策。广泛共识不是承诺。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-decision_state/releases/download/v0.7.5/decision_state-0.7.5.kdna",
@@ -117,7 +118,8 @@
         },
         "zh-CN": {
           "display_name": "智能体安全判断",
-          "description": "在执行不可逆操作前暂停——验证授权、备份和可逆性。"
+          "description": "在执行不可逆操作前暂停——验证授权、备份和可逆性。",
+          "core_insight": "工具让Agent有能力。安全判断让Agent在不可逆操作前保持谨慎。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-agent_safety/releases/download/v0.7.5/agent_safety-0.7.5.kdna",
@@ -188,7 +190,8 @@
         },
         "zh-CN": {
           "display_name": "写作判断",
-          "description": "诊断内容是否有真实观点、认知钩子和证据密度，而不是只做文字润色。"
+          "description": "诊断内容是否有真实观点、认知钩子和证据密度，而不是只做文字润色。",
+          "core_insight": "大多数写作问题不是语言问题，而是结构和观点层面的问题。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-writing/releases/download/v0.7.2/writing-0.7.2.kdna",
@@ -259,7 +262,8 @@
         },
         "zh-CN": {
           "display_name": "内容策略判断",
-          "description": "评估选题价值——特定受众、认知差异、可讨论性和理解门槛。"
+          "description": "评估选题价值——特定受众、认知差异、可讨论性和理解门槛。",
+          "core_insight": "想法很廉价。真正稀缺的是值得被讨论的话题。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-content_strategy/releases/download/v0.7.5/content_strategy-0.7.5.kdna",
@@ -330,7 +334,8 @@
         },
         "zh-CN": {
           "display_name": "提示诊断",
-          "description": "诊断提示失败的根本原因——通常是任务混合、目标模糊或上下文缺口，而非格式问题。"
+          "description": "诊断提示失败的根本原因——通常是任务混合、目标模糊或上下文缺口，而非格式问题。",
+          "core_insight": "大多数提示失败是任务混合和目标模糊，而非缺少格式元素。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-prompt_diagnosis/releases/download/v0.7.5/prompt_diagnosis-0.7.5.kdna",
@@ -401,7 +406,8 @@
         },
         "zh-CN": {
           "display_name": "知识管理判断",
-          "description": "区分知识资产和原始材料——知识需要有命题、边界、反例和演进记录。"
+          "description": "区分知识资产和原始材料——知识需要有命题、边界、反例和演进记录。",
+          "core_insight": "大多数知识库只是原始材料集合。知识需要检验，而非仅仅保存。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-knowledge_management/releases/download/v0.7.5/knowledge_management-0.7.5.kdna",
@@ -472,7 +478,8 @@
         },
         "zh-CN": {
           "display_name": "KDNA 创作判断",
-          "description": "元认知——教 Agent 如何通过访谈优先的创作方式和质量审核来编写高质量 KDNA。"
+          "description": "元认知——教 Agent 如何通过访谈优先的创作方式和质量审核来编写高质量 KDNA。",
+          "core_insight": "KDNA编码的是判断，不是信息。通过访谈提取的专家区分点是唯一有效的原始素材。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-authoring/releases/download/v0.7.5/kdna_authoring-0.7.5.kdna",
@@ -542,7 +549,8 @@
         },
         "zh-CN": {
           "display_name": "开源项目判断",
-          "description": "诊断项目为什么没有获得采纳——根本原因是价值入口清晰度，而非文档或功能缺口。"
+          "description": "诊断项目为什么没有获得采纳——根本原因是价值入口清晰度，而非文档或功能缺口。",
+          "core_insight": "采纳失败是价值入口问题：访客在30秒内无法确定问题和替代方案。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-open_source_project/releases/download/v0.7.5/open_source_project-0.7.5.kdna",
@@ -678,7 +686,13 @@
       "replaced_by": null,
       "created": "2026-05-21",
       "updated": "2026-05-21",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "domain_field": [
+        "design"
+      ],
+      "judgment_patterns": [
+        "quality-assessment"
+      ]
     },
     {
       "name": "@aikdna/motion_design_master",
@@ -731,7 +745,9 @@
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "file_count": 6,
+      "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem."
     },
     {
       "name": "@aikdna/gsap_master",
@@ -784,7 +800,9 @@
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "file_count": 6,
+      "core_insight": "GSAP mastery requires understanding timeline orchestration, not just tween syntax."
     },
     {
       "name": "@aikdna/motion_canvas_master",
@@ -836,7 +854,9 @@
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "file_count": 6,
+      "core_insight": "Programmatic video animation demands scene composition judgment beyond code execution."
     },
     {
       "name": "@aikdna/web_animation_performance",
@@ -889,7 +909,9 @@
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "file_count": 6,
+      "core_insight": "Jank is not a rendering bug. It is a judgment failure about when and what to animate."
     },
     {
       "name": "@aikdna/frontend_motion_system",
@@ -941,7 +963,9 @@
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "file_count": 6,
+      "core_insight": "Motion systems require design token consistency, not one-off animation code."
     },
     {
       "name": "@aikdna/ai_animation_workflow",
@@ -993,7 +1017,9 @@
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "file_count": 6,
+      "core_insight": "AI-generated animation needs quality gates, not just generation speed."
     },
     {
       "name": "@aikdna/animation_review_master",
@@ -1045,7 +1071,9 @@
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
-      "quality_badge": "untested"
+      "quality_badge": "untested",
+      "file_count": 6,
+      "core_insight": "Animation review is critique, not approval. Every note must reference a timing or attention principle."
     },
     {
       "name": "@aikdna/code_review",
@@ -1066,7 +1094,8 @@
         },
         "zh-CN": {
           "display_name": "代码审查判断",
-          "description": "行为优先审查、评论分类和反橡皮图章原则。"
+          "description": "行为优先审查、评论分类和反橡皮图章原则。",
+          "core_insight": "每条要求修改的审查意见必须引用具体的失败模式。"
         }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-code_review/releases/download/v0.7.5/code_review-0.7.5.kdna",
