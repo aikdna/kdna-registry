@@ -39,7 +39,7 @@
         "zh-CN"
       ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
         "en": {
           "display_name": "Decision State"
@@ -252,7 +252,7 @@
         "zh-CN"
       ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
         "en": {
           "display_name": "Content Strategy"
@@ -323,7 +323,7 @@
         "zh-CN"
       ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
         "en": {
           "display_name": "Prompt Diagnosis"
@@ -394,7 +394,7 @@
         "zh-CN"
       ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
         "en": {
           "display_name": "Knowledge Management"
@@ -535,7 +535,7 @@
         "zh-CN"
       ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
         "en": {
           "display_name": "Open Source Project"
@@ -1059,7 +1059,7 @@
         "zh-CN"
       ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
         "en": {
           "display_name": "Code Review"
