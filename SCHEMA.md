@@ -1,4 +1,4 @@
-# KDNA Registry Schema v2.0
+# KDNA Registry Schema v2.2
 
 This document specifies the data contract for `domains.json` in `kdna-registry`. All install/publish/CLI tooling must conform to this schema.
 
@@ -7,7 +7,7 @@ This document specifies the data contract for `domains.json` in `kdna-registry`.
 ```json
 {
   "schema_version": "2.0",
-  "registry_version": "2.0",
+  "registry_version": "2.2",
   "updated": "ISO-8601 timestamp",
   "scopes": { ... },
   "domains": [ ... ]
@@ -58,7 +58,20 @@ Array of domain or cluster entries.
   "release_status": "published_signed" | "published_unsigned" | "pending_v0.7_republish",
 
   "repo": "https://github.com/...", // source of truth, fallback for `kdna install --from-git`
-  "language": ["en"],
+  "language": ["en"],                   // DEPRECATED — use "languages" + "default_language" instead
+  "languages": ["en", "zh-CN"],          // v2.2: all supported BCP 47 language tags
+  "default_language": "en",              // v2.2: canonical language of judgment content
+  "i18n_level": "L1" | "L2" | "L3",     // v2.2: localization coverage level
+  "localized": {                         // v2.2: locale-specific display metadata
+    "en": { "display_name": "...", "description": "...", "core_insight": "..." },
+    "zh-CN": { "display_name": "...", "description": "...", "core_insight": "..." }
+  },
+  "risk_level": "R0" | "R1" | "R2" | "R3",  // v2.2: risk classification
+  "review_status": "community" | "verified" | "reviewed" | "trusted", // v2.2: review state
+  "provenance_required": true,           // v2.2
+  "signature_required": true,            // v2.2
+  "yanked_reason": "<short text>",       // v2.2: why yanked
+  "yanked_at": "<ISO timestamp>",        // v2.2: when yanked
   "author": {
     "name": "...",
     "id": "...",
@@ -74,7 +87,7 @@ Array of domain or cluster entries.
 
   "file_count": N,
   "test_count": N,
-  "quality_badge": "validated" | "experimental" | "reference",
+  "quality_badge": "untested" | "tested" | "validated" | "expert_reviewed" | "production_ready",
   "eval_score": 0-100,
 
   "deprecated": false,
@@ -213,5 +226,4 @@ v1.0 used bare names (`writing`) and only the `repo` field. v0.7 breaking change
 
 No backward compatibility. CLI bumped to v0.7.0 to signal break.
 
-v2.1 (2026-05+) adds judgment-governance fields without bumping
-`schema_version` — old `2.0` entries continue to work.
+v2.2 (2026-05+) adds i18n fields (languages, default_language, i18n_level, localized), governance fields (risk_level, review_status, provenance_required, signature_required), and deprecates `language` (singular) in favor of `languages` + `default_language`. The `quality_badge` enum was corrected from legacy values to match KDNA SPEC: `untested | tested | validated | expert_reviewed | production_ready`. See [I18N_SPEC.md](https://github.com/knowledge-dna/KDNA/blob/main/docs/KDNA_I18N_SPEC.md) and [GOVERNANCE.md](https://github.com/knowledge-dna/KDNA/blob/main/docs/GOVERNANCE.md).
