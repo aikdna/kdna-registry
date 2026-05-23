@@ -214,6 +214,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Content Strategy" },
+        "zh-CN": { "display_name": "内容策略判断", "description": "评估选题价值——特定受众、认知差异、可讨论性和理解门槛。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-content_strategy/releases/download/v0.7.5/content_strategy-0.7.5.kdna",
       "sha256": "2dbaad9ad9e98e6cffc0eb37a45468bc6e41f59fb9465448d84a1cbb2575e8e2",
       "signature": "ed25519:8746b0f655f19d3cda063aa87f9da9e1cce5aa8e43ed37c2fad58f274c1e4aabecca9d6a6831daa6dc93e419ed18fff0d85db53e800953df51e7c68f2b77f108",
@@ -333,6 +340,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Knowledge Management" },
+        "zh-CN": { "display_name": "知识管理判断", "description": "区分知识资产和原始材料——知识需要有命题、边界、反例和演进记录。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-knowledge_management/releases/download/v0.7.5/knowledge_management-0.7.5.kdna",
       "sha256": "38a4c9a88458a623713a54dce328e18034a23e8654601fe49724960ed70492e4",
       "signature": "ed25519:c4a51ea4752407709a261ee53fe0a396da1fd545618b363ec9bec80252e4b4c64d957e01f71322158f989da4f5cb8691abc2c39089c684ac4899150a76858f07",
@@ -451,6 +465,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Open Source Project" },
+        "zh-CN": { "display_name": "开源项目判断", "description": "诊断项目为什么没有获得采纳——根本原因是价值入口清晰度，而非文档或功能缺口。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-open_source_project/releases/download/v0.7.5/open_source_project-0.7.5.kdna",
       "sha256": "9aa654356843a80e8a99635594a685c2b7af9527c835652c1afda95c38af2e4d",
       "signature": "ed25519:b61dfa1bdae5c37cefb203ce04604cb82f4329a45c7dcb769af5851e46fe2ccd42a5c2f4dde18f129654be82d7df3914213b40326811212bc1ddc58136161309",
@@ -954,12 +975,19 @@
       "quality_badge": "untested"
     },
     {
-      "name": "@aikdna/code_review",
+"name": "@aikdna/code_review",
       "type": "domain",
       "version": "0.7.5",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Code Review" },
+        "zh-CN": { "display_name": "代码审查判断", "description": "行为优先审查、评论分类和反橡皮图章原则。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-code_review/releases/download/v0.7.5/code_review-0.7.5.kdna",
       "sha256": "35d7922d9d01d7216304f47470ef900ec576043fc7a1aa042e885cbfc91c55cf",
       "signature": "ed25519:615ba5f3dfc2d0c2bf8006a8a40568af60d0e2d8724b6487c60230d96fc91e70f2fea613b1636f6acf1f9c719d3c849a0f63a0feb54c7134269ef3df1bb0490f",
