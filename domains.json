@@ -6,7 +6,16 @@
   "governance": {
     "yank_policy": "Domains with severe safety issues may be yanked. Yanked domains are blocked from new installations. See registry-policy.md.",
     "appeal_process": "Authors may appeal moderation decisions by opening an issue with evidence.",
-    "review_levels": ["unlisted", "community", "verified", "reviewed", "trusted", "restricted", "deprecated", "yanked"]
+    "review_levels": [
+      "unlisted",
+      "community",
+      "verified",
+      "reviewed",
+      "trusted",
+      "restricted",
+      "deprecated",
+      "yanked"
+    ]
   },
   "scopes": {
     "@aikdna": {
@@ -25,12 +34,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
       "i18n_level": "L1",
       "localized": {
-        "en": { "display_name": "Decision State" },
-        "zh-CN": { "display_name": "决策状态判断", "description": "判断一次会议或讨论是否产生了可执行的决策——而不只是讨论。" }
+        "en": {
+          "display_name": "Decision State"
+        },
+        "zh-CN": {
+          "display_name": "决策状态判断",
+          "description": "判断一次会议或讨论是否产生了可执行的决策——而不只是讨论。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-decision_state/releases/download/v0.7.5/decision_state-0.7.5.kdna",
       "sha256": "3339a69d648921cfcdaac3fb9076980b2f54b0f17390203a95c72c0f315f3984",
@@ -88,12 +105,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
-        "en": { "display_name": "Agent Safety" },
-        "zh-CN": { "display_name": "智能体安全判断", "description": "在执行不可逆操作前暂停——验证授权、备份和可逆性。" }
+        "en": {
+          "display_name": "Agent Safety"
+        },
+        "zh-CN": {
+          "display_name": "智能体安全判断",
+          "description": "在执行不可逆操作前暂停——验证授权、备份和可逆性。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-agent_safety/releases/download/v0.7.5/agent_safety-0.7.5.kdna",
       "sha256": "ae7b02d260de4c3e8846b5f115cac91898a78ffdbb6ff38a0d2a0abbf72d8c94",
@@ -151,12 +176,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
-        "en": { "display_name": "Writing Judgment" },
-        "zh-CN": { "display_name": "写作判断", "description": "诊断内容是否有真实观点、认知钩子和证据密度，而不是只做文字润色。" }
+        "en": {
+          "display_name": "Writing Judgment"
+        },
+        "zh-CN": {
+          "display_name": "写作判断",
+          "description": "诊断内容是否有真实观点、认知钩子和证据密度，而不是只做文字润色。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-writing/releases/download/v0.7.2/writing-0.7.2.kdna",
       "sha256": "9361e676b039b640c6c32c5b3dfa8728ca7a1135a808b0a4492e13606a20c284",
@@ -214,12 +247,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
       "i18n_level": "L1",
       "localized": {
-        "en": { "display_name": "Content Strategy" },
-        "zh-CN": { "display_name": "内容策略判断", "description": "评估选题价值——特定受众、认知差异、可讨论性和理解门槛。" }
+        "en": {
+          "display_name": "Content Strategy"
+        },
+        "zh-CN": {
+          "display_name": "内容策略判断",
+          "description": "评估选题价值——特定受众、认知差异、可讨论性和理解门槛。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-content_strategy/releases/download/v0.7.5/content_strategy-0.7.5.kdna",
       "sha256": "2dbaad9ad9e98e6cffc0eb37a45468bc6e41f59fb9465448d84a1cbb2575e8e2",
@@ -277,12 +318,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
       "i18n_level": "L1",
       "localized": {
-        "en": { "display_name": "Prompt Diagnosis" },
-        "zh-CN": { "display_name": "提示诊断", "description": "诊断提示失败的根本原因——通常是任务混合、目标模糊或上下文缺口，而非格式问题。" }
+        "en": {
+          "display_name": "Prompt Diagnosis"
+        },
+        "zh-CN": {
+          "display_name": "提示诊断",
+          "description": "诊断提示失败的根本原因——通常是任务混合、目标模糊或上下文缺口，而非格式问题。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-prompt_diagnosis/releases/download/v0.7.5/prompt_diagnosis-0.7.5.kdna",
       "sha256": "11bef75f5b67effea450fa05b0807e77b4ade4ebca977e93006199e1164e2456",
@@ -340,12 +389,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
       "i18n_level": "L1",
       "localized": {
-        "en": { "display_name": "Knowledge Management" },
-        "zh-CN": { "display_name": "知识管理判断", "description": "区分知识资产和原始材料——知识需要有命题、边界、反例和演进记录。" }
+        "en": {
+          "display_name": "Knowledge Management"
+        },
+        "zh-CN": {
+          "display_name": "知识管理判断",
+          "description": "区分知识资产和原始材料——知识需要有命题、边界、反例和演进记录。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-knowledge_management/releases/download/v0.7.5/knowledge_management-0.7.5.kdna",
       "sha256": "38a4c9a88458a623713a54dce328e18034a23e8654601fe49724960ed70492e4",
@@ -403,12 +460,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
-      "i18n_level": "L1",
+      "i18n_level": "L2",
       "localized": {
-        "en": { "display_name": "KDNA Authoring" },
-        "zh-CN": { "display_name": "KDNA 创作判断", "description": "元认知——教 Agent 如何通过访谈优先的创作方式和质量审核来编写高质量 KDNA。" }
+        "en": {
+          "display_name": "KDNA Authoring"
+        },
+        "zh-CN": {
+          "display_name": "KDNA 创作判断",
+          "description": "元认知——教 Agent 如何通过访谈优先的创作方式和质量审核来编写高质量 KDNA。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-authoring/releases/download/v0.7.5/kdna_authoring-0.7.5.kdna",
       "sha256": "16ce79a9612aa53c2a79a31d55f3a05c3c5460207bb3d24e90f837148b39ecf1",
@@ -465,12 +530,20 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
       "i18n_level": "L1",
       "localized": {
-        "en": { "display_name": "Open Source Project" },
-        "zh-CN": { "display_name": "开源项目判断", "description": "诊断项目为什么没有获得采纳——根本原因是价值入口清晰度，而非文档或功能缺口。" }
+        "en": {
+          "display_name": "Open Source Project"
+        },
+        "zh-CN": {
+          "display_name": "开源项目判断",
+          "description": "诊断项目为什么没有获得采纳——根本原因是价值入口清晰度，而非文档或功能缺口。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-open_source_project/releases/download/v0.7.5/open_source_project-0.7.5.kdna",
       "sha256": "9aa654356843a80e8a99635594a685c2b7af9527c835652c1afda95c38af2e4d",
@@ -975,18 +1048,26 @@
       "quality_badge": "untested"
     },
     {
-"name": "@aikdna/code_review",
+      "name": "@aikdna/code_review",
       "type": "domain",
       "version": "0.7.5",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
-      "languages": ["en", "zh-CN"],
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
       "default_language": "en",
       "i18n_level": "L1",
       "localized": {
-        "en": { "display_name": "Code Review" },
-        "zh-CN": { "display_name": "代码审查判断", "description": "行为优先审查、评论分类和反橡皮图章原则。" }
+        "en": {
+          "display_name": "Code Review"
+        },
+        "zh-CN": {
+          "display_name": "代码审查判断",
+          "description": "行为优先审查、评论分类和反橡皮图章原则。"
+        }
       },
       "kdna_url": "https://github.com/knowledge-dna/kdna-code_review/releases/download/v0.7.5/code_review-0.7.5.kdna",
       "sha256": "35d7922d9d01d7216304f47470ef900ec576043fc7a1aa042e885cbfc91c55cf",
