@@ -25,6 +25,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Decision State" },
+        "zh-CN": { "display_name": "决策状态判断", "description": "判断一次会议或讨论是否产生了可执行的决策——而不只是讨论。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-decision_state/releases/download/v0.7.5/decision_state-0.7.5.kdna",
       "sha256": "3339a69d648921cfcdaac3fb9076980b2f54b0f17390203a95c72c0f315f3984",
       "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206",
@@ -81,6 +88,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Agent Safety" },
+        "zh-CN": { "display_name": "智能体安全判断", "description": "在执行不可逆操作前暂停——验证授权、备份和可逆性。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-agent_safety/releases/download/v0.7.5/agent_safety-0.7.5.kdna",
       "sha256": "ae7b02d260de4c3e8846b5f115cac91898a78ffdbb6ff38a0d2a0abbf72d8c94",
       "signature": "ed25519:1b06986c509fda9dac8cd448c6f87aa24f3389762f9f6f300e086ca8e5dd940ec5f62f50b01aa87346f83f349fc452d40c0311831612a5ce8872afed75af9a00",
@@ -137,6 +151,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Writing Judgment" },
+        "zh-CN": { "display_name": "写作判断", "description": "诊断内容是否有真实观点、认知钩子和证据密度，而不是只做文字润色。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-writing/releases/download/v0.7.2/writing-0.7.2.kdna",
       "sha256": "9361e676b039b640c6c32c5b3dfa8728ca7a1135a808b0a4492e13606a20c284",
       "signature": "ed25519:8d0c6c6080a9f574dfb8590e403ad3167a786d76263f627daf641a524ef2b1bceac336bc133c4ea5157dfd5c8416034b6c922eb8fd52d9cce2e1aee4aab9dc06",
@@ -249,6 +270,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "Prompt Diagnosis" },
+        "zh-CN": { "display_name": "提示诊断", "description": "诊断提示失败的根本原因——通常是任务混合、目标模糊或上下文缺口，而非格式问题。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-prompt_diagnosis/releases/download/v0.7.5/prompt_diagnosis-0.7.5.kdna",
       "sha256": "11bef75f5b67effea450fa05b0807e77b4ade4ebca977e93006199e1164e2456",
       "signature": "ed25519:d4b91178c211736702045ef7f764d9c7805c00671b290b6f6b1dac8f93f773a20dc67c55336efcf45a69247a0f2c924370997132fc24aff601ab49d3f32c830d",
@@ -361,6 +389,13 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en", "zh-CN"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": {
+        "en": { "display_name": "KDNA Authoring" },
+        "zh-CN": { "display_name": "KDNA 创作判断", "description": "元认知——教 Agent 如何通过访谈优先的创作方式和质量审核来编写高质量 KDNA。" }
+      },
       "kdna_url": "https://github.com/knowledge-dna/kdna-authoring/releases/download/v0.7.5/kdna_authoring-0.7.5.kdna",
       "sha256": "16ce79a9612aa53c2a79a31d55f3a05c3c5460207bb3d24e90f837148b39ecf1",
       "signature": "ed25519:1bf5f9a370a5f2fc518985ceffc3651fb02ae762cd03274b951fc995ca18f67b8d05be593c75f70504e7fe6b17d2405fb00ad2e5706fda338073b2aaebe8aa06",
