@@ -1,4 +1,4 @@
-# KDNA Registry Schema v2.2
+# KDNA Registry Schema v2.3
 
 This document specifies the data contract for `domains.json` in `kdna-registry`. All install/publish/CLI tooling must conform to this schema.
 
@@ -7,7 +7,7 @@ This document specifies the data contract for `domains.json` in `kdna-registry`.
 ```json
 {
   "schema_version": "2.0",
-  "registry_version": "2.2",
+  "registry_version": "2.3",
   "updated": "ISO-8601 timestamp",
   "scopes": { ... },
   "domains": [ ... ]
