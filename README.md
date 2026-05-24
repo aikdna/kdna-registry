@@ -72,6 +72,18 @@ Each domain entry in `domains.json` includes these key metadata fields:
 | `deprecated` | Whether the domain has been superseded |
 | `yanked` / `yanked_reason` | Whether the domain was pulled from new installations |
 
+## Official Quality Badges
+
+Official KDNA quality badges are issued only by the official registry or authorized registries. Forked tools may compute local validation results, but cannot claim official badge status unless signed by an authorized registry.
+
+| Badge | Meaning | Issued By |
+|-------|---------|-----------|
+| `tested` | Passed quality gate + benchmark or expert review | Official or authorized registry |
+| `untested` | Basic validation passed, no formal review | Official or authorized registry |
+| `unreleased` | In development, not for production use | Official or authorized registry |
+
+---
+
 ## Review Model
 
 The registry classifies domains by review status, per the [KDNA Governance Policy](https://github.com/aikdna/KDNA/blob/main/docs/GOVERNANCE.md):
