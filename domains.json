@@ -588,7 +588,7 @@
       "kdna_url": null,
       "sha256": null,
       "signature": null,
-      "release_status": "published",
+      "release_status": "pending_v0.7_republish",
       "repo": "https://github.com/aikdna/kdna-animation",
       "author": {
         "name": "KDNA Team",
