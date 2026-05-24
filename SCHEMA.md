@@ -49,8 +49,8 @@ Array of domain or cluster entries.
   "type": "domain",                 // REQUIRED, "domain" | "cluster"
   "version": "MAJOR.MINOR.PATCH",   // REQUIRED, semver
   "spec_version": "0.4" | "1.0-rc", // KDNA spec the package conforms to
-  "status": "experimental" | "reference" | "stable" | "deprecated",
-  "access": "open",                 // future: "private" | "paid"
+  "status": "experimental" | "reference" | "stable" | "staging" | "deprecated",
+  "access": "open" | "licensed" | "runtime",
 
   "kdna_url": "https://...",        // REQUIRED for installable, null = not yet released
   "sha256": "<64-hex>",             // REQUIRED when kdna_url set
@@ -77,7 +77,33 @@ Array of domain or cluster entries.
     "id": "...",
     "pubkey": "ed25519:<hex>"       // must match scope.trust_pubkey for official scopes
   },
-  "license": { "type": "CC-BY-4.0" | "MIT" | ... },
+  "license": {
+    "type": "CC-BY-4.0" | "KCL-1.0" | "MIT" | ...,
+    "url": "https://...",
+    "commercial": true | false,
+    "allow_agent_use": true | false,
+    "allow_redistribution": true | false,
+    "allow_training": true | false
+  },
+
+  // ── Commercial asset fields (required when access is "licensed" or "runtime") ──
+  "subscription": {
+    "model": "free" | "one_time" | "subscription" | "enterprise" | "runtime_api",
+    "price": "$X/seat/month" | "Free" | "Custom pricing",
+    "billing_period": "monthly" | "annual" | null,
+    "trial_available": true | false,
+    "trial_duration_days": null | <number>,
+    "includes_updates": true | false,
+    "update_cadence": "monthly" | "quarterly" | "on_revision" | null
+  },
+  "verified_author": {
+    "verified": true | false,
+    "verification_method": "domain" | "social" | "manual" | null,
+    "verified_at": "ISO-8601 timestamp"
+  },
+  "release_channel": "default" | "staging" | "internal",
+  "runtime_endpoint": null | "https://runtime.aikdna.com/v1/...",
+  "asset_type": "domain" | "cluster" | "creator_asset" | "organization_standard",
 
   "description": "≤200 chars",
   "core_insight": "single sentence",
@@ -226,4 +252,69 @@ v1.0 used bare names (`writing`) and only the `repo` field. v0.7 breaking change
 
 No backward compatibility. CLI bumped to v0.7.0 to signal break.
 
-v2.2 (2026-05+) adds i18n fields (languages, default_language, i18n_level, localized), governance fields (risk_level, review_status, provenance_required, signature_required), and deprecates `language` (singular) in favor of `languages` + `default_language`. The `quality_badge` enum was corrected from legacy values to match KDNA SPEC: `untested | tested | validated | expert_reviewed | production_ready`. See [I18N_SPEC.md](https://github.com/knowledge-dna/KDNA/blob/main/docs/KDNA_I18N_SPEC.md) and [GOVERNANCE.md](https://github.com/knowledge-dna/KDNA/blob/main/docs/GOVERNANCE.md).
+v2.2 (2026-05+) adds i18n fields (languages, default_language, i18n_level, localized), governance fields (risk_level, review_status, provenance_required, signature_required), and deprecates `language` (singular) in favor of `languages` + `default_language`. The `quality_badge` enum was corrected from legacy values to match KDNA SPEC: `untested | tested | validated | expert_reviewed | production_ready`. See [I18N_SPEC.md](https://github.com/aikdna/KDNA/blob/main/docs/KDNA_I18N_SPEC.md) and [GOVERNANCE.md](https://github.com/aikdna/KDNA/blob/main/docs/GOVERNANCE.md).
+
+## v2.3 — Commercial Asset & Staging Channel (2026-05+)
+
+### Access modes
+
+The `access` field now supports three modes:
+
+| Mode | Description | Registry visibility | Install requirement |
+|------|-------------|---------------------|---------------------|
+| `open` | Free, publicly available domain | Listed in default channel | `kdna install @scope/name` |
+| `licensed` | Commercial domain with client-side KDNA files | Listed only with valid license | `kdna install @scope/name --license <key>` |
+| `runtime` | Commercial domain served via Runtime API | Listed only with valid subscription | `kdna install @scope/name --runtime` |
+
+### Commercial asset required fields
+
+When `access` is `licensed` or `runtime`, the following fields become REQUIRED:
+
+- `license.url` — canonical KCL-1.0 URL
+- `license.commercial` — must be `true`
+- `license.allow_redistribution` — must be `false`
+- `subscription.model` — one of `one_time`, `subscription`, `enterprise`, `runtime_api`
+- `subscription.price` — human-readable price
+- `subscription.includes_updates` — boolean
+- `signature` — must be present and valid `ed25519:<hex>`
+- `author.pubkey` — must be present
+
+### Release channels
+
+The `release_channel` field controls registry visibility:
+
+| Channel | Description | Validator behavior |
+|---------|-------------|--------------------|
+| `default` | Main registry, visible to all users | Standard validation |
+| `staging` | Pre-release validation, not publicly visible | Relaxed signature requirement; warns on placeholder pubkey |
+| `internal` | Organization-private, not in public index | Skipped by public registry CI |
+
+### Staging channel rules
+
+- Domains in `staging` channel are NOT listed in the default `kdna list --available` output.
+- CLI can access staging with `kdna list --channel staging`.
+- Staging domains MAY have placeholder pubkeys and empty signatures during development.
+- Domains MUST graduate to `default` channel before public release.
+- Graduation requires: valid signature, real pubkey, quality_badge ≥ `tested`, license.url present.
+
+### Asset type classification
+
+The `asset_type` field classifies domains by their intended use:
+
+| Type | Description | quality_badge requirements |
+|------|-------------|---------------------------|
+| `domain` | Standard judgment domain | Standard badge progression |
+| `cluster` | Bundled domain group | Inherits from member domains |
+| `creator_asset` | Individual creator's judgment asset | Requires verified_author |
+| `organization_standard` | Organizational policy/standard domain | Requires organization pubkey verification |
+
+### Validated commercial fields
+
+Commercial assets passing through the validator must satisfy:
+
+1. `access: "licensed"` or `"runtime"` → all commercial required fields present
+2. `release_channel: "default"` + `access: "licensed"` → `signature` is valid ed25519 hex, `author.pubkey` is not placeholder
+3. `release_channel: "staging"` → warns on placeholder values but does not fail
+4. `asset_type: "creator_asset"` → `verified_author.verified` must be `true`
+5. `subscription.model` is one of the valid subscription model values
+6. `license.type` is `KCL-1.0` when `access` is `licensed` or `runtime`

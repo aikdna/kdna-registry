@@ -55,9 +55,6 @@
       "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-decision_state",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -88,7 +85,7 @@
       "yanked": false,
       "yanked_reason": null,
       "yanked_at": null,
-      "risk_level": "R0",
+      "risk_level": "R1",
       "review_status": "community",
       "provenance_required": true,
       "signature_required": true,
@@ -127,9 +124,6 @@
       "signature": "ed25519:1b06986c509fda9dac8cd448c6f87aa24f3389762f9f6f300e086ca8e5dd940ec5f62f50b01aa87346f83f349fc452d40c0311831612a5ce8872afed75af9a00",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-agent_safety",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -160,7 +154,7 @@
       "yanked": false,
       "yanked_reason": null,
       "yanked_at": null,
-      "risk_level": "R0",
+      "risk_level": "R2",
       "review_status": "community",
       "provenance_required": true,
       "signature_required": true,
@@ -199,9 +193,6 @@
       "signature": "ed25519:8d0c6c6080a9f574dfb8590e403ad3167a786d76263f627daf641a524ef2b1bceac336bc133c4ea5157dfd5c8416034b6c922eb8fd52d9cce2e1aee4aab9dc06",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-writing",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -271,9 +262,6 @@
       "signature": "ed25519:8746b0f655f19d3cda063aa87f9da9e1cce5aa8e43ed37c2fad58f274c1e4aabecca9d6a6831daa6dc93e419ed18fff0d85db53e800953df51e7c68f2b77f108",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-content_strategy",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -343,9 +331,6 @@
       "signature": "ed25519:d4b91178c211736702045ef7f764d9c7805c00671b290b6f6b1dac8f93f773a20dc67c55336efcf45a69247a0f2c924370997132fc24aff601ab49d3f32c830d",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-prompt_diagnosis",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -415,9 +400,6 @@
       "signature": "ed25519:c4a51ea4752407709a261ee53fe0a396da1fd545618b363ec9bec80252e4b4c64d957e01f71322158f989da4f5cb8691abc2c39089c684ac4899150a76858f07",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-knowledge_management",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -487,9 +469,6 @@
       "signature": "ed25519:1bf5f9a370a5f2fc518985ceffc3651fb02ae762cd03274b951fc995ca18f67b8d05be593c75f70504e7fe6b17d2405fb00ad2e5706fda338073b2aaebe8aa06",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-authoring",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -558,9 +537,6 @@
       "signature": "ed25519:b61dfa1bdae5c37cefb203ce04604cb82f4329a45c7dcb769af5851e46fe2ccd42a5c2f4dde18f129654be82d7df3914213b40326811212bc1ddc58136161309",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-open_source_project",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -612,11 +588,8 @@
       "kdna_url": null,
       "sha256": null,
       "signature": null,
-      "release_status": "published_signed",
+      "release_status": "published",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -625,7 +598,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "World-class animation judgment cluster: seven domains teaching agents what quality means, what to reject, and when to choose restraint — before they write a line of code.",
+      "description": "World-class animation judgment cluster: seven domains teaching agents what quality means, what to reject, and when to choose restraint — before they write a line of code. Clusters provide discovery and composition rules, not direct downloads — individual sub-domains are downloadable separately.",
       "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem.",
       "keywords": [
         "animation",
@@ -680,13 +653,16 @@
       "yanked_at": null,
       "risk_level": "R0",
       "review_status": "community",
-      "provenance_required": true,
-      "signature_required": true,
+      "provenance_required": false,
+      "signature_required": false,
       "known_limitations_url": null,
       "replaced_by": null,
       "created": "2026-05-21",
       "updated": "2026-05-21",
       "quality_badge": "untested",
+      "file_count": 8,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "domain_field": [
         "design"
       ],
@@ -701,14 +677,15 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": false,
       "kdna_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/motion_design_master-0.3.2.kdna",
       "sha256": "9b126827a5a09f090aeeaa711a8c414757366ace518b3884562141e7b496b709",
       "signature": "ed25519:6c5f9e3376af2ef0e53cba02a8be1e3264ff96c02aa7d516c7e474206e0d502021efb14b48966b49625ee15767e31b5eb2df6f0c85b02e9284fd168f685ba602",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -746,7 +723,9 @@
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
       "quality_badge": "untested",
-      "file_count": 6,
+      "file_count": 1,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem."
     },
     {
@@ -756,14 +735,15 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": false,
       "kdna_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/gsap_master-0.3.2.kdna",
       "sha256": "db5ab9314d78b8e78a2857e1a898177b9a68be2758ecdd53a386864a3aed27d9",
       "signature": "ed25519:616cfe1378f3fd6b4104195b712a02c0f245394edc1185e7f4b70d11f5e8cccba6822754fa54b5b93da3647e1974515a29676afb2e4ab1316327cb9b47f37103",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -801,7 +781,9 @@
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
       "quality_badge": "untested",
-      "file_count": 6,
+      "file_count": 1,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "core_insight": "GSAP mastery requires understanding timeline orchestration, not just tween syntax."
     },
     {
@@ -811,14 +793,15 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": false,
       "kdna_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/motion_canvas_master-0.3.2.kdna",
       "sha256": "5173a3f1f4eab74d0ab32dbbefd89b374504c50b0d4f68a5b63467ceb7b27716",
       "signature": "ed25519:6faf540e021af7da77cf0be85887e1d310c4d911daca7b36f497f43996bb09919e2d45330c70e6ed28463721d3567eb9dd802cc24531935a5397872106e1da0a",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -855,7 +838,9 @@
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
       "quality_badge": "untested",
-      "file_count": 6,
+      "file_count": 1,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "core_insight": "Programmatic video animation demands scene composition judgment beyond code execution."
     },
     {
@@ -865,14 +850,15 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": false,
       "kdna_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/web_animation_performance-0.3.2.kdna",
       "sha256": "25c5a973708bcbc58e4bae4f03ca3ffac7c2bdf2f9547b4efe555b8397a0debf",
       "signature": "ed25519:da75cfc29fa0ceaf311010fa92d5132d31531e3ce36348b1f33d6f3d4ed1e5561711fc8532f28bac5541d4c2b502577774d6cab693741256d9495491fff77b05",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -910,7 +896,9 @@
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
       "quality_badge": "untested",
-      "file_count": 6,
+      "file_count": 1,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "core_insight": "Jank is not a rendering bug. It is a judgment failure about when and what to animate."
     },
     {
@@ -920,14 +908,15 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": false,
       "kdna_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/frontend_motion_system-0.3.2.kdna",
       "sha256": "8e0a73193efcbc65f61b2cfb72fa53b0fc4f908244a47d8f6919109dcc5b06b2",
       "signature": "ed25519:e9f5d5d5f44553dd1fe495e24778bbe6abe92d5a706e5ffb9c36bc935b494cf54dbddf6db506ebebbd3cf5d2a682b9c4af10724da918ecdc3f4e197fcd2c1305",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -964,7 +953,9 @@
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
       "quality_badge": "untested",
-      "file_count": 6,
+      "file_count": 1,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "core_insight": "Motion systems require design token consistency, not one-off animation code."
     },
     {
@@ -974,14 +965,15 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": false,
       "kdna_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/ai_animation_workflow-0.3.2.kdna",
       "sha256": "c828adac30b76b5ae5d4f0ff46447ac277f6cc1b76dedf871104d326ff6e0ff5",
       "signature": "ed25519:a6ccd6a2fe9477c6c4baa796bbe63e82ad9587712936bc788c4cb7ddad02bcde2e4d8425d3d000c67a482951ae47162e02cd2799e8ae41517356aae95a851a0e",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -1018,7 +1010,9 @@
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
       "quality_badge": "untested",
-      "file_count": 6,
+      "file_count": 1,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "core_insight": "AI-generated animation needs quality gates, not just generation speed."
     },
     {
@@ -1028,14 +1022,15 @@
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
+      "languages": ["en"],
+      "default_language": "en",
+      "i18n_level": "L1",
+      "localized": false,
       "kdna_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/animation_review_master-0.3.2.kdna",
       "sha256": "a9cedbaac3fb1da8bb9f46ef94f471cff5688e7bf439f5aa690543f5a08794e8",
       "signature": "ed25519:8e8ae820a52b436404fe8a563b9abf04205af1296de66d66a273c61b668024ee79dc99150a8a587f7a994a026ab9aed6b9a7d0c40b25e3cf843e97c7e59a8c0f",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-animation",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -1072,7 +1067,9 @@
       "updated": "2026-05-21",
       "judgment_version": "2026.05",
       "quality_badge": "untested",
-      "file_count": 6,
+      "file_count": 1,
+      "kdna_file_count": 1,
+      "test_count": 0,
       "core_insight": "Animation review is critique, not approval. Every note must reference a timing or attention principle."
     },
     {
@@ -1103,9 +1100,6 @@
       "signature": "ed25519:615ba5f3dfc2d0c2bf8006a8a40568af60d0e2d8724b6487c60230d96fc91e70f2fea613b1636f6acf1f9c719d3c849a0f63a0feb54c7134269ef3df1bb0490f",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-code_review",
-      "language": [
-        "en"
-      ],
       "author": {
         "name": "KDNA Team",
         "id": "kdna-team",
@@ -1135,7 +1129,7 @@
       "yanked": false,
       "yanked_reason": null,
       "yanked_at": null,
-      "risk_level": "R0",
+      "risk_level": "R1",
       "review_status": "community",
       "provenance_required": true,
       "signature_required": true,

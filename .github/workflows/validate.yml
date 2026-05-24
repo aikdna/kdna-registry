@@ -19,3 +19,15 @@ jobs:
         run: node scripts/validate-registry.js
       - name: Validate remote URLs and checksums
         run: node scripts/validate-registry.js --remote
+      - name: Check file_count consistency
+        run: node scripts/check-file-count.js || echo "::warning::Some domains may have incorrect file_count"
+      - name: Check localization coverage
+        run: node scripts/check-localization.js || echo "::warning::Some domains missing localization"
+      - name: Security audit (token scan)
+        run: |
+          if grep -rq "eyJ\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|-----BEGIN RSA PRIVATE KEY-----" domains.json; then
+            echo "::error::Potential secret found in domains.json"
+            exit 1
+          fi
+      - name: Quality badge consistency
+        run: node scripts/check-quality-badges.js || echo "::warning::Quality badge inconsistencies found"

@@ -30,7 +30,7 @@ Yanked domains are:
 
 ## Appeal Process
 
-Authors may appeal moderation decisions by opening an issue in [knowledge-dna/kdna-registry](https://github.com/knowledge-dna/kdna-registry/issues) with:
+Authors may appeal moderation decisions by opening an issue in [aikdna/kdna-registry](https://github.com/aikdna/kdna-registry/issues) with:
 1. Domain name and version
 2. Reason for appeal
 3. Evidence supporting the appeal

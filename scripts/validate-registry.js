@@ -89,7 +89,11 @@ const NAME_RE = /^@([a-z][a-z0-9-]*)\/([a-z][a-z0-9_]*)$/;
 const SEMVER_RE = /^\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/i;
 const SHA256_RE = /^[a-f0-9]{64}$/;
 const VALID_TYPES = new Set(['domain', 'cluster']);
-const VALID_STATUS = new Set(['experimental', 'reference', 'stable', 'deprecated']);
+const VALID_STATUS = new Set(['experimental', 'reference', 'stable', 'staging', 'deprecated']);
+const VALID_ACCESS = new Set(['open', 'licensed', 'runtime']);
+const VALID_RELEASE_CHANNEL = new Set(['default', 'staging', 'internal']);
+const VALID_ASSET_TYPES = new Set(['domain', 'cluster', 'creator_asset', 'organization_standard']);
+const VALID_SUBSCRIPTION_MODELS = new Set(['free', 'one_time', 'subscription', 'enterprise', 'runtime_api']);
 const VALID_RELEASE_STATUS = new Set([
   'pending_v0.7_republish',
   'published_unsigned',
@@ -159,6 +163,90 @@ for (let i = 0; i < registry.domains.length; i++) {
   }
   if (d.judgment_version && !/^\d{4}\.\d{2}(\.\d+)?$/.test(d.judgment_version)) {
     warn(`${where}: judgment_version should be YYYY.MM or YYYY.MM.NN, got "${d.judgment_version}"`);
+  }
+
+  // ── access mode validation (v2.3) ──────────────────────────────────
+  if (d.access && !VALID_ACCESS.has(d.access)) {
+    fail(`${where}: access must be one of ${[...VALID_ACCESS].join(', ')}, got "${d.access}"`);
+  }
+
+  // ── release_channel validation (v2.3) ──────────────────────────────
+  const channel = d.release_channel || 'default';
+  if (!VALID_RELEASE_CHANNEL.has(channel)) {
+    fail(`${where}: release_channel must be one of ${[...VALID_RELEASE_CHANNEL].join(', ')}, got "${channel}"`);
+  }
+
+  // ── asset_type validation (v2.3) ───────────────────────────────────
+  if (d.asset_type && !VALID_ASSET_TYPES.has(d.asset_type)) {
+    fail(`${where}: asset_type must be one of ${[...VALID_ASSET_TYPES].join(', ')}, got "${d.asset_type}"`);
+  }
+
+  // ── commercial asset required fields (v2.3) ────────────────────────
+  const isCommercial = d.access === 'licensed' || d.access === 'runtime';
+  const isStaging = channel === 'staging';
+  const isDefault = channel === 'default';
+
+  if (isCommercial) {
+    if (!d.license || !d.license.url) {
+      if (isDefault) fail(`${where}: commercial access requires license.url`);
+      else warn(`${where}: commercial access should have license.url`);
+    }
+    if (!d.license || d.license.commercial !== true) {
+      if (isDefault) fail(`${where}: commercial access requires license.commercial = true`);
+      else warn(`${where}: commercial access should have license.commercial = true`);
+    }
+    if (d.license && d.license.type !== 'KCL-1.0') {
+      warn(`${where}: commercial access should use license.type = "KCL-1.0", got "${d.license.type}"`);
+    }
+    if (!d.subscription) {
+      if (isDefault) fail(`${where}: commercial access requires subscription block`);
+      else warn(`${where}: commercial access should have subscription block`);
+    } else {
+      if (!VALID_SUBSCRIPTION_MODELS.has(d.subscription.model)) {
+        fail(`${where}: subscription.model must be one of ${[...VALID_SUBSCRIPTION_MODELS].join(', ')}, got "${d.subscription.model}"`);
+      }
+      if (!d.subscription.price) {
+        fail(`${where}: subscription.price is required for commercial assets`);
+      }
+      if (typeof d.subscription.includes_updates !== 'boolean') {
+        warn(`${where}: subscription.includes_updates should be a boolean`);
+      }
+    }
+    if (isDefault) {
+      if (!d.signature || !/^ed25519:[a-f0-9]+$/i.test(d.signature)) {
+        fail(`${where}: default-channel commercial asset requires valid ed25519 signature`);
+      }
+      if (!d.author || !d.author.pubkey || d.author.pubkey.includes('PLACEHOLDER') || d.author.pubkey.includes('placeholder')) {
+        fail(`${where}: default-channel commercial asset requires real author.pubkey`);
+      }
+    }
+  }
+
+  // ── staging channel rules (v2.3) ───────────────────────────────────
+  if (isStaging) {
+    if (d.author && d.author.pubkey && (d.author.pubkey.includes('PLACEHOLDER') || d.author.pubkey.includes('placeholder'))) {
+      warn(`${where}: staging channel — pubkey is placeholder, must be replaced before default release`);
+    }
+    if (!d.signature || d.signature === '') {
+      warn(`${where}: staging channel — signature is empty, must be signed before default release`);
+    }
+    if (d.quality_badge === 'untested' && d.status === 'stable') {
+      warn(`${where}: staging channel — status "stable" + quality_badge "untested" incompatible for default release`);
+    }
+  }
+
+  // ── creator_asset verification (v2.3) ──────────────────────────────
+  if (d.asset_type === 'creator_asset') {
+    if (!d.verified_author || d.verified_author.verified !== true) {
+      warn(`${where}: creator_asset type requires verified_author.verified = true`);
+    }
+  }
+
+  // ── runtime_endpoint for runtime access (v2.3) ─────────────────────
+  if (d.access === 'runtime' && isDefault) {
+    if (!d.runtime_endpoint) {
+      fail(`${where}: runtime access requires runtime_endpoint URL`);
+    }
   }
 
   // ── quality_badge consistency checks ──────────────────────────────
