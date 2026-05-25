@@ -252,7 +252,7 @@ v1.0 used bare names (`writing`) and only the `repo` field. v0.7 breaking change
 
 No backward compatibility. CLI bumped to v0.7.0 to signal break.
 
-v2.2 (2026-05+) adds i18n fields (languages, default_language, i18n_level, localized), governance fields (risk_level, review_status, provenance_required, signature_required), and deprecates `language` (singular) in favor of `languages` + `default_language`. The `quality_badge` enum was corrected from legacy values to match KDNA SPEC: `untested | tested | validated | expert_reviewed | production_ready`. See [I18N_SPEC.md](https://github.com/aikdna/KDNA/blob/main/docs/KDNA_I18N_SPEC.md) and [GOVERNANCE.md](https://github.com/aikdna/KDNA/blob/main/docs/GOVERNANCE.md).
+v2.2 (2026-05+) adds i18n fields (languages, default_language, i18n_level, localized), governance fields (risk_level, review_status, provenance_required, signature_required), and deprecates `language` (singular) in favor of `languages` + `default_language`. The `quality_badge` enum was corrected from legacy values to match KDNA SPEC: `untested | tested | validated | expert_reviewed | production_ready`. See [I18N_SPEC.md](https://github.com/aikdna/kdna/blob/main/docs/KDNA_I18N_SPEC.md) and [GOVERNANCE.md](https://github.com/aikdna/kdna/blob/main/docs/GOVERNANCE.md).
 
 ## v2.3 — Commercial Asset & Staging Channel (2026-05+)
 

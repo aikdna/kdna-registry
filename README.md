@@ -30,7 +30,7 @@ You don't need to be a developer to contribute your judgment to KDNA.
 
 **If you are a domain expert** (writer, caregiver, designer, community operator, florist, product builder, or any practitioner with real judgment in a specific field), here's your path:
 
-1. **Start with an interview, not a JSON file.** [KDNA Studio](https://github.com/aikdna/kdna-studio) asks you questions about your expertise — what you reject, what beginners get wrong, what signals you watch for — and generates a structured KDNA domain from your answers.
+1. **Start with an interview, not a JSON file.** [KDNA Studio](https://github.com/aikdna/kdna-studio-core) (`@aikdna/kdna-studio`) asks you questions about your expertise — what you reject, what beginners get wrong, what signals you watch for — and generates a structured KDNA domain from your answers.
 2. **Don't worry about JSON.** The Studio interview mode handles the encoding. You focus on what you know, not on formatting.
 3. **Get feedback before publishing.** Run `kdna validate` on your domain to check for structural issues. Share the `.kdna` file with a peer for review.
 4. **Publish when ready.** When your domain passes validation and you're satisfied with the judgment content, `kdna publish` sends it to the registry — complete with your Ed25519 signature that proves you authored it.
@@ -45,7 +45,7 @@ kdna install @aikdna/writing   # install a domain (sha256 + Ed25519 verified)
 
 That's it. Your agent now loads domain judgment. No coding required.
 
-For detailed authoring guidance, see the [KDNA Authoring Guide](https://github.com/aikdna/KDNA/blob/main/docs/AUTHORING.md).
+For detailed authoring guidance, see the [KDNA Authoring Guide](https://github.com/aikdna/kdna/blob/main/docs/authoring-guide.md).
 
 ---
 
@@ -86,7 +86,7 @@ Official KDNA quality badges are issued only by the official registry or authori
 
 ## Review Model
 
-The registry classifies domains by review status, per the [KDNA Governance Policy](https://github.com/aikdna/KDNA/blob/main/docs/GOVERNANCE.md):
+The registry classifies domains by review status, per the [KDNA Governance Policy](https://github.com/aikdna/kdna/blob/main/docs/GOVERNANCE.md):
 
 | Status | Meaning |
 |--------|---------|
@@ -116,9 +116,9 @@ kdna-registry/
 
 ## Related Repos
 
-- [KDNA main](https://github.com/aikdna/KDNA) — Protocol, specification, governance
-- [kdna-cli](https://github.com/aikdna/kdna-cli) — Command-line tool for installing and publishing domains
-- [kdna-studio](https://github.com/aikdna/kdna-studio) — Desktop authoring environment
+- [KDNA main](https://github.com/aikdna/kdna) — Protocol, specification, governance
+- [kdna-cli](https://github.com/aikdna/kdna-cli) — CLI toolchain
+- [kdna-studio-core](https://github.com/aikdna/kdna-studio-core) — Authoring kernel (`@aikdna/kdna-studio`)
 - [kdna-skills](https://github.com/aikdna/kdna-skills) — Ready-to-use agent skill integrations
 - [kdna-vscode](https://github.com/aikdna/kdna-vscode) — VS Code extension for KDNA authoring
 - [kdna-website](https://github.com/aikdna/kdna-website) — Main project website
