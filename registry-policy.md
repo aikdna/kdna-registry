@@ -2,6 +2,18 @@
 
 The KDNA registry is a curated index of domain cognition packages. It is not an automatic listing.
 
+## Asset Boundary Policy
+
+The KDNA Registry is **not a token marketplace**. It is **not an NFT marketplace**. It is **not a financial product**. KDNA cognitive assets are licensed judgment packages — not crypto assets, not speculative instruments, not tradeable tokens.
+
+- No token, no NFT, no crypto asset
+- No marketplace speculation or trading
+- No auction or bidding mechanisms
+- No financialization of judgment assets
+- Standard content licenses only (CC-BY-4.0, Apache-2.0)
+
+The Registry provides: **Discover → Verify → Install → Load → License**. It does not provide: trade, speculate, tokenize, or auction.
+
 ## Review Levels
 
 | Level | Meaning | Requirements |
