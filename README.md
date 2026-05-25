@@ -6,7 +6,11 @@ Static registry for KDNA domain cognition packages. The `kdna` CLI reads this fo
 
 ## What is KDNA Registry?
 
+The KDNA Registry is not a token marketplace. It is not an NFT marketplace. It is a trusted catalog for AI-loadable cognitive assets.
+
 The KDNA Registry is the canonical index of all published KDNA domain cognition packages. It is a machine-readable JSON file (`domains.json`) that tells the `kdna` CLI what domains exist, where to download them, how to verify them, and what quality and safety metadata they carry. Every domain entry includes a review status, risk level, internationalization level, quality badge, provenance requirements, and a known limitations URL.
+
+Discover → Verify → Install → Load → License
 
 ## How to Use
 
