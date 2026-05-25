@@ -30,4 +30,4 @@ jobs:
             exit 1
           fi
       - name: Quality badge consistency
-        run: node scripts/check-quality-badges.js || echo "::warning::Quality badge inconsistencies found"
+        run: node scripts/check-quality-badges.js
