@@ -115,8 +115,19 @@ kdna-registry/
 ├── SCHEMA.md                      # Schema contract — required reading
 ├── registry-policy.md             # Moderation and yank policy
 ├── scripts/validate-registry.js   # Validator (offline + --remote)
+├── scripts/check-domain-trust-gate.js # Quality/review/limitations trust gate
 └── README.md
 ```
+
+## Trust Gate
+
+The registry must not let weak domains damage trust in KDNA itself. Run the trust gate before review:
+
+```bash
+node scripts/check-domain-trust-gate.js
+```
+
+The gate checks that quality badges, review status, tested evidence, yanked state, and known limitations metadata do not over-claim domain quality. `tested` domains may still ship with a warning when limitations are not published, but promotion to `validated`, `expert_reviewed`, `production_ready`, `reviewed`, or `trusted` requires public limitations and review evidence.
 
 ## Related Repos
 
