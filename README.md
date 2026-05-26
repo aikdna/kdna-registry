@@ -66,7 +66,7 @@ Each domain entry in `domains.json` includes these key metadata fields:
 | `kdna_url` | Direct download URL for the `.kdna` file |
 | `sha256` | Content hash for integrity verification |
 | `signature` | Ed25519 signature for provenance verification |
-| `quality_badge` | Quality tier: `tested`, `untested`, or `unreleased` |
+| `quality_badge` | Quality tier: `untested`, `tested`, `validated`, `expert_reviewed`, or `production_ready` |
 | `risk_level` | Risk classification: `R0` (low) through `R3` (restricted) |
 | `review_status` | Registry review status (see Review Model below) |
 | `i18n_level` | Internationalization level: `L0` (en only) through `L4` (fully localized) |
@@ -80,11 +80,13 @@ Each domain entry in `domains.json` includes these key metadata fields:
 
 Official KDNA quality badges are issued only by the official registry or authorized registries. Forked tools may compute local validation results, but cannot claim official badge status unless signed by an authorized registry.
 
-| Badge | Meaning | Issued By |
-|-------|---------|-----------|
-| `tested` | Passed quality gate + benchmark or expert review | Official or authorized registry |
-| `untested` | Basic validation passed, no formal review | Official or authorized registry |
-| `unreleased` | In development, not for production use | Official or authorized registry |
+| Badge | Meaning | Min Eval Cases | Issued By |
+|-------|---------|:---:|------------|
+| `untested` | Schema validation only, no judgment quality evidence | 0 | Author self-declared |
+| `tested` | Eval cases with manual verification | >= 3 | Author self-declared (requires signature) |
+| `validated` | >= 10 eval cases with automated scoring passing | >= 10 | Official registry after automated check |
+| `expert_reviewed` | Externally reviewed by a domain expert | >= 10 | Official registry after expert sign-off |
+| `production_ready` | Validated + real-world deployment evidence | >= 10 | Official registry after deployment audit |
 
 ---
 

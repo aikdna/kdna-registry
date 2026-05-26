@@ -49,7 +49,7 @@ Array of domain or cluster entries.
   "type": "domain",                 // REQUIRED, "domain" | "cluster"
   "version": "MAJOR.MINOR.PATCH",   // REQUIRED, semver
   "spec_version": "0.4" | "1.0-rc", // KDNA spec the package conforms to
-  "status": "experimental" | "reference" | "stable" | "staging" | "deprecated",
+  "status": "draft" | "experimental" | "stable" | "deprecated" | "staging",
   "access": "open" | "licensed" | "runtime",
 
   "kdna_url": "https://...",        // REQUIRED for installable, null = not yet released
