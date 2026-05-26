@@ -1,4 +1,4 @@
-# KDNA Registry Schema v2.3
+# KDNA Registry Schema v3.0
 
 This document specifies the data contract for `domains.json` in `kdna-registry`. All install/publish/CLI tooling must conform to this schema.
 
@@ -6,9 +6,10 @@ This document specifies the data contract for `domains.json` in `kdna-registry`.
 
 ```json
 {
-  "schema_version": "2.0",
-  "registry_version": "2.3",
+  "schema_version": "3.0",
+  "registry_version": "3.0.0",
   "updated": "ISO-8601 timestamp",
+  "trust": { ... },
   "scopes": { ... },
   "domains": [ ... ]
 }
@@ -16,6 +17,46 @@ This document specifies the data contract for `domains.json` in `kdna-registry`.
 
 ### `schema_version` (required)
 Semver string. Bumped only on breaking schema changes. CLIs read this and refuse to operate on unknown major versions.
+
+Schema `3.0` is asset-first and breaking. Registry entries MUST publish canonical `.kdna` assets with `asset_url` and `asset_digest`. Legacy `kdna_url` and `sha256` fields are invalid.
+
+### `trust` (required)
+Minimal registry trust metadata. This is intentionally TUF-inspired without claiming full TUF conformance.
+
+```json
+{
+  "model": "kdna-registry-v1",
+  "root": {
+    "threshold": 1,
+    "keys": [
+      {
+        "keyid": "aikdna-root-2026-05",
+        "scheme": "ed25519",
+        "pubkey": "ed25519:<hex>"
+      }
+    ]
+  },
+  "targets": {
+    "threshold": 1,
+    "delegated_scopes": ["@aikdna"]
+  },
+  "snapshot": {
+    "registry_version": "3.0.0",
+    "generated_at": "ISO-8601 timestamp",
+    "expires_at": "ISO-8601 timestamp"
+  },
+  "timestamp": {
+    "generated_at": "ISO-8601 timestamp",
+    "expires_at": "ISO-8601 timestamp"
+  },
+  "revocations": []
+}
+```
+
+- `snapshot.registry_version` MUST match top-level `registry_version`.
+- `snapshot.expires_at` and `timestamp.expires_at` MUST be in the future.
+- `revocations[]` blocks assets by `{ "name", "version", "asset_digest", "reason", "revoked_at" }`.
+- A conforming installer MUST refuse expired, revoked, or yanked assets.
 
 ### `scopes` (required)
 Map from `@scope` name → scope descriptor. Every domain's `name` must belong to a registered scope.
@@ -52,12 +93,12 @@ Array of domain or cluster entries.
   "status": "draft" | "experimental" | "stable" | "deprecated" | "staging",
   "access": "open" | "licensed" | "runtime",
 
-  "kdna_url": "https://...",        // REQUIRED for installable, null = not yet released
-  "sha256": "<64-hex>",             // REQUIRED when kdna_url set
-  "signature": "ed25519:<hex>",     // REQUIRED in production; null allowed during v0.7 bootstrap
+  "asset_url": "https://...",       // REQUIRED for installable .kdna assets
+  "asset_digest": "sha256:<64-hex>",// REQUIRED when asset_url set
+  "signature": "ed25519:<hex>",     // REQUIRED for installable assets
   "release_status": "published_signed" | "published_unsigned" | "pending_v0.7_republish",
 
-  "repo": "https://github.com/...", // source of truth, fallback for `kdna install --from-git`
+  "repo": "https://github.com/...", // source repository, not an install source
   "language": ["en"],                   // DEPRECATED — use "languages" + "default_language" instead
   "languages": ["en", "zh-CN"],          // v2.2: all supported BCP 47 language tags
   "default_language": "en",              // v2.2: canonical language of judgment content
@@ -169,12 +210,12 @@ Regex: `^@[a-z][a-z0-9-]*/[a-z][a-z0-9_]*$`
 
 CLI MAY accept bare names and expand them to `@aikdna/<name>` for the official scope only. Non-official scopes always require `@scope/` prefix.
 
-## Signature
+## Signature And Digest
 
 `signature` is `ed25519:<hex>` where the signed payload is the canonical JSON serialization of the .kdna container contents (all .json files inside the ZIP, sorted by filename, concatenated). Verification:
 
 1. Verify `author.pubkey` matches `scopes[scope].trust_pubkey` (for official/verified scopes)
-2. Download .kdna, compute sha256, verify matches `sha256` field
+2. Download .kdna, compute its whole-file asset digest, verify it matches `asset_digest`
 3. Extract, canonicalize content, verify Ed25519 signature with `author.pubkey`
 
 ## Deprecation lifecycle
@@ -190,8 +231,8 @@ CLI MAY accept bare names and expand them to `@aikdna/<name>` for the official s
 
 v2.1 adds fields that let `kdna verify --judgment` measure whether a domain
 declares its boundaries, evidence, and failure modes. These fields are
-**recommended, not required** — old domains stay valid; CLI surfaces a
-quality score for whether they are present.
+**recommended, not required** — CLI surfaces a quality score for whether they
+are present.
 
 Inside `KDNA_Core.json > axioms[]` and `KDNA_Patterns.json > misunderstandings[]`:
 
@@ -242,19 +283,17 @@ Inside each domain's `kdna.json`, separately from `version` (semver):
 tracks when the encoded judgment was last revised (YYYY.MM). Used by
 `kdna diff` to surface judgment-level changes that semver may hide.
 
-## Migration from v1.0
+## v3.0 Asset-First Break
 
-v1.0 used bare names (`writing`) and only the `repo` field. v0.7 breaking change:
-- All names now `@aikdna/<name>`
-- `kdna_url` + `sha256` required for installable
-- `signature` introduced (nullable during bootstrap, required in production)
-- New entries: animation cluster + 7 sub-domains
+v3.0 is a clean break:
 
-No backward compatibility. CLI bumped to v0.7.0 to signal break.
+- Every installable entry uses `asset_url` and `asset_digest`.
+- `kdna_url` and `sha256` are invalid.
+- Top-level `trust` metadata is required.
+- Installers refuse expired registries, yanked entries, and revoked assets.
+- The registry publishes `.kdna` assets only, never raw domain directories.
 
-v2.2 (2026-05+) adds i18n fields (languages, default_language, i18n_level, localized), governance fields (risk_level, review_status, provenance_required, signature_required), and deprecates `language` (singular) in favor of `languages` + `default_language`. The `quality_badge` enum was corrected from legacy values to match KDNA SPEC: `untested | tested | validated | expert_reviewed | production_ready`. See [I18N_SPEC.md](https://github.com/aikdna/kdna/blob/main/docs/KDNA_I18N_SPEC.md) and [GOVERNANCE.md](https://github.com/aikdna/kdna/blob/main/docs/GOVERNANCE.md).
-
-## v2.3 — Commercial Asset & Staging Channel (2026-05+)
+## Commercial Asset & Staging Channel
 
 ### Access modes
 
@@ -263,7 +302,7 @@ The `access` field now supports three modes:
 | Mode | Description | Registry visibility | Install requirement |
 |------|-------------|---------------------|---------------------|
 | `open` | Free, publicly available domain | Listed in default channel | `kdna install @scope/name` |
-| `licensed` | Commercial domain with client-side KDNA files | Listed only with valid license | `kdna install @scope/name --license <key>` |
+| `licensed` | Commercial domain with client-side encrypted `.kdna` entries | Listed only with valid license | `kdna install @scope/name`, then `kdna license activate @scope/name --key <key> --server <url>` |
 | `runtime` | Commercial domain served via Runtime API | Listed only with valid subscription | `kdna install @scope/name --runtime` |
 
 ### Commercial asset required fields
@@ -286,14 +325,13 @@ The `release_channel` field controls registry visibility:
 | Channel | Description | Validator behavior |
 |---------|-------------|--------------------|
 | `default` | Main registry, visible to all users | Standard validation |
-| `staging` | Pre-release validation, not publicly visible | Relaxed signature requirement; warns on placeholder pubkey |
+| `staging` | Pre-release validation, not publicly visible | Standard metadata validation; cannot be installed as a trusted default asset |
 | `internal` | Organization-private, not in public index | Skipped by public registry CI |
 
 ### Staging channel rules
 
 - Domains in `staging` channel are NOT listed in the default `kdna list --available` output.
 - CLI can access staging with `kdna list --channel staging`.
-- Staging domains MAY have placeholder pubkeys and empty signatures during development.
 - Domains MUST graduate to `default` channel before public release.
 - Graduation requires: valid signature, real pubkey, quality_badge ≥ `tested`, license.url present.
 
@@ -314,7 +352,7 @@ Commercial assets passing through the validator must satisfy:
 
 1. `access: "licensed"` or `"runtime"` → all commercial required fields present
 2. `release_channel: "default"` + `access: "licensed"` → `signature` is valid ed25519 hex, `author.pubkey` is not placeholder
-3. `release_channel: "staging"` → warns on placeholder values but does not fail
+3. `release_channel: "staging"` → cannot be treated as a trusted default asset
 4. `asset_type: "creator_asset"` → `verified_author.verified` must be `true`
 5. `subscription.model` is one of the valid subscription model values
 6. `license.type` is `KCL-1.0` when `access` is `licensed` or `runtime`

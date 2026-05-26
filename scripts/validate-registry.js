@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * Validate kdna-registry/domains.json against schema v2.0.
+ * Validate kdna-registry/domains.json against schema v3.0.
  * See SCHEMA.md for the full contract.
  *
  * Usage:
  *   node scripts/validate-registry.js          # offline checks only
- *   node scripts/validate-registry.js --remote # also verify kdna_url + sha256 reachable
+ *   node scripts/validate-registry.js --remote # also verify asset_url + asset_digest reachable
  */
 
 const fs = require('fs');
@@ -38,8 +38,32 @@ try {
 
 // ─── Top-level shape ────────────────────────────────────────────────────
 
-if (registry.schema_version !== '2.0') {
-  fail(`schema_version must be "2.0", got ${JSON.stringify(registry.schema_version)}`);
+if (registry.schema_version !== '3.0') {
+  fail(`schema_version must be "3.0", got ${JSON.stringify(registry.schema_version)}`);
+}
+if (!registry.trust || typeof registry.trust !== 'object') {
+  fail('trust metadata is required');
+} else {
+  if (registry.trust.model !== 'kdna-registry-v1') {
+    fail(`trust.model must be "kdna-registry-v1", got ${JSON.stringify(registry.trust.model)}`);
+  }
+  if (registry.trust.snapshot?.registry_version !== registry.registry_version) {
+    fail('trust.snapshot.registry_version must match registry_version');
+  }
+  for (const [label, value] of [
+    ['trust.snapshot.expires_at', registry.trust.snapshot?.expires_at],
+    ['trust.timestamp.expires_at', registry.trust.timestamp?.expires_at],
+  ]) {
+    const date = value ? new Date(value) : null;
+    if (!date || Number.isNaN(date.getTime())) {
+      fail(`${label} must be an ISO timestamp`);
+    } else if (date <= new Date()) {
+      fail(`${label} is expired: ${value}`);
+    }
+  }
+  if (!Array.isArray(registry.trust.revocations)) {
+    fail('trust.revocations must be an array');
+  }
 }
 if (!registry.scopes || typeof registry.scopes !== 'object') {
   fail('scopes must be an object');
@@ -87,7 +111,7 @@ for (const scopeName of scopeNames) {
 
 const NAME_RE = /^@([a-z][a-z0-9-]*)\/([a-z][a-z0-9_]*)$/;
 const SEMVER_RE = /^\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/i;
-const SHA256_RE = /^[a-f0-9]{64}$/;
+const ASSET_DIGEST_RE = /^sha256:[a-f0-9]{64}$/;
 const VALID_TYPES = new Set(['domain', 'cluster']);
 const VALID_STATUS = new Set(['draft', 'experimental', 'stable', 'staging', 'deprecated']);
 const VALID_ACCESS = new Set(['open', 'licensed', 'runtime']);
@@ -273,19 +297,26 @@ for (let i = 0; i < registry.domains.length; i++) {
     warn(`${where}: status "stable" but test_count = 0 — stable domains should have eval cases`);
   }
 
-  // kdna_url + sha256 coherence
-  if (d.kdna_url) {
-    if (!/^https:\/\//.test(d.kdna_url)) {
-      fail(`${where}: kdna_url must be https://`);
+  if ('kdna_url' in d) {
+    fail(`${where}: kdna_url is invalid in schema 3.0; use asset_url`);
+  }
+  if ('sha256' in d) {
+    fail(`${where}: sha256 is invalid in schema 3.0; use asset_digest`);
+  }
+
+  // asset_url + asset_digest coherence
+  if (d.asset_url) {
+    if (!/^https:\/\//.test(d.asset_url)) {
+      fail(`${where}: asset_url must be https://`);
     }
-    if (!d.sha256 || !SHA256_RE.test(d.sha256)) {
-      fail(`${where}: sha256 required (64 hex) when kdna_url set`);
+    if (!d.asset_digest || !ASSET_DIGEST_RE.test(d.asset_digest)) {
+      fail(`${where}: asset_digest required as sha256:<64 hex> when asset_url set`);
     }
   } else {
-    if (d.sha256) warn(`${where}: sha256 set but kdna_url null`);
-    // Clusters never have kdna_url (they're logical bundles)
+    if (d.asset_digest) warn(`${where}: asset_digest set but asset_url null`);
+    // Clusters do not have asset_url (they're logical bundles)
     if (d.type !== 'cluster' && d.release_status !== 'pending_v0.7_republish') {
-      warn(`${where}: kdna_url null but release_status is "${d.release_status}"`);
+      warn(`${where}: asset_url null but release_status is "${d.release_status}"`);
     }
   }
 
@@ -401,22 +432,22 @@ function fetchAndHash(url) {
 }
 
 if (checkRemote) {
-  console.log('Remote checks (kdna_url reachability + sha256 match)...');
+  console.log('Remote checks (asset_url reachability + asset_digest match)...');
   for (const d of registry.domains) {
-    if (!d.kdna_url) continue;
+    if (!d.asset_url) continue;
     process.stdout.write(`  ${d.name}: `);
-    if (!fetchHead(d.kdna_url)) {
+    if (!fetchHead(d.asset_url)) {
       console.log('UNREACHABLE');
-      fail(`${d.name}: kdna_url not reachable`);
+      fail(`${d.name}: asset_url not reachable`);
       continue;
     }
-    const actual = fetchAndHash(d.kdna_url);
+    const actual = fetchAndHash(d.asset_url);
     if (!actual) {
       console.log('DOWNLOAD FAILED');
-      fail(`${d.name}: kdna_url download failed`);
-    } else if (actual !== d.sha256) {
+      fail(`${d.name}: asset_url download failed`);
+    } else if (`sha256:${actual}` !== d.asset_digest) {
       console.log('SHA MISMATCH');
-      fail(`${d.name}: sha256 mismatch — expected ${d.sha256}, got ${actual}`);
+      fail(`${d.name}: asset_digest mismatch — expected ${d.asset_digest}, got sha256:${actual}`);
     } else {
       console.log('ok');
     }

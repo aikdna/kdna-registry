@@ -1,8 +1,8 @@
 # KDNA Registry
 
-Static registry for KDNA domain cognition packages. The `kdna` CLI reads this for domain discovery and `.kdna` file download URLs, sha256, and signature verification.
+Static registry for KDNA cognition assets. The `kdna` CLI reads this for asset discovery, `.kdna` download URLs, asset digests, signature verification, and revocation status.
 
-**Schema version: 2.2** (see [SCHEMA.md](./SCHEMA.md))
+**Schema version: 3.0** (see [SCHEMA.md](./SCHEMA.md))
 
 ## What is KDNA Registry?
 
@@ -22,11 +22,12 @@ kdna install @aikdna/animation  # Install a cluster (installs all sub-domains)
 ```
 
 CLI flow:
-1. Read registry index → find `kdna_url`
-2. Download `.kdna` (ZIP, ~10KB)
-3. Verify `sha256` matches `domains.json`
-4. Verify Ed25519 `signature` against scope's `trust_pubkey`
-5. Extract to `~/.kdna/domains/@scope/name/`
+1. Read registry trust metadata and reject expired snapshots/timestamps.
+2. Resolve the entry and reject yanked or revoked assets.
+3. Download `.kdna` from `asset_url`.
+4. Verify whole-file `asset_digest` matches `domains.json`.
+5. Verify Ed25519 `signature` against the scope `trust_pubkey`.
+6. Store the immutable asset under `~/.kdna/packages/` with a `receipt.json`.
 
 ## For domain experts and creators
 
@@ -36,7 +37,7 @@ You don't need to be a developer to contribute your judgment to KDNA.
 
 1. **Start with an interview, not a JSON file.** [KDNA Studio](https://github.com/aikdna/kdna-studio-core) (`@aikdna/kdna-studio`) asks you questions about your expertise — what you reject, what beginners get wrong, what signals you watch for — and generates a structured KDNA domain from your answers.
 2. **Don't worry about JSON.** The Studio interview mode handles the encoding. You focus on what you know, not on formatting.
-3. **Get feedback before publishing.** Run `kdna validate` on your domain to check for structural issues. Share the `.kdna` file with a peer for review.
+3. **Get feedback before publishing.** Run `kdna dev validate` on your source workspace, then share the `.kdna` file with a peer for review.
 4. **Publish when ready.** When your domain passes validation and you're satisfied with the judgment content, `kdna publish` sends it to the registry — complete with your Ed25519 signature that proves you authored it.
 
 **If you just want to use KDNA domains with your AI agent:**
@@ -44,7 +45,7 @@ You don't need to be a developer to contribute your judgment to KDNA.
 ```bash
 npm install -g @aikdna/kdna-cli
 kdna setup              # auto-detects your agent, installs kdna-loader
-kdna install @aikdna/writing   # install a domain (sha256 + Ed25519 verified)
+kdna install @aikdna/writing   # install a .kdna asset (asset digest + Ed25519 verified)
 ```
 
 That's it. Your agent now loads domain judgment. No coding required.
@@ -63,8 +64,8 @@ Each domain entry in `domains.json` includes these key metadata fields:
 |-------|-------------|
 | `name` | Full `@scope/id` identifier |
 | `version` | Semver version of the domain |
-| `kdna_url` | Direct download URL for the `.kdna` file |
-| `sha256` | Content hash for integrity verification |
+| `asset_url` | Direct download URL for the canonical `.kdna` asset |
+| `asset_digest` | Whole-file asset digest: `sha256:<hex>` |
 | `signature` | Ed25519 signature for provenance verification |
 | `quality_badge` | Quality tier: `untested`, `tested`, `validated`, `expert_reviewed`, or `production_ready` |
 | `risk_level` | Risk classification: `R0` (low) through `R3` (restricted) |
@@ -113,7 +114,7 @@ Domains with severe safety issues may be yanked. Yanked domains are blocked from
 
 ```
 kdna-registry/
-├── domains.json                   # Machine-readable index (schema v2.0)
+├── domains.json                   # Machine-readable index (schema v3.0)
 ├── SCHEMA.md                      # Schema contract — required reading
 ├── registry-policy.md             # Moderation and yank policy
 ├── scripts/validate-registry.js   # Validator (offline + --remote)
