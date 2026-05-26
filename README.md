@@ -2,7 +2,7 @@
 
 Static registry for KDNA domain cognition packages. The `kdna` CLI reads this for domain discovery and `.kdna` file download URLs, sha256, and signature verification.
 
-**Schema version: 2.0** (see [SCHEMA.md](./SCHEMA.md))
+**Schema version: 2.2** (see [SCHEMA.md](./SCHEMA.md))
 
 ## What is KDNA Registry?
 
