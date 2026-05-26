@@ -149,4 +149,4 @@ KDNA Protocol → Studio Core → Domain Package → Registry → CLI → Agent 
 
 ## License
 
-Domain entries are metadata only (CC0). Individual domain packages carry their own licenses (declared in each entry's `license` field).
+Domain entries are metadata only (CC0). Individual domain assets carry their own licenses (declared in each entry's `license` field).
