@@ -144,7 +144,7 @@ The gate checks that quality badges, review status, tested evidence, yanked stat
 ## Ecosystem
 
 ```
-KDNA Protocol → Studio Core → Domain Package → Registry → CLI → Agent Loader
+KDNA Protocol → Studio Core → Domain Asset → Registry → CLI → Agent Loader
 ```
 
 ## License
