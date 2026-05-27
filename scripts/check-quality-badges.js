@@ -12,6 +12,13 @@ const registryPath = path.join(__dirname, '..', 'domains.json');
 const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
 const warnings = [];
 
+const badgeThresholds = {
+  tested: 10,
+  validated: 30,
+  expert_reviewed: 30,
+  production_ready: 30,
+};
+
 for (const d of registry.domains) {
   const name = d.name;
   const badge = d.quality_badge;
@@ -24,17 +31,20 @@ for (const d of registry.domains) {
   }
 
   // Badge-level requirements
-  if (badge === 'tested' && testCount < 1) {
-    warnings.push(`${name}: badge "tested" but test_count = ${testCount} (need >= 1)`);
+  if (badge === 'tested' && testCount < badgeThresholds.tested) {
+    warnings.push(`${name}: badge "tested" but test_count = ${testCount} (need >= ${badgeThresholds.tested})`);
   }
-  if (badge === 'validated' && testCount < 10) {
-    warnings.push(`${name}: badge "validated" but test_count = ${testCount} (need >= 10)`);
+  if (badge === 'validated' && testCount < badgeThresholds.validated) {
+    warnings.push(`${name}: badge "validated" but test_count = ${testCount} (need >= ${badgeThresholds.validated})`);
   }
   if (badge === 'expert_reviewed' && !d.reviewed_by) {
     warnings.push(`${name}: badge "expert_reviewed" but no reviewed_by`);
   }
-  if (badge === 'production_ready' && testCount < 30) {
-    warnings.push(`${name}: badge "production_ready" but test_count = ${testCount} (need >= 30)`);
+  if (badge === 'expert_reviewed' && testCount < badgeThresholds.expert_reviewed) {
+    warnings.push(`${name}: badge "expert_reviewed" but test_count = ${testCount} (need >= ${badgeThresholds.expert_reviewed})`);
+  }
+  if (badge === 'production_ready' && testCount < badgeThresholds.production_ready) {
+    warnings.push(`${name}: badge "production_ready" but test_count = ${testCount} (need >= ${badgeThresholds.production_ready})`);
   }
 
   // Status-badge coherence

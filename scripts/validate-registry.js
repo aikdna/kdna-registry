@@ -278,14 +278,17 @@ for (let i = 0; i < registry.domains.length; i++) {
   const testCount = d.test_count || 0;
   const domStatus = d.status;
 
-  if (badge === 'tested' && testCount < 1) {
-    fail(`${where}: quality_badge "tested" requires test_count >= 1 (got ${testCount})`);
+  if (badge === 'tested' && testCount < 10) {
+    fail(`${where}: quality_badge "tested" requires test_count >= 10 (got ${testCount})`);
   }
-  if (badge === 'validated' && testCount < 10) {
-    fail(`${where}: quality_badge "validated" requires test_count >= 10 (got ${testCount})`);
+  if (badge === 'validated' && testCount < 30) {
+    fail(`${where}: quality_badge "validated" requires test_count >= 30 (got ${testCount})`);
   }
   if (badge === 'expert_reviewed' && !d.reviewed_by) {
     warn(`${where}: quality_badge "expert_reviewed" should have reviewed_by field`);
+  }
+  if (badge === 'expert_reviewed' && testCount < 30) {
+    fail(`${where}: quality_badge "expert_reviewed" requires test_count >= 30 (got ${testCount})`);
   }
   if (badge === 'production_ready' && testCount < 30) {
     fail(`${where}: quality_badge "production_ready" requires test_count >= 30 (got ${testCount})`);

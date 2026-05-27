@@ -4,6 +4,8 @@ Static registry for KDNA cognition assets. The `kdna` CLI reads this for asset d
 
 **Schema version: 3.0** (see [SCHEMA.md](./SCHEMA.md))
 
+Trust model: [KDNA Registry Trust Model v1](./TRUST_MODEL.md)
+
 ## What is KDNA Registry?
 
 The KDNA Registry is not a token marketplace. It is not an NFT marketplace. It is a trusted catalog for AI-loadable cognitive assets.
@@ -86,10 +88,10 @@ Official KDNA quality badges are issued only by the official registry or authori
 | Badge | Meaning | Min Eval Cases | Issued By |
 |-------|---------|:---:|------------|
 | `untested` | Schema validation only, no judgment quality evidence | 0 | Author self-declared |
-| `tested` | Eval cases with manual verification | >= 3 | Author self-declared (requires signature) |
-| `validated` | >= 10 eval cases with automated scoring passing | >= 10 | Official registry after automated check |
-| `expert_reviewed` | Externally reviewed by a domain expert | >= 10 | Official registry after expert sign-off |
-| `production_ready` | Validated + real-world deployment evidence | >= 10 | Official registry after deployment audit |
+| `tested` | At least 10 eval cases with manual verification | >= 10 | Author self-declared (requires signature) |
+| `validated` | At least 30 eval cases with automated scoring and raw outputs | >= 30 | Official registry after automated check |
+| `expert_reviewed` | Validated evidence plus independent domain expert review | >= 30 | Official registry after expert sign-off |
+| `production_ready` | Expert-reviewed evidence plus real-world deployment evidence | >= 30 | Official registry after deployment audit |
 
 ---
 
@@ -118,6 +120,7 @@ Domains with severe safety issues may be yanked. Yanked domains are blocked from
 kdna-registry/
 ├── domains.json                   # Machine-readable index (schema v3.0)
 ├── SCHEMA.md                      # Schema contract — required reading
+├── TRUST_MODEL.md                 # Registry trust, revocation, and scope delegation
 ├── registry-policy.md             # Moderation and yank policy
 ├── scripts/validate-registry.js   # Validator (offline + --remote)
 ├── scripts/check-domain-trust-gate.js # Quality/review/limitations trust gate

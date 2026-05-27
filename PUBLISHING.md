@@ -73,10 +73,10 @@ Each published entry must include:
 | Badge | Minimum evidence |
 | --- | --- |
 | `untested` | Structural validation and a visible README. |
-| `tested` | `evals_url`, known limitations, and at least one before/after or rubric report. |
-| `validated` | Repeatable benchmark report showing improvement over a baseline. |
-| `expert_reviewed` | Independent reviewer identity and review notes. |
-| `production_ready` | Deployment evidence, monitoring/audit path, and rollback/yank plan. |
+| `tested` | >= 10 eval cases, `evals_url`, known limitations, and manual verification. |
+| `validated` | >= 30 eval cases, repeatable benchmark report, rubric, and raw outputs. |
+| `expert_reviewed` | Validated evidence plus independent reviewer identity and review notes. |
+| `production_ready` | Expert-reviewed evidence plus deployment evidence, monitoring/audit path, and rollback/yank plan. |
 
 ## Required Boundary Documents
 

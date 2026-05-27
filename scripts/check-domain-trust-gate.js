@@ -24,6 +24,13 @@ const badgeRank = {
   production_ready: 4,
 };
 
+const badgeThresholds = {
+  tested: 10,
+  validated: 30,
+  expert_reviewed: 30,
+  production_ready: 30,
+};
+
 const validReviewStatuses = new Set([
   'unlisted',
   'community',
@@ -68,16 +75,20 @@ for (const entry of registry.domains || []) {
     fail(`${name}: known_limitations_url key is required, even when explicitly null`);
   }
 
-  if (badge === 'tested' && testCount < 1) {
-    fail(`${name}: quality_badge tested requires test_count >= 1`);
+  if (badge === 'tested' && testCount < badgeThresholds.tested) {
+    fail(`${name}: quality_badge tested requires test_count >= ${badgeThresholds.tested}`);
   }
 
-  if (badge === 'validated' && testCount < 10) {
-    fail(`${name}: quality_badge validated requires test_count >= 10`);
+  if (badge === 'validated' && testCount < badgeThresholds.validated) {
+    fail(`${name}: quality_badge validated requires test_count >= ${badgeThresholds.validated}`);
   }
 
-  if (badge === 'production_ready' && testCount < 30) {
-    fail(`${name}: quality_badge production_ready requires test_count >= 30`);
+  if (badge === 'expert_reviewed' && testCount < badgeThresholds.expert_reviewed) {
+    fail(`${name}: quality_badge expert_reviewed requires test_count >= ${badgeThresholds.expert_reviewed}`);
+  }
+
+  if (badge === 'production_ready' && testCount < badgeThresholds.production_ready) {
+    fail(`${name}: quality_badge production_ready requires test_count >= ${badgeThresholds.production_ready}`);
   }
 
   if (badgeRank[badge] >= badgeRank.validated && !hasKnownLimitations(entry)) {
