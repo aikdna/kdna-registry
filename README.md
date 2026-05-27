@@ -74,6 +74,8 @@ Each domain entry in `domains.json` includes these key metadata fields:
 | `languages` | Array of supported language codes |
 | `default_language` | Primary language for fallback |
 | `known_limitations_url` | Link to the domain's `docs/known-limitations.md` |
+| `evals_url` | Link to public evaluation cases for tested or higher domains |
+| `benchmark_report_url` | Link to public benchmark or before/after report |
 | `deprecated` | Whether the domain has been superseded |
 | `yanked` / `yanked_reason` | Whether the domain was pulled from new installations |
 
@@ -146,6 +148,16 @@ The gate checks that quality badges, review status, tested evidence, yanked stat
 ```
 KDNA Protocol → Studio Core → Domain Asset → Registry → CLI → Agent Loader
 ```
+
+## External Publishing
+
+Third-party creators should follow [PUBLISHING.md](./PUBLISHING.md). The short
+version is:
+
+- publish a canonical `.kdna` asset file,
+- submit `asset_url` and `asset_digest`,
+- include signature, limitations, evals, and quality evidence,
+- run the Registry validators before opening a pull request.
 
 ## License
 

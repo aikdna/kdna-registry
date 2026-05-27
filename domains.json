@@ -156,14 +156,16 @@
       "review_status": "community",
       "provenance_required": true,
       "signature_required": true,
-      "known_limitations_url": null,
+      "known_limitations_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-agent_safety/releases/download/v0.7.5/agent_safety-0.7.5.kdna",
-      "asset_digest": "sha256:ae7b02d260de4c3e8846b5f115cac91898a78ffdbb6ff38a0d2a0abbf72d8c94"
+      "asset_digest": "sha256:ae7b02d260de4c3e8846b5f115cac91898a78ffdbb6ff38a0d2a0abbf72d8c94",
+      "evals_url": "https://github.com/aikdna/kdna-agent_safety/tree/main/evals",
+      "benchmark_report_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/benchmarks/report.md"
     },
     {
       "name": "@aikdna/writing",
@@ -225,7 +227,7 @@
       "review_status": "community",
       "provenance_required": true,
       "signature_required": true,
-      "known_limitations_url": null,
+      "known_limitations_url": "https://github.com/aikdna/kdna-writing/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
       "updated": "2026-05-27",
@@ -233,7 +235,9 @@
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-writing/releases/download/v0.7.2/writing-0.7.2.kdna",
       "asset_digest": "sha256:43ceef10aa6f01832974a13e9bd79c9537947debdd67c3e50c1870a2cda8c5ab",
-      "content_digest": "sha256:fbdb42273732b1d6901911c11f2bf046074dca5715ffc76fe0e536f982bac77d"
+      "content_digest": "sha256:fbdb42273732b1d6901911c11f2bf046074dca5715ffc76fe0e536f982bac77d",
+      "evals_url": "https://github.com/aikdna/kdna-writing/tree/main/evals",
+      "benchmark_report_url": "https://github.com/aikdna/kdna-writing/blob/main/benchmarks/report.md"
     },
     {
       "name": "@aikdna/content_strategy",
@@ -570,14 +574,16 @@
       "review_status": "community",
       "provenance_required": true,
       "signature_required": true,
-      "known_limitations_url": null,
+      "known_limitations_url": "https://github.com/aikdna/kdna-open_source_project/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
       "updated": "2026-05-20",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-open_source_project/releases/download/v0.7.5/open_source_project-0.7.5.kdna",
-      "asset_digest": "sha256:9aa654356843a80e8a99635594a685c2b7af9527c835652c1afda95c38af2e4d"
+      "asset_digest": "sha256:9aa654356843a80e8a99635594a685c2b7af9527c835652c1afda95c38af2e4d",
+      "evals_url": "https://github.com/aikdna/kdna-open_source_project/tree/main/evals",
+      "benchmark_report_url": "https://github.com/aikdna/kdna-open_source_project/blob/main/benchmarks/report.md"
     },
     {
       "name": "@aikdna/animation",
