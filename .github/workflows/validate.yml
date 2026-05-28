@@ -15,20 +15,16 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - name: Validate registry metadata
-        run: npm run validate
-      - name: Check file_count consistency
-        run: npm run check:file-count || echo "::warning::Some domains may have incorrect file_count"
-      - name: Check localization coverage
-        run: npm run check:localization || echo "::warning::Some domains missing localization"
+      - name: Registry release preflight
+        run: npm run release:preflight
       - name: Security audit (token scan)
         run: |
           if grep -rq "eyJ\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|-----BEGIN RSA PRIVATE KEY-----" domains.json; then
             echo "::error::Potential secret found in domains.json"
             exit 1
           fi
-      - name: Quality badge consistency
-        run: npm run check:quality
+      - name: Check localization coverage
+        run: npm run check:localization || echo "::warning::Some domains missing localization"
 
   remote-audit:
     if: github.event_name == 'workflow_dispatch'

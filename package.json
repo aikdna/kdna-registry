@@ -10,6 +10,7 @@
     "check:quality": "node scripts/check-quality-badges.js",
     "check:localization": "node scripts/check-localization.js",
     "check:file-count": "node scripts/check-file-count.js",
+    "report:yanked": "node scripts/report-yanked-assets.js",
     "test": "npm run validate && npm run check:quality",
     "release:preflight": "node scripts/release-preflight.js"
   },

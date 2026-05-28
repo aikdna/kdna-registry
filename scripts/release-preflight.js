@@ -6,6 +6,7 @@ const checks = [
   ['npm', ['test']],
   ['npm', ['run', 'check:file-count']],
   ['node', ['scripts/check-domain-trust-gate.js']],
+  ['npm', ['run', 'validate:remote']],
   ['git', ['diff', '--check']],
 ];
 

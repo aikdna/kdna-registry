@@ -124,6 +124,7 @@ kdna-registry/
 ├── SCHEMA.md                      # Schema contract — required reading
 ├── TRUST_MODEL.md                 # Registry trust, revocation, and scope delegation
 ├── registry-policy.md             # Moderation and yank policy
+├── OFFICIAL_REPUBLISH.md          # Official yanked-asset republish runbook
 ├── scripts/validate-registry.js   # Validator (offline + --remote)
 ├── scripts/check-domain-trust-gate.js # Quality/review/limitations trust gate
 └── README.md
@@ -163,6 +164,10 @@ version is:
 - submit `asset_url` and `asset_digest`,
 - include signature, limitations, evals, and quality evidence,
 - run the Registry validators before opening a pull request.
+
+Official KDNA maintainers should follow
+[OFFICIAL_REPUBLISH.md](./OFFICIAL_REPUBLISH.md) before unyanking any official
+asset.
 
 ## License
 
