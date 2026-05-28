@@ -4,8 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-  schedule:
-    - cron: '0 6 * * *'  # Daily at 6AM UTC — detect URL drift
+  workflow_dispatch:
 
 jobs:
   validate:
@@ -15,14 +14,13 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
+      - run: npm ci
       - name: Validate registry metadata
-        run: node scripts/validate-registry.js
-      - name: Validate remote URLs and checksums
-        run: node scripts/validate-registry.js --remote
+        run: npm run validate
       - name: Check file_count consistency
-        run: node scripts/check-file-count.js || echo "::warning::Some domains may have incorrect file_count"
+        run: npm run check:file-count || echo "::warning::Some domains may have incorrect file_count"
       - name: Check localization coverage
-        run: node scripts/check-localization.js || echo "::warning::Some domains missing localization"
+        run: npm run check:localization || echo "::warning::Some domains missing localization"
       - name: Security audit (token scan)
         run: |
           if grep -rq "eyJ\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|-----BEGIN RSA PRIVATE KEY-----" domains.json; then
@@ -30,4 +28,16 @@ jobs:
             exit 1
           fi
       - name: Quality badge consistency
-        run: node scripts/check-quality-badges.js
+        run: npm run check:quality
+
+  remote-audit:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Validate remote URLs, digests, and v1.0 mimetype
+        run: npm run validate:remote

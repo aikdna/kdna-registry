@@ -1,0 +1,19 @@
+{
+  "name": "@aikdna/kdna-registry",
+  "version": "3.1.0",
+  "private": true,
+  "description": "KDNA public registry metadata and validation gates.",
+  "type": "commonjs",
+  "scripts": {
+    "validate": "node scripts/validate-registry.js",
+    "validate:remote": "node scripts/validate-registry.js --remote",
+    "check:quality": "node scripts/check-quality-badges.js",
+    "check:localization": "node scripts/check-localization.js",
+    "check:file-count": "node scripts/check-file-count.js",
+    "test": "npm run validate && npm run check:quality"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  }
+}

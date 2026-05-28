@@ -29,10 +29,11 @@ A conforming installer MUST:
 4. Reject revoked assets when `{ name, version, asset_digest }` matches a
    `revocations[]` entry.
 5. Download only from `asset_url`.
-6. Verify the whole-file `asset_digest` before loading.
-7. Verify Ed25519 `signature` against the scope `trust_pubkey` when
+6. Verify root `mimetype` is `application/vnd.aikdna.kdna+zip`.
+7. Verify the whole-file `asset_digest` before loading.
+8. Verify Ed25519 `signature` against the scope `trust_pubkey` when
    `signature_required` is true or when trust mode is requested.
-8. Store the immutable `.kdna` file as the trust source; caches are rebuildable.
+9. Store the immutable `.kdna` file as the trust source; caches are rebuildable.
 
 ## Scope Delegation
 

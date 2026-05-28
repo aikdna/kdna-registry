@@ -16,11 +16,13 @@ This document specifies the data contract for `domains.json` in `kdna-registry`.
 ```
 
 ### `schema_version` (required)
+
 Semver string. Bumped only on breaking schema changes. CLIs read this and refuse to operate on unknown major versions.
 
-Schema `3.0` is asset-first and breaking. Registry entries MUST publish canonical `.kdna` assets with `asset_url` and `asset_digest`. Legacy `kdna_url` and `sha256` fields are invalid.
+Schema `3.0` is asset-first and breaking. Registry entries MUST publish canonical `.kdna` assets with `asset_url`, `media_type`, and `asset_digest`. `kdna_url`, bare `sha256`, singular `language`, and `kdna_spec` fields are invalid.
 
 ### `trust` (required)
+
 Minimal registry trust metadata. This is intentionally TUF-inspired without claiming full TUF conformance.
 
 ```json
@@ -59,6 +61,7 @@ Minimal registry trust metadata. This is intentionally TUF-inspired without clai
 - A conforming installer MUST refuse expired, revoked, or yanked assets.
 
 ### `scopes` (required)
+
 Map from `@scope` name → scope descriptor. Every domain's `name` must belong to a registered scope.
 
 ```json
@@ -80,6 +83,7 @@ Map from `@scope` name → scope descriptor. Every domain's `name` must belong t
 - `registry_url` — if non-null, CLI fetches domain metadata from this URL instead of the main registry (used by `private` scopes)
 
 ### `domains` (required)
+
 Array of domain or cluster entries.
 
 ## Domain entry
@@ -89,17 +93,17 @@ Array of domain or cluster entries.
   "name": "@scope/identifier",      // REQUIRED, format: @[a-z][a-z0-9-]*/[a-z][a-z0-9_]*
   "type": "domain",                 // REQUIRED, "domain" | "cluster"
   "version": "MAJOR.MINOR.PATCH",   // REQUIRED, semver
-  "spec_version": "0.4" | "1.0-rc", // KDNA spec the package conforms to
+  "spec_version": "1.0-rc",         // KDNA spec the package conforms to
   "status": "draft" | "experimental" | "stable" | "deprecated" | "staging",
   "access": "open" | "licensed" | "runtime",
 
   "asset_url": "https://...",       // REQUIRED for installable .kdna assets
+  "media_type": "application/vnd.aikdna.kdna+zip",
   "asset_digest": "sha256:<64-hex>",// REQUIRED when asset_url set
   "signature": "ed25519:<hex>",     // REQUIRED for installable assets
   "release_status": "published_signed" | "published_unsigned" | "pending_v0.7_republish",
 
   "repo": "https://github.com/...", // source repository, not an install source
-  "language": ["en"],                   // DEPRECATED — use "languages" + "default_language" instead
   "languages": ["en", "zh-CN"],          // v2.2: all supported BCP 47 language tags
   "default_language": "en",              // v2.2: canonical language of judgment content
   "i18n_level": "L1" | "L2" | "L3",     // v2.2: localization coverage level
@@ -144,7 +148,8 @@ Array of domain or cluster entries.
   },
   "release_channel": "default" | "staging" | "internal",
   "runtime_endpoint": null | "https://runtime.aikdna.com/v1/...",
-  "asset_type": "domain" | "cluster" | "creator_asset" | "organization_standard",
+  "asset_type": "domain_judgment" | "personal_judgment" | "organization_standard" | "team_policy" | "creator_style" | "risk_guard",
+  "privacy_level": "public" | "private" | "sensitive" | "regulated",
 
   "description": "≤200 chars",
   "core_insight": "single sentence",
@@ -189,6 +194,7 @@ A cluster bundles multiple standalone domains under a single install target.
 ```
 
 Rules:
+
 - Every name in `cluster.domains` MUST exist as a separate domain entry in the same registry
 - Sub-domains can be installed independently (`kdna install @aikdna/motion_design_master`)
 - Installing a cluster (`kdna install @aikdna/animation`) installs all sub-domains
@@ -212,11 +218,13 @@ CLI MAY accept bare names and expand them to `@aikdna/<name>` for the official s
 
 ## Signature And Digest
 
-`signature` is `ed25519:<hex>` where the signed payload is the canonical JSON serialization of the .kdna container contents (all .json files inside the ZIP, sorted by filename, concatenated). Verification:
+`signature` is `ed25519:<hex>` where the signed payload is the canonical KDNA v1.0 content tree. Verification:
 
 1. Verify `author.pubkey` matches `scopes[scope].trust_pubkey` (for official/verified scopes)
-2. Download .kdna, compute its whole-file asset digest, verify it matches `asset_digest`
-3. Extract, canonicalize content, verify Ed25519 signature with `author.pubkey`
+2. Verify the entry declares `media_type: "application/vnd.aikdna.kdna+zip"`
+3. Download `.kdna`, verify root `mimetype` is exactly `application/vnd.aikdna.kdna+zip`
+4. Compute the whole-file asset digest and verify it matches `asset_digest`
+5. Canonicalize the content tree and verify Ed25519 signature with `author.pubkey`
 
 ## Deprecation lifecycle
 
@@ -264,7 +272,7 @@ Inside `KDNA_Core.json > axioms[]` and `KDNA_Patterns.json > misunderstandings[]
 may carry `applies_when`.
 
 Rationale: KDNA encodes judgment frameworks. Saying "axiom X is true" without
-saying *when it stops being true* is the leading cause of judgment pollution.
+saying _when it stops being true_ is the leading cause of judgment pollution.
 This contract surfaces the boundary so loaders and reviewers can detect it.
 
 ## judgment_version (v2.1, optional)
@@ -287,8 +295,8 @@ tracks when the encoded judgment was last revised (YYYY.MM). Used by
 
 v3.0 is a clean break:
 
-- Every installable entry uses `asset_url` and `asset_digest`.
-- `kdna_url` and `sha256` are invalid.
+- Every installable entry uses `asset_url`, `media_type`, and `asset_digest`.
+- `kdna_url`, `sha256`, `kdna_spec`, and singular `language` are invalid.
 - Top-level `trust` metadata is required.
 - Installers refuse expired registries, yanked entries, and revoked assets.
 - The registry publishes `.kdna` assets only, never raw domain directories.
@@ -299,11 +307,11 @@ v3.0 is a clean break:
 
 The `access` field now supports three modes:
 
-| Mode | Description | Registry visibility | Install requirement |
-|------|-------------|---------------------|---------------------|
-| `open` | Free, publicly available domain | Listed in default channel | `kdna install @scope/name` |
-| `licensed` | Commercial domain with client-side encrypted `.kdna` entries | Listed only with valid license | `kdna install @scope/name`, then `kdna license activate @scope/name --key <key> --server <url>` |
-| `runtime` | Commercial domain served via Runtime API | Listed only with valid subscription | `kdna install @scope/name --runtime` |
+| Mode       | Description                                                  | Registry visibility                 | Install requirement                                                                             |
+| ---------- | ------------------------------------------------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `open`     | Free, publicly available domain                              | Listed in default channel           | `kdna install @scope/name`                                                                      |
+| `licensed` | Commercial domain with client-side encrypted `.kdna` entries | Listed only with valid license      | `kdna install @scope/name`, then `kdna license activate @scope/name --key <key> --server <url>` |
+| `runtime`  | Commercial domain served via Runtime API                     | Listed only with valid subscription | `kdna install @scope/name --runtime`                                                            |
 
 ### Commercial asset required fields
 
@@ -322,11 +330,11 @@ When `access` is `licensed` or `runtime`, the following fields become REQUIRED:
 
 The `release_channel` field controls registry visibility:
 
-| Channel | Description | Validator behavior |
-|---------|-------------|--------------------|
-| `default` | Main registry, visible to all users | Standard validation |
-| `staging` | Pre-release validation, not publicly visible | Standard metadata validation; cannot be installed as a trusted default asset |
-| `internal` | Organization-private, not in public index | Skipped by public registry CI |
+| Channel    | Description                                  | Validator behavior                                                           |
+| ---------- | -------------------------------------------- | ---------------------------------------------------------------------------- |
+| `default`  | Main registry, visible to all users          | Standard validation                                                          |
+| `staging`  | Pre-release validation, not publicly visible | Standard metadata validation; cannot be installed as a trusted default asset |
+| `internal` | Organization-private, not in public index    | Skipped by public registry CI                                                |
 
 ### Staging channel rules
 
@@ -339,12 +347,14 @@ The `release_channel` field controls registry visibility:
 
 The `asset_type` field classifies domains by their intended use:
 
-| Type | Description | quality_badge requirements |
-|------|-------------|---------------------------|
-| `domain` | Standard judgment domain | Standard badge progression |
-| `cluster` | Bundled domain group | Inherits from member domains |
-| `creator_asset` | Individual creator's judgment asset | Requires verified_author |
-| `organization_standard` | Organizational policy/standard domain | Requires organization pubkey verification |
+| Type                    | Description                                    | quality_badge requirements                |
+| ----------------------- | ---------------------------------------------- | ----------------------------------------- |
+| `domain_judgment`       | Standard domain judgment asset                 | Standard badge progression                |
+| `personal_judgment`     | Individual's explicit judgment system          | Requires verified_author when public      |
+| `organization_standard` | Organizational policy/standard domain          | Requires organization pubkey verification |
+| `team_policy`           | Team-level operating judgment and policy       | Standard badge progression                |
+| `creator_style`         | Creator's taste, style, and recurring judgment | Requires verified_author when public      |
+| `risk_guard`            | Safety or risk-boundary judgment asset         | Requires stronger review evidence         |
 
 ### Validated commercial fields
 
@@ -353,6 +363,6 @@ Commercial assets passing through the validator must satisfy:
 1. `access: "licensed"` or `"runtime"` → all commercial required fields present
 2. `release_channel: "default"` + `access: "licensed"` → `signature` is valid ed25519 hex, `author.pubkey` is not placeholder
 3. `release_channel: "staging"` → cannot be treated as a trusted default asset
-4. `asset_type: "creator_asset"` → `verified_author.verified` must be `true`
+4. public `personal_judgment` or `creator_style` → `verified_author.verified` must be `true`
 5. `subscription.model` is one of the valid subscription model values
 6. `license.type` is `KCL-1.0` when `access` is `licensed` or `runtime`

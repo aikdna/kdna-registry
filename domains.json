@@ -2,7 +2,7 @@
   "schema_version": "3.0",
   "registry_version": "3.0.0",
   "updated": "2026-05-27T00:00:00Z",
-  "_note": "v3.0 asset-first registry: .kdna files are canonical assets. Use asset_url and asset_digest; kdna_url and sha256 are invalid legacy fields.",
+  "_note": "v3.0 asset-first registry: .kdna files are canonical KDNA v1.0 assets. Use asset_url, media_type, and asset_digest; kdna_url, sha256, kdna_spec, and language are invalid fields.",
   "governance": {
     "yank_policy": "Domains with severe safety issues may be yanked. Yanked domains are blocked from new installations. See registry-policy.md.",
     "appeal_process": "Authors may appeal moderation decisions by opening an issue with evidence.",
@@ -94,7 +94,8 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-decision_state/releases/download/v0.7.5/decision_state-0.7.5.kdna",
-      "asset_digest": "sha256:3339a69d648921cfcdaac3fb9076980b2f54b0f17390203a95c72c0f315f3984"
+      "asset_digest": "sha256:3339a69d648921cfcdaac3fb9076980b2f54b0f17390203a95c72c0f315f3984",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/agent_safety",
@@ -165,7 +166,8 @@
       "asset_url": "https://github.com/aikdna/kdna-agent_safety/releases/download/v0.7.5/agent_safety-0.7.5.kdna",
       "asset_digest": "sha256:ae7b02d260de4c3e8846b5f115cac91898a78ffdbb6ff38a0d2a0abbf72d8c94",
       "evals_url": "https://github.com/aikdna/kdna-agent_safety/tree/main/evals",
-      "benchmark_report_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/benchmarks/report.md"
+      "benchmark_report_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/benchmarks/report.md",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/writing",
@@ -237,7 +239,8 @@
       "asset_digest": "sha256:43ceef10aa6f01832974a13e9bd79c9537947debdd67c3e50c1870a2cda8c5ab",
       "content_digest": "sha256:fbdb42273732b1d6901911c11f2bf046074dca5715ffc76fe0e536f982bac77d",
       "evals_url": "https://github.com/aikdna/kdna-writing/tree/main/evals",
-      "benchmark_report_url": "https://github.com/aikdna/kdna-writing/blob/main/benchmarks/report.md"
+      "benchmark_report_url": "https://github.com/aikdna/kdna-writing/blob/main/benchmarks/report.md",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/content_strategy",
@@ -306,7 +309,8 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-content_strategy/releases/download/v0.7.5/content_strategy-0.7.5.kdna",
-      "asset_digest": "sha256:2dbaad9ad9e98e6cffc0eb37a45468bc6e41f59fb9465448d84a1cbb2575e8e2"
+      "asset_digest": "sha256:2dbaad9ad9e98e6cffc0eb37a45468bc6e41f59fb9465448d84a1cbb2575e8e2",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/prompt_diagnosis",
@@ -375,7 +379,8 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-prompt_diagnosis/releases/download/v0.7.5/prompt_diagnosis-0.7.5.kdna",
-      "asset_digest": "sha256:11bef75f5b67effea450fa05b0807e77b4ade4ebca977e93006199e1164e2456"
+      "asset_digest": "sha256:11bef75f5b67effea450fa05b0807e77b4ade4ebca977e93006199e1164e2456",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/knowledge_management",
@@ -444,7 +449,8 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-knowledge_management/releases/download/v0.7.5/knowledge_management-0.7.5.kdna",
-      "asset_digest": "sha256:38a4c9a88458a623713a54dce328e18034a23e8654601fe49724960ed70492e4"
+      "asset_digest": "sha256:38a4c9a88458a623713a54dce328e18034a23e8654601fe49724960ed70492e4",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/kdna_authoring",
@@ -512,7 +518,8 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-authoring/releases/download/v0.7.5/kdna_authoring-0.7.5.kdna",
-      "asset_digest": "sha256:16ce79a9612aa53c2a79a31d55f3a05c3c5460207bb3d24e90f837148b39ecf1"
+      "asset_digest": "sha256:16ce79a9612aa53c2a79a31d55f3a05c3c5460207bb3d24e90f837148b39ecf1",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/open_source_project",
@@ -583,7 +590,8 @@
       "asset_url": "https://github.com/aikdna/kdna-open_source_project/releases/download/v0.7.5/open_source_project-0.7.5.kdna",
       "asset_digest": "sha256:9aa654356843a80e8a99635594a685c2b7af9527c835652c1afda95c38af2e4d",
       "evals_url": "https://github.com/aikdna/kdna-open_source_project/tree/main/evals",
-      "benchmark_report_url": "https://github.com/aikdna/kdna-open_source_project/blob/main/benchmarks/report.md"
+      "benchmark_report_url": "https://github.com/aikdna/kdna-open_source_project/blob/main/benchmarks/report.md",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/animation",
@@ -733,7 +741,8 @@
       "test_count": 0,
       "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem.",
       "asset_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/motion_design_master-0.3.2.kdna",
-      "asset_digest": "sha256:9b126827a5a09f090aeeaa711a8c414757366ace518b3884562141e7b496b709"
+      "asset_digest": "sha256:9b126827a5a09f090aeeaa711a8c414757366ace518b3884562141e7b496b709",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/gsap_master",
@@ -793,7 +802,8 @@
       "test_count": 0,
       "core_insight": "GSAP mastery requires understanding timeline orchestration, not just tween syntax.",
       "asset_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/gsap_master-0.3.2.kdna",
-      "asset_digest": "sha256:db5ab9314d78b8e78a2857e1a898177b9a68be2758ecdd53a386864a3aed27d9"
+      "asset_digest": "sha256:db5ab9314d78b8e78a2857e1a898177b9a68be2758ecdd53a386864a3aed27d9",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/motion_canvas_master",
@@ -852,7 +862,8 @@
       "test_count": 0,
       "core_insight": "Programmatic video animation demands scene composition judgment beyond code execution.",
       "asset_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/motion_canvas_master-0.3.2.kdna",
-      "asset_digest": "sha256:5173a3f1f4eab74d0ab32dbbefd89b374504c50b0d4f68a5b63467ceb7b27716"
+      "asset_digest": "sha256:5173a3f1f4eab74d0ab32dbbefd89b374504c50b0d4f68a5b63467ceb7b27716",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/web_animation_performance",
@@ -912,7 +923,8 @@
       "test_count": 0,
       "core_insight": "Jank is not a rendering bug. It is a judgment failure about when and what to animate.",
       "asset_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/web_animation_performance-0.3.2.kdna",
-      "asset_digest": "sha256:25c5a973708bcbc58e4bae4f03ca3ffac7c2bdf2f9547b4efe555b8397a0debf"
+      "asset_digest": "sha256:25c5a973708bcbc58e4bae4f03ca3ffac7c2bdf2f9547b4efe555b8397a0debf",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/frontend_motion_system",
@@ -971,7 +983,8 @@
       "test_count": 0,
       "core_insight": "Motion systems require design token consistency, not one-off animation code.",
       "asset_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/frontend_motion_system-0.3.2.kdna",
-      "asset_digest": "sha256:8e0a73193efcbc65f61b2cfb72fa53b0fc4f908244a47d8f6919109dcc5b06b2"
+      "asset_digest": "sha256:8e0a73193efcbc65f61b2cfb72fa53b0fc4f908244a47d8f6919109dcc5b06b2",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/ai_animation_workflow",
@@ -1030,7 +1043,8 @@
       "test_count": 0,
       "core_insight": "AI-generated animation needs quality gates, not just generation speed.",
       "asset_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/ai_animation_workflow-0.3.2.kdna",
-      "asset_digest": "sha256:c828adac30b76b5ae5d4f0ff46447ac277f6cc1b76dedf871104d326ff6e0ff5"
+      "asset_digest": "sha256:c828adac30b76b5ae5d4f0ff46447ac277f6cc1b76dedf871104d326ff6e0ff5",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/animation_review_master",
@@ -1089,7 +1103,8 @@
       "test_count": 0,
       "core_insight": "Animation review is critique, not approval. Every note must reference a timing or attention principle.",
       "asset_url": "https://github.com/aikdna/kdna-animation/releases/download/v0.3.2/animation_review_master-0.3.2.kdna",
-      "asset_digest": "sha256:a9cedbaac3fb1da8bb9f46ef94f471cff5688e7bf439f5aa690543f5a08794e8"
+      "asset_digest": "sha256:a9cedbaac3fb1da8bb9f46ef94f471cff5688e7bf439f5aa690543f5a08794e8",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     },
     {
       "name": "@aikdna/code_review",
@@ -1157,7 +1172,8 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-code_review/releases/download/v0.7.5/code_review-0.7.5.kdna",
-      "asset_digest": "sha256:35d7922d9d01d7216304f47470ef900ec576043fc7a1aa042e885cbfc91c55cf"
+      "asset_digest": "sha256:35d7922d9d01d7216304f47470ef900ec576043fc7a1aa042e885cbfc91c55cf",
+      "media_type": "application/vnd.aikdna.kdna+zip"
     }
   ],
   "trust": {

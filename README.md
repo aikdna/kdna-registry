@@ -27,9 +27,10 @@ CLI flow:
 1. Read registry trust metadata and reject expired snapshots/timestamps.
 2. Resolve the entry and reject yanked or revoked assets.
 3. Download `.kdna` from `asset_url`.
-4. Verify whole-file `asset_digest` matches `domains.json`.
-5. Verify Ed25519 `signature` against the scope `trust_pubkey`.
-6. Store the immutable asset under `~/.kdna/packages/` with a `receipt.json`.
+4. Verify root `mimetype` is `application/vnd.aikdna.kdna+zip`.
+5. Verify whole-file `asset_digest` matches `domains.json`.
+6. Verify Ed25519 `signature` against the scope `trust_pubkey`.
+7. Store the immutable asset under `~/.kdna/packages/` with a `receipt.json`.
 
 ## For domain experts and creators
 
@@ -68,6 +69,7 @@ Each domain entry in `domains.json` includes these key metadata fields:
 | `version` | Semver version of the domain |
 | `asset_url` | Direct download URL for the canonical `.kdna` asset |
 | `asset_digest` | Whole-file asset digest: `sha256:<hex>` |
+| `media_type` | Optional explicit media type. If present, MUST be `application/vnd.aikdna.kdna+zip` |
 | `signature` | Ed25519 signature for provenance verification |
 | `quality_badge` | Quality tier: `untested`, `tested`, `validated`, `expert_reviewed`, or `production_ready` |
 | `risk_level` | Risk classification: `R0` (low) through `R3` (restricted) |

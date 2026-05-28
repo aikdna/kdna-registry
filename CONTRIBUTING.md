@@ -10,9 +10,10 @@ For protocol-level guidance (schema, spec, judgment patterns), see the [main KDN
 2. Generate an `asset_digest` checksum of the `.kdna` file
 3. Have the package signed by a trusted scope pubkey (Ed25519)
 4. Edit `domains.json` with your entry using the v3.0 schema format
-5. Ensure all required fields are present: `languages`, `default_language`, `i18n_level`, `localized`, `risk_level`, `provenance_required`, `signature_required`
-6. Do NOT use the deprecated `language` (singular) field — use `languages` + `default_language`
-7. Open a PR for review
+5. Set `media_type` to `application/vnd.aikdna.kdna+zip`
+6. Ensure all required fields are present: `languages`, `default_language`, `i18n_level`, `localized`, `risk_level`, `provenance_required`, `signature_required`
+7. Do not use non-v1.0 fields such as `language`, `kdna_spec`, `kdna_url`, or bare `sha256`
+8. Open a PR for review
 
 ## Entry Format (Schema v3.0)
 
@@ -27,7 +28,8 @@ See [registry-policy.md](https://github.com/aikdna/kdna/blob/main/docs/registry-
 ## Pull Request Checklist
 
 - [ ] Entry follows schema v3.0 format
-- [ ] `language` (deprecated) field is absent — `languages` + `default_language` used instead
+- [ ] `media_type` is `application/vnd.aikdna.kdna+zip`
+- [ ] `language`, `kdna_spec`, `kdna_url`, and `sha256` are absent
 - [ ] i18n fields are populated (`languages`, `default_language`, `i18n_level`, `localized`)
 - [ ] `asset_digest` matches the published `.kdna` file
 - [ ] Signature is valid for the declared scope pubkey

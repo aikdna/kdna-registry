@@ -3,9 +3,9 @@
 This is the external publishing path for creators who want a `.kdna` asset to
 appear in the public Registry.
 
-The Registry accepts canonical `.kdna` assets only. Raw source directories,
-repository archives, `kdna_url`, and bare `sha256` fields are legacy forms and
-are rejected by schema v3.
+The Registry accepts canonical KDNA v1.0 `.kdna` assets only. Raw source
+directories, repository archives, `kdna_url`, bare `sha256`, `kdna_spec`, and
+singular `language` fields are rejected by schema v3.
 
 ## Publishing Flow
 
@@ -35,6 +35,7 @@ are rejected by schema v3.
 
 5. **Add or update the Registry entry**
    - Use `asset_url`, not `kdna_url`.
+   - Set `media_type` to `application/vnd.aikdna.kdna+zip`.
    - Use `asset_digest` in `sha256:<64-hex>` form, not `sha256`.
    - Include `signature` when signed.
    - Include `known_limitations_url`, `evals_url`, and `benchmark_report_url`
@@ -59,6 +60,7 @@ Each published entry must include:
 - `name`
 - `version`
 - `asset_url`
+- `media_type`
 - `asset_digest`
 - `release_status`
 - `license`
@@ -103,6 +105,8 @@ Every third-party asset should publish:
 ## Pull Request Checklist
 
 - [ ] `.kdna` asset is publicly downloadable.
+- [ ] Root `mimetype` is exactly `application/vnd.aikdna.kdna+zip`.
+- [ ] Registry `media_type` is `application/vnd.aikdna.kdna+zip`.
 - [ ] `asset_digest` matches the released file.
 - [ ] Signature verifies, or the entry is clearly unsigned/community.
 - [ ] Known limitations URL is present.
