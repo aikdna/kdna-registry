@@ -23,9 +23,9 @@ singular `language` fields are rejected by schema v3.
 
    ```bash
    kdna dev validate ./source
-   kdna dev pack ./source --out ./dist/legal_review-0.1.0.kdna
-   kdna inspect ./dist/legal_review-0.1.0.kdna
-   kdna verify ./dist/legal_review-0.1.0.kdna
+   kdna dev pack ./source --output ./dist
+   kdna inspect ./dist/legal_review.kdna
+   kdna verify ./dist/legal_review.kdna
    ```
 
 4. **Sign and publish the asset file**
