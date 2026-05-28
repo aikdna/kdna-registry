@@ -18,9 +18,9 @@ Discover → Verify → Install → Load → License
 
 ```bash
 kdna list --available           # Browse all registered domains
-kdna install writing            # Short name (official @aikdna/ scope only)
-kdna install @aikdna/writing    # Full @scope/name
-kdna install @aikdna/animation  # Install a cluster (installs all sub-domains)
+kdna install <name>             # Install a non-yanked official @aikdna/ asset
+kdna install @scope/name        # Install a non-yanked scoped asset
+kdna install @aikdna/animation  # Install a non-yanked cluster and its sub-domains
 ```
 
 CLI flow:
@@ -48,10 +48,10 @@ You don't need to be a developer to contribute your judgment to KDNA.
 ```bash
 npm install -g @aikdna/kdna-cli
 kdna setup              # auto-detects your agent, installs kdna-loader
-kdna install @aikdna/writing   # install a .kdna asset (asset digest + Ed25519 verified)
+kdna install @scope/name        # install a non-yanked .kdna asset
 ```
 
-That's it. Your agent now loads domain judgment. No coding required.
+That's it. Your agent can now load installed domain judgment. No coding required.
 
 For detailed authoring guidance, see the [KDNA Authoring Guide](https://github.com/aikdna/kdna/blob/main/docs/authoring-guide.md).
 

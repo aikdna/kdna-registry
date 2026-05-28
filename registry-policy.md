@@ -32,6 +32,8 @@ The Registry provides: **Discover → Verify → Install → Load → License**.
 A domain MAY be yanked if it:
 - Contains harmful or dangerous judgment
 - Has forged provenance or signatures
+- Fails current KDNA asset-format requirements, including the root `mimetype`
+  marker or canonical `.kdna` verification contract
 - Violates the risk policy (e.g., R3 domain in public registry)
 - Has been reported with verified safety issues
 

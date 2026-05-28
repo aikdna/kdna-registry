@@ -614,6 +614,10 @@ if (checkRemote) {
   console.log("Remote checks (asset_url reachability + asset_digest match)...");
   for (const d of registry.domains) {
     if (!d.asset_url) continue;
+    if (d.yanked === true) {
+      console.log(`  ${d.name}: skipped (yanked)`);
+      continue;
+    }
     process.stdout.write(`  ${d.name}: `);
     if (!fetchHead(d.asset_url)) {
       console.log("UNREACHABLE");
