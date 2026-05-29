@@ -22,8 +22,7 @@ singular `language` fields are rejected by schema v3.
 3. **Validate locally**
 
    ```bash
-   kdna dev validate ./source
-   kdna dev pack ./source --output ./dist
+   kdna-studio export ./project --out ./dist/legal_review.kdna --sign
    kdna inspect ./dist/legal_review.kdna
    kdna verify ./dist/legal_review.kdna
    ```
@@ -36,7 +35,7 @@ singular `language` fields are rejected by schema v3.
    claim `tested` or higher quality.
 
    - Publish the `.kdna` file to a stable release URL.
-   - Sign with the scope key when the asset is official for that scope.
+   - Sign with the scope key during Studio export when the asset is official for that scope.
    - Keep released `.kdna` files immutable.
 
 5. **Add or update the Registry entry**

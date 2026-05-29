@@ -30,8 +30,9 @@ Republish official assets in this order:
 From the source domain repository:
 
 ```bash
-kdna publish --check .
-kdna publish . --release-tag vX.Y.Z --repo aikdna/<repo>
+kdna-studio export ./studio.project.json --out ./dist/<name>.kdna --sign
+kdna verify ./dist/<name>.kdna --judgment
+kdna publish ./dist/<name>.kdna --release-tag vX.Y.Z --repo aikdna/<repo>
 ```
 
 Use the registry patch printed by `kdna publish`. Do not hand-edit digest,
