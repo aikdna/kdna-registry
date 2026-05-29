@@ -458,7 +458,7 @@
     {
       "name": "@aikdna/kdna_authoring",
       "type": "domain",
-      "version": "0.7.6",
+      "version": "0.7.7",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
@@ -478,7 +478,7 @@
           "core_insight": "KDNA编码的是判断，不是信息。通过访谈提取的专家区分点是唯一有效的原始素材。"
         }
       },
-      "signature": "ed25519:d39e9a53cb55a5b3240adda97119cfa16c205e26dc7a8042d9059f569766b0f5efb5a1f599f25943c7d5c74cb298fa01e4531fc2a847cb221bb0db3f790f020f",
+      "signature": "ed25519:372182b63064cd637719cb7c4d32fe262620feb64ecb0f4c20f6953d9ed35fc38fff64f6eed17d764d093e2004392f88835cf2ded15a1876df686b4e162fdf08",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-authoring",
       "author": {
@@ -520,10 +520,10 @@
       "updated": "2026-05-29",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
-      "asset_url": "https://github.com/aikdna/kdna-authoring/releases/download/v0.7.6/kdna_authoring-0.7.6.kdna",
-      "asset_digest": "sha256:dac7fe38b553a4a0705f4441db7eab3c6a5a69f48fb4d44da64017220062df9d",
+      "asset_url": "https://github.com/aikdna/kdna-authoring/releases/download/v0.7.7/kdna_authoring-0.7.7.kdna",
+      "asset_digest": "sha256:2d8bf47cf2fa3f97a22a9b5f1932bb1bdd3a5f6434029ef25b1a74d1cdf998a4",
       "media_type": "application/vnd.aikdna.kdna+zip",
-      "content_digest": "sha256:49122d6c99aa8330ed4299046adfd4c55a32896caa4749c0417ea9fc5f3acf72"
+      "content_digest": "sha256:1c6dd34b0c2615746ebd06254e356b7df1baf74b014a2bcec5f71382622eb201"
     },
     {
       "name": "@aikdna/open_source_project",
