@@ -1109,7 +1109,7 @@
     {
       "name": "@aikdna/code_review",
       "type": "domain",
-      "version": "0.7.5",
+      "version": "0.7.6",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
@@ -1129,7 +1129,7 @@
           "core_insight": "每条要求修改的审查意见必须引用具体的失败模式。"
         }
       },
-      "signature": "ed25519:615ba5f3dfc2d0c2bf8006a8a40568af60d0e2d8724b6487c60230d96fc91e70f2fea613b1636f6acf1f9c719d3c849a0f63a0feb54c7134269ef3df1bb0490f",
+      "signature": "ed25519:e16eb2b3344a6c215b666134173b8ac5274781c16bb892fab01009d58f943d06ac22cd01ccefbcb32cbd2037e3dccb8713645470b45f999f947d5ed678f01306",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-code_review",
       "author": {
@@ -1158,9 +1158,9 @@
       "test_count": 14,
       "quality_badge": "tested",
       "deprecated": false,
-      "yanked": true,
-      "yanked_reason": "Legacy asset lacks the v1.0-rc root mimetype marker; republish with current kdna-cli before default installs.",
-      "yanked_at": "2026-05-28T16:37:29Z",
+      "yanked": false,
+      "yanked_reason": null,
+      "yanked_at": null,
       "risk_level": "R1",
       "review_status": "community",
       "provenance_required": true,
@@ -1171,9 +1171,10 @@
       "updated": "2026-05-29",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
-      "asset_url": "https://github.com/aikdna/kdna-code_review/releases/download/v0.7.5/code_review-0.7.5.kdna",
-      "asset_digest": "sha256:35d7922d9d01d7216304f47470ef900ec576043fc7a1aa042e885cbfc91c55cf",
-      "media_type": "application/vnd.aikdna.kdna+zip"
+      "asset_url": "https://github.com/aikdna/kdna-code_review/releases/download/v0.7.6/code_review-0.7.6.kdna",
+      "asset_digest": "sha256:a2d9e7275dc8f298e9df0d9482bb07f6b77a18dbae2af36ee7ea823fec3ab4bc",
+      "media_type": "application/vnd.aikdna.kdna+zip",
+      "content_digest": "sha256:8be83c545e162d9761047ea36e3b9a330ff3bbb598ce31a646bf8e01195b9744"
     }
   ],
   "trust": {
