@@ -10,7 +10,7 @@ Trust model: [KDNA Registry Trust Model v1](./TRUST_MODEL.md)
 
 The KDNA Registry is not a token marketplace. It is not an NFT marketplace. It is a trusted catalog for AI-loadable cognitive assets.
 
-The KDNA Registry is the canonical index of all published KDNA domain cognition packages. It is a machine-readable JSON file (`domains.json`) that tells the `kdna` CLI what domains exist, where to download them, how to verify them, and what quality and safety metadata they carry. Every domain entry includes a review status, risk level, internationalization level, quality badge, provenance requirements, and a known limitations URL.
+The KDNA Registry is the canonical index of all published KDNA domain cognition packages. It is a machine-readable JSON file (`domains.json`) that tells the `kdna` CLI what domains exist, where to download them, how to verify them, and what quality and safety metadata they carry. Every domain entry includes a review status, risk level, internationalization level, quality badge, authoring provenance requirements, and a known limitations URL.
 
 Discover → Verify → Install → Load → License
 
@@ -40,8 +40,8 @@ You don't need to be a developer to contribute your judgment to KDNA.
 
 1. **Start with an interview, not a JSON file.** [KDNA Studio](https://github.com/aikdna/kdna-studio-core) (`@aikdna/kdna-studio`) asks you questions about your expertise — what you reject, what beginners get wrong, what signals you watch for — and generates a structured KDNA domain from your answers.
 2. **Don't worry about JSON.** The Studio interview mode handles the encoding. You focus on what you know, not on formatting.
-3. **Get feedback before publishing.** Run `kdna dev validate` on your source workspace, then share the `.kdna` file with a peer for review.
-4. **Publish when ready.** When your domain passes validation and you're satisfied with the judgment content, `kdna publish` sends it to the registry — complete with your Ed25519 signature that proves you authored it.
+3. **Create through Studio.** Use KDNA Studio or a Studio-compatible compiler to Human Lock, compile, and export a `.kdna` file with authoring provenance.
+4. **Publish when ready.** When your `.kdna` passes verification and you're satisfied with the judgment content, `kdna publish <file.kdna>` prepares the registry metadata.
 
 **If you just want to use KDNA domains with your AI agent:**
 
@@ -71,6 +71,7 @@ Each domain entry in `domains.json` includes these key metadata fields:
 | `asset_digest` | Whole-file asset digest: `sha256:<hex>` |
 | `media_type` | Optional explicit media type. If present, MUST be `application/vnd.aikdna.kdna+zip` |
 | `signature` | Ed25519 signature for provenance verification |
+| `authoring` | Studio-compatible authoring provenance for trusted quality claims |
 | `quality_badge` | Quality tier: `untested`, `tested`, `validated`, `expert_reviewed`, or `production_ready` |
 | `risk_level` | Risk classification: `R0` (low) through `R3` (restricted) |
 | `review_status` | Registry review status (see Review Model below) |
@@ -85,12 +86,12 @@ Each domain entry in `domains.json` includes these key metadata fields:
 
 ## Official Quality Badges
 
-Official KDNA quality badges are issued only by the official registry or authorized registries. Forked tools may compute local validation results, but cannot claim official badge status unless signed by an authorized registry.
+Official KDNA quality badges are issued only by the official registry or authorized registries. Forked tools may compute local validation results, but cannot claim official badge status unless signed by an authorized registry. Schema validation only proves structure; it does not prove judgment quality. Assets without Studio-compatible authoring provenance cannot be promoted into trusted registry channels above `untested`.
 
 | Badge | Meaning | Min Eval Cases | Issued By |
 |-------|---------|:---:|------------|
-| `untested` | Schema validation only, no judgment quality evidence | 0 | Author self-declared |
-| `tested` | At least 10 eval cases with manual verification | >= 10 | Author self-declared (requires signature) |
+| `untested` | Schema validation only, no trusted authoring or judgment quality evidence | 0 | Author self-declared |
+| `tested` | Studio-compatible provenance, Human Lock, and at least 10 eval cases with manual verification | >= 10 | Author self-declared (requires signature) |
 | `validated` | At least 30 eval cases with automated scoring and raw outputs | >= 30 | Official registry after automated check |
 | `expert_reviewed` | Validated evidence plus independent domain expert review | >= 30 | Official registry after expert sign-off |
 | `production_ready` | Expert-reviewed evidence plus real-world deployment evidence | >= 30 | Official registry after deployment audit |

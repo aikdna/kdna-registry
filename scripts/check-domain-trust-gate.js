@@ -56,6 +56,23 @@ function hasKnownLimitations(entry) {
   );
 }
 
+function hasStudioCompatibleAuthoring(entry) {
+  const authoring = entry.authoring;
+  if (!authoring) return false;
+  return [
+    'kdna-studio',
+    'kdna-studio-cli',
+    'kdna-studio-sdk',
+    'third-party-studio-compatible',
+  ].includes(authoring.created_by) &&
+    !!authoring.compiler &&
+    !!authoring.compiler_version &&
+    !!authoring.compiled_at &&
+    authoring.human_confirmed === true &&
+    Number.isInteger(authoring.human_lock_count) &&
+    authoring.human_lock_count > 0;
+}
+
 for (const entry of registry.domains || []) {
   const name = entry.name || '<unnamed>';
   const badge = entry.quality_badge;
@@ -95,12 +112,20 @@ for (const entry of registry.domains || []) {
     fail(`${name}: ${badge} requires a public known_limitations_url`);
   }
 
+  if (badgeRank[badge] >= badgeRank.tested && !hasStudioCompatibleAuthoring(entry)) {
+    warn(`${name}: ${badge} has no Studio-compatible authoring provenance; cannot be promoted to verified/reviewed/trusted`);
+  }
+
   if (badgeRank[badge] >= badgeRank.expert_reviewed && !entry.reviewed_by) {
     fail(`${name}: ${badge} requires reviewed_by`);
   }
 
   if ((review === 'verified' || review === 'reviewed' || review === 'trusted') && badgeRank[badge] < badgeRank.tested) {
     fail(`${name}: review_status ${review} requires quality_badge >= tested`);
+  }
+
+  if ((review === 'verified' || review === 'reviewed' || review === 'trusted') && !hasStudioCompatibleAuthoring(entry)) {
+    fail(`${name}: review_status ${review} requires Studio-compatible authoring provenance`);
   }
 
   if ((review === 'reviewed' || review === 'trusted') && !entry.reviewed_by) {

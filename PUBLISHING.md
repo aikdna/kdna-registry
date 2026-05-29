@@ -28,7 +28,13 @@ singular `language` fields are rejected by schema v3.
    kdna verify ./dist/legal_review.kdna
    ```
 
-4. **Sign and publish the asset file**
+4. **Compile, sign, and publish the asset file**
+
+   Trusted assets must come from KDNA Studio or a Studio-compatible compiler.
+   The `.kdna` manifest must include `authoring.created_by`, compiler metadata,
+   Human Lock count, confirmation status, and compile timestamp before it can
+   claim `tested` or higher quality.
+
    - Publish the `.kdna` file to a stable release URL.
    - Sign with the scope key when the asset is official for that scope.
    - Keep released `.kdna` files immutable.
@@ -38,6 +44,7 @@ singular `language` fields are rejected by schema v3.
    - Set `media_type` to `application/vnd.aikdna.kdna+zip`.
    - Use `asset_digest` in `sha256:<64-hex>` form, not `sha256`.
    - Include `signature` when signed.
+   - Include `authoring` for any asset requesting `tested` or higher quality.
    - Include `known_limitations_url`, `evals_url`, and `benchmark_report_url`
      for any asset requesting `tested` or higher quality.
 
@@ -65,6 +72,7 @@ Each published entry must include:
 - `release_status`
 - `license`
 - `quality_badge`
+- `authoring`
 - `risk_level`
 - `review_status`
 - `yanked`
@@ -74,9 +82,9 @@ Each published entry must include:
 
 | Badge | Minimum evidence |
 | --- | --- |
-| `untested` | Structural validation and a visible README. |
-| `tested` | >= 10 eval cases, `evals_url`, known limitations, and manual verification. |
-| `validated` | >= 30 eval cases, repeatable benchmark report, rubric, and raw outputs. |
+| `untested` | Structural validation and a visible README. Manual JSON or unknown provenance is capped here. |
+| `tested` | Studio-compatible provenance, Human Lock, >= 10 eval cases, `evals_url`, known limitations, and manual verification. |
+| `validated` | Studio-compatible provenance, >= 30 eval cases, repeatable benchmark report, rubric, and raw outputs. |
 | `expert_reviewed` | Validated evidence plus independent reviewer identity and review notes. |
 | `production_ready` | Expert-reviewed evidence plus deployment evidence, monitoring/audit path, and rollback/yank plan. |
 

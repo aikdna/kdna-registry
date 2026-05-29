@@ -19,7 +19,7 @@ This document specifies the data contract for `domains.json` in `kdna-registry`.
 
 Semver string. Bumped only on breaking schema changes. CLIs read this and refuse to operate on unknown major versions.
 
-Schema `3.0` is asset-first and breaking. Registry entries MUST publish canonical `.kdna` assets with `asset_url`, `media_type`, and `asset_digest`. `kdna_url`, bare `sha256`, singular `language`, and `kdna_spec` fields are invalid.
+Schema `3.0` is asset-first and breaking. Registry entries MUST publish canonical `.kdna` assets with `asset_url`, `media_type`, and `asset_digest`. `kdna_url`, bare `sha256`, singular `language`, and `kdna_spec` fields are invalid. Trusted entries with `quality_badge` `tested` or higher SHOULD include Studio-compatible `authoring` provenance. Entries promoted to `verified`, `reviewed`, or `trusted` MUST include it.
 
 ### `trust` (required)
 
@@ -102,6 +102,14 @@ Array of domain or cluster entries.
   "asset_digest": "sha256:<64-hex>",// REQUIRED when asset_url set
   "signature": "ed25519:<hex>",     // REQUIRED for installable assets
   "release_status": "published_signed" | "published_unsigned" | "pending_v0.7_republish",
+  "authoring": {
+    "created_by": "kdna-studio" | "kdna-studio-cli" | "kdna-studio-sdk" | "third-party-studio-compatible" | "manual-dev-source",
+    "compiler": "@aikdna/kdna-studio",
+    "compiler_version": "0.3.0",
+    "compiled_at": "2026-05-29T00:00:00Z",
+    "human_confirmed": true,
+    "human_lock_count": 8
+  },
 
   "repo": "https://github.com/...", // source repository, not an install source
   "languages": ["en", "zh-CN"],          // v2.2: all supported BCP 47 language tags
@@ -301,6 +309,9 @@ v3.0 is a clean break:
 - Top-level `trust` metadata is required.
 - Installers refuse expired registries, yanked entries, and revoked assets.
 - The registry publishes `.kdna` assets only, never raw domain directories.
+- Studio-compatible authoring provenance gates quality badge promotion:
+  `manual-dev-source` or missing provenance is capped at `untested` in trusted
+  channels.
 
 ## Commercial Asset & Staging Channel
 

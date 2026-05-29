@@ -412,6 +412,46 @@ for (let i = 0; i < registry.domains.length; i++) {
     );
   }
 
+  const studioCompatible = new Set([
+    "kdna-studio",
+    "kdna-studio-cli",
+    "kdna-studio-sdk",
+    "third-party-studio-compatible",
+  ]);
+  const authoring = d.authoring;
+  const promotedReview =
+    d.review_status === "verified" ||
+    d.review_status === "reviewed" ||
+    d.review_status === "trusted";
+  if (badge !== "untested") {
+    if (!authoring) {
+      warn(
+        `${where}: quality_badge "${badge}" has no authoring provenance; trusted channels will reject promotion`,
+      );
+    } else if (!studioCompatible.has(authoring.created_by)) {
+      warn(`${where}: quality_badge "${badge}" is not Studio-compatible (${authoring.created_by})`);
+    }
+  }
+  if (promotedReview) {
+    if (!authoring) {
+      fail(`${where}: review_status ${d.review_status} requires authoring provenance`);
+    } else {
+      if (!studioCompatible.has(authoring.created_by)) {
+        fail(`${where}: review_status ${d.review_status} requires Studio-compatible authoring.created_by`);
+      }
+      if (!authoring.compiler || !authoring.compiler_version || !authoring.compiled_at) {
+        fail(`${where}: review_status ${d.review_status} requires compiler metadata`);
+      }
+      if (
+        authoring.human_confirmed !== true ||
+        !Number.isInteger(authoring.human_lock_count) ||
+        authoring.human_lock_count < 1
+      ) {
+        fail(`${where}: review_status ${d.review_status} requires Human Lock provenance`);
+      }
+    }
+  }
+
   if ("kdna_url" in d) {
     fail(`${where}: kdna_url is invalid in schema 3.0; use asset_url`);
   }
