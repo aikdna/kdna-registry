@@ -172,7 +172,7 @@
     {
       "name": "@aikdna/writing",
       "type": "domain",
-      "version": "0.7.2",
+      "version": "0.7.3",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
@@ -192,7 +192,7 @@
           "core_insight": "大多数写作问题不是语言问题，而是结构和观点层面的问题。"
         }
       },
-      "signature": "ed25519:7acaa1fe711c90b30fcf9be95b00a1a632a600d1d28eca3b03d6070debd069b5abaf1e0c14e6bda904d2192eac1614639e3f6b8eddca45f2972be8b5874aee04",
+      "signature": "ed25519:5923a859d188b752939a8e4c90aba38466265bfef34ac8f17bc1a067dde3db2e7396058f51d42e5db8d3d5db620be42443e6889eab21ad78494eccab293f0306",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-writing",
       "author": {
@@ -222,9 +222,9 @@
       "test_count": 10,
       "quality_badge": "tested",
       "deprecated": false,
-      "yanked": true,
-      "yanked_reason": "Legacy asset lacks the v1.0-rc root mimetype marker; republish with current kdna-cli before default installs.",
-      "yanked_at": "2026-05-28T16:37:29Z",
+      "yanked": false,
+      "yanked_reason": null,
+      "yanked_at": null,
       "risk_level": "R0",
       "review_status": "community",
       "provenance_required": true,
@@ -235,9 +235,9 @@
       "updated": "2026-05-29",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
-      "asset_url": "https://github.com/aikdna/kdna-writing/releases/download/v0.7.2/writing-0.7.2.kdna",
-      "asset_digest": "sha256:43ceef10aa6f01832974a13e9bd79c9537947debdd67c3e50c1870a2cda8c5ab",
-      "content_digest": "sha256:fbdb42273732b1d6901911c11f2bf046074dca5715ffc76fe0e536f982bac77d",
+      "asset_url": "https://github.com/aikdna/kdna-writing/releases/download/v0.7.3/writing-0.7.3.kdna",
+      "asset_digest": "sha256:f2b1e62b9edd5ad959cd8b836a106732b6044c23a37531c6becc2aa5e28a6b6a",
+      "content_digest": "sha256:ea5e3dea1f156a45f82590f3be02cc669db6f558a265e2cd5389e138350276a7",
       "evals_url": "https://github.com/aikdna/kdna-writing/tree/main/evals",
       "benchmark_report_url": "https://github.com/aikdna/kdna-writing/blob/main/benchmarks/report.md",
       "media_type": "application/vnd.aikdna.kdna+zip"
