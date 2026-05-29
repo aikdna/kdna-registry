@@ -106,6 +106,12 @@ Array of domain or cluster entries.
     "created_by": "kdna-studio" | "kdna-studio-cli" | "kdna-studio-sdk" | "third-party-studio-compatible" | "manual-dev-source",
     "compiler": "@aikdna/kdna-studio",
     "compiler_version": "0.3.0",
+    "asset_uid": "uuidv7",
+    "project_uid": "uuidv7",
+    "build_id": "build_xxx",
+    "domain_id": "identifier",
+    "registry_name": "@scope/identifier",
+    "content_digest": "sha256:<64-hex>",
     "compiled_at": "2026-05-29T00:00:00Z",
     "human_confirmed": true,
     "human_lock_count": 8
@@ -312,6 +318,9 @@ v3.0 is a clean break:
 - Studio-compatible authoring provenance gates quality badge promotion:
   `manual-dev-source` or missing provenance is capped at `untested` in trusted
   channels.
+- Trusted provenance MUST include compiler metadata, `asset_uid`,
+  `project_uid`, `build_id`, `domain_id`, `content_digest`, Human Lock evidence,
+  and human confirmation.
 
 ## Commercial Asset & Staging Channel
 

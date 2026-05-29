@@ -12,6 +12,11 @@ The KDNA Registry is not a token marketplace. It is not an NFT marketplace. It i
 
 The KDNA Registry is the canonical index of all published KDNA domain cognition packages. It is a machine-readable JSON file (`domains.json`) that tells the `kdna` CLI what domains exist, where to download them, how to verify them, and what quality and safety metadata they carry. Every domain entry includes a review status, risk level, internationalization level, quality badge, authoring provenance requirements, and a known limitations URL.
 
+A `.kdna` asset is not created by writing JSON files. It is compiled by a
+Studio-compatible authoring pipeline that performs human confirmation,
+validation, canonicalization, identity generation, digest computation, signing,
+optional encryption, and provenance recording.
+
 Discover → Verify → Install → Load → License
 
 ## How to Use
@@ -88,13 +93,13 @@ Each domain entry in `domains.json` includes these key metadata fields:
 
 Official KDNA quality badges are issued only by the official registry or authorized registries. Forked tools may compute local validation results, but cannot claim official badge status unless signed by an authorized registry. Schema validation only proves structure; it does not prove judgment quality. Assets without Studio-compatible authoring provenance cannot be promoted into trusted registry channels above `untested`.
 
-| Badge | Meaning | Min Eval Cases | Issued By |
-|-------|---------|:---:|------------|
-| `untested` | Schema validation only, no trusted authoring or judgment quality evidence | 0 | Author self-declared |
-| `tested` | Studio-compatible provenance, Human Lock, and at least 10 eval cases with manual verification | >= 10 | Author self-declared (requires signature) |
-| `validated` | At least 30 eval cases with automated scoring and raw outputs | >= 30 | Official registry after automated check |
-| `expert_reviewed` | Validated evidence plus independent domain expert review | >= 30 | Official registry after expert sign-off |
-| `production_ready` | Expert-reviewed evidence plus real-world deployment evidence | >= 30 | Official registry after deployment audit |
+| Badge | Meaning | Min Eval Cases | Required Studio Evidence | Issued By |
+|-------|---------|:---:|--------------------------|------------|
+| `untested` | Schema validation only, no trusted authoring or judgment quality evidence | 0 | `reports/build-report.json`, `reports/provenance-report.json` | Author self-declared |
+| `tested` | Studio-compatible provenance, Human Lock, and manual verification | >= 10 | Human Lock report + eval report | Author self-declared (requires signature) |
+| `validated` | Automated scoring and raw outputs | >= 30 | Quality gate report + raw outputs or authorized review evidence | Official registry after automated check |
+| `expert_reviewed` | Validated evidence plus independent domain expert review | >= 30 | Reviewer signature or review report | Official registry after expert sign-off |
+| `production_ready` | Expert-reviewed evidence plus real-world deployment evidence | >= 30 | Deployment evidence + regression report | Official registry after deployment audit |
 
 ---
 

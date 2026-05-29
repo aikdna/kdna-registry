@@ -59,6 +59,7 @@ function hasKnownLimitations(entry) {
 function hasStudioCompatibleAuthoring(entry) {
   const authoring = entry.authoring;
   if (!authoring) return false;
+  const identityFields = ['asset_uid', 'project_uid', 'build_id', 'domain_id', 'content_digest'];
   return [
     'kdna-studio',
     'kdna-studio-cli',
@@ -70,7 +71,8 @@ function hasStudioCompatibleAuthoring(entry) {
     !!authoring.compiled_at &&
     authoring.human_confirmed === true &&
     Number.isInteger(authoring.human_lock_count) &&
-    authoring.human_lock_count > 0;
+    authoring.human_lock_count > 0 &&
+    identityFields.every(field => !!authoring[field] || !!entry[field]);
 }
 
 for (const entry of registry.domains || []) {

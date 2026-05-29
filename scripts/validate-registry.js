@@ -442,6 +442,11 @@ for (let i = 0; i < registry.domains.length; i++) {
       if (!authoring.compiler || !authoring.compiler_version || !authoring.compiled_at) {
         fail(`${where}: review_status ${d.review_status} requires compiler metadata`);
       }
+      for (const field of ["asset_uid", "project_uid", "build_id", "domain_id", "content_digest"]) {
+        if (!authoring[field] && !d[field]) {
+          fail(`${where}: review_status ${d.review_status} requires authoring ${field}`);
+        }
+      }
       if (
         authoring.human_confirmed !== true ||
         !Number.isInteger(authoring.human_lock_count) ||
