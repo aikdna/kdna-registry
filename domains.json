@@ -30,7 +30,7 @@
     {
       "name": "@aikdna/decision_state",
       "type": "domain",
-      "version": "0.7.5",
+      "version": "0.7.6",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
@@ -50,7 +50,7 @@
           "core_insight": "讨论不是决策。广泛共识不是承诺。"
         }
       },
-      "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206",
+      "signature": "ed25519:6f6fccb7b484df4d8780c40008841a8087fb91c36ef370686fca51e4bfc1c8c54f367fd908bd775aab1423d85818a015c7e1dc946403d49e71b79a04dec4c909",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-decision_state",
       "author": {
@@ -80,9 +80,9 @@
       "test_count": 10,
       "quality_badge": "tested",
       "deprecated": false,
-      "yanked": true,
-      "yanked_reason": "Legacy asset lacks the v1.0-rc root mimetype marker; republish with current kdna-cli before default installs.",
-      "yanked_at": "2026-05-28T16:37:29Z",
+      "yanked": false,
+      "yanked_reason": null,
+      "yanked_at": null,
       "risk_level": "R1",
       "review_status": "community",
       "provenance_required": true,
@@ -93,9 +93,10 @@
       "updated": "2026-05-29",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
-      "asset_url": "https://github.com/aikdna/kdna-decision_state/releases/download/v0.7.5/decision_state-0.7.5.kdna",
-      "asset_digest": "sha256:3339a69d648921cfcdaac3fb9076980b2f54b0f17390203a95c72c0f315f3984",
-      "media_type": "application/vnd.aikdna.kdna+zip"
+      "asset_url": "https://github.com/aikdna/kdna-decision_state/releases/download/v0.7.6/decision_state-0.7.6.kdna",
+      "asset_digest": "sha256:eda9de880812b50c9706d783279bb6aadc203b1319b7ca9c06b5802ea211ce4c",
+      "media_type": "application/vnd.aikdna.kdna+zip",
+      "content_digest": "sha256:a98d376520a2637eb6783ee4cf902d556edd0abb673a613eeba710eaab06f2a8"
     },
     {
       "name": "@aikdna/agent_safety",
