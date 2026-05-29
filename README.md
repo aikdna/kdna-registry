@@ -20,7 +20,7 @@ Discover → Verify → Install → Load → License
 kdna list --available           # Browse all registered domains
 kdna install <name>             # Install a non-yanked official @aikdna/ asset
 kdna install @scope/name        # Install a non-yanked scoped asset
-kdna install @aikdna/animation  # Install a non-yanked cluster and its sub-domains
+kdna install @aikdna/writing    # Example: install one first-launch official asset
 ```
 
 CLI flow:
@@ -98,6 +98,8 @@ Official KDNA quality badges are issued only by the official registry or authori
 ---
 
 ## Review Model
+
+The default official install surface currently contains five first-launch assets: `@aikdna/kdna_authoring`, `@aikdna/agent_safety`, `@aikdna/prompt_diagnosis`, `@aikdna/code_review`, and `@aikdna/writing`. Other entries may remain in the registry as yanked experimental candidates.
 
 The registry classifies domains by review status, per the [KDNA Governance Policy](https://github.com/aikdna/kdna/blob/main/docs/GOVERNANCE.md):
 

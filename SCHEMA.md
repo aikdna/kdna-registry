@@ -173,7 +173,7 @@ Array of domain or cluster entries.
 
 ## Cluster entry
 
-A cluster bundles multiple standalone domains under a single install target.
+A cluster bundles multiple standalone domains under a logical composition entry. Clusters can be represented in the registry before they are default-installable; yanked clusters are discovery records only and MUST be rejected by installers.
 
 ```json
 {
@@ -196,8 +196,9 @@ A cluster bundles multiple standalone domains under a single install target.
 Rules:
 
 - Every name in `cluster.domains` MUST exist as a separate domain entry in the same registry
-- Sub-domains can be installed independently (`kdna install @aikdna/motion_design_master`)
-- Installing a cluster (`kdna install @aikdna/animation`) installs all sub-domains
+- Non-yanked sub-domains can be installed independently (`kdna install @scope/domain`)
+- Non-yanked clusters MAY install or resolve their sub-domains according to CLI/runtime policy
+- Yanked clusters and yanked sub-domains MUST NOT be installable
 - Sub-domains MAY have a `part_of_cluster` field pointing back to the cluster
 
 ## Name format
