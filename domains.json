@@ -526,7 +526,7 @@
     {
       "name": "@aikdna/open_source_project",
       "type": "domain",
-      "version": "0.7.5",
+      "version": "0.7.6",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
@@ -546,7 +546,7 @@
           "core_insight": "采纳失败是价值入口问题：访客在30秒内无法确定问题和替代方案。"
         }
       },
-      "signature": "ed25519:b61dfa1bdae5c37cefb203ce04604cb82f4329a45c7dcb769af5851e46fe2ccd42a5c2f4dde18f129654be82d7df3914213b40326811212bc1ddc58136161309",
+      "signature": "ed25519:0cd7fe668c8a53cc35c94c94687240f13ba423e46f7b1264e40c7f8df04971edd1d594fb26b69a419c8c2bc35473f6fda9e4b023e47e2926e3bc9965d7cde501",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-open_source_project",
       "author": {
@@ -576,9 +576,9 @@
       "test_count": 11,
       "quality_badge": "tested",
       "deprecated": false,
-      "yanked": true,
-      "yanked_reason": "Legacy asset lacks the v1.0-rc root mimetype marker; republish with current kdna-cli before default installs.",
-      "yanked_at": "2026-05-28T16:37:29Z",
+      "yanked": false,
+      "yanked_reason": null,
+      "yanked_at": null,
       "risk_level": "R0",
       "review_status": "community",
       "provenance_required": true,
@@ -589,11 +589,12 @@
       "updated": "2026-05-29",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
-      "asset_url": "https://github.com/aikdna/kdna-open_source_project/releases/download/v0.7.5/open_source_project-0.7.5.kdna",
-      "asset_digest": "sha256:9aa654356843a80e8a99635594a685c2b7af9527c835652c1afda95c38af2e4d",
+      "asset_url": "https://github.com/aikdna/kdna-open_source_project/releases/download/v0.7.6/open_source_project-0.7.6.kdna",
+      "asset_digest": "sha256:112dbbc61a2f356897fe6510da9c4688399c5719d5496cb9dda7eda7c369df18",
       "evals_url": "https://github.com/aikdna/kdna-open_source_project/tree/main/evals",
       "benchmark_report_url": "https://github.com/aikdna/kdna-open_source_project/blob/main/benchmarks/report.md",
-      "media_type": "application/vnd.aikdna.kdna+zip"
+      "media_type": "application/vnd.aikdna.kdna+zip",
+      "content_digest": "sha256:fa7923c07e92edf030f06ab34a40b979bec9d9a01f08c06e1fdfb4d73bb2889f"
     },
     {
       "name": "@aikdna/animation",
