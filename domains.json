@@ -100,7 +100,7 @@
     {
       "name": "@aikdna/agent_safety",
       "type": "domain",
-      "version": "0.7.5",
+      "version": "0.7.6",
       "spec_version": "1.0-rc",
       "status": "experimental",
       "access": "open",
@@ -120,7 +120,7 @@
           "core_insight": "工具让Agent有能力。安全判断让Agent在不可逆操作前保持谨慎。"
         }
       },
-      "signature": "ed25519:1b06986c509fda9dac8cd448c6f87aa24f3389762f9f6f300e086ca8e5dd940ec5f62f50b01aa87346f83f349fc452d40c0311831612a5ce8872afed75af9a00",
+      "signature": "ed25519:f95578932215d1d99d7cca88082420b55d5b2dca6a35a72933b09aadaba97fa053e65ce0c56f8313379505b88a79e4cb0ac92aac13f0e96e17f147029a8cf000",
       "release_status": "published_signed",
       "repo": "https://github.com/aikdna/kdna-agent_safety",
       "author": {
@@ -150,9 +150,9 @@
       "test_count": 14,
       "quality_badge": "tested",
       "deprecated": false,
-      "yanked": true,
-      "yanked_reason": "Legacy asset lacks the v1.0-rc root mimetype marker; republish with current kdna-cli before default installs.",
-      "yanked_at": "2026-05-28T16:37:29Z",
+      "yanked": false,
+      "yanked_reason": null,
+      "yanked_at": null,
       "risk_level": "R2",
       "review_status": "community",
       "provenance_required": true,
@@ -163,11 +163,12 @@
       "updated": "2026-05-29",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
-      "asset_url": "https://github.com/aikdna/kdna-agent_safety/releases/download/v0.7.5/agent_safety-0.7.5.kdna",
-      "asset_digest": "sha256:ae7b02d260de4c3e8846b5f115cac91898a78ffdbb6ff38a0d2a0abbf72d8c94",
+      "asset_url": "https://github.com/aikdna/kdna-agent_safety/releases/download/v0.7.6/agent_safety-0.7.6.kdna",
+      "asset_digest": "sha256:2d8bc87fa1f41f1409119f60392eb8f4075416e2aaaa4cee185c8acd7dd9edc7",
       "evals_url": "https://github.com/aikdna/kdna-agent_safety/tree/main/evals",
       "benchmark_report_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/benchmarks/report.md",
-      "media_type": "application/vnd.aikdna.kdna+zip"
+      "media_type": "application/vnd.aikdna.kdna+zip",
+      "content_digest": "sha256:c1a51c43e10003827a688006643747ac1ce147f8c299fa74905bd861eade70b7"
     },
     {
       "name": "@aikdna/writing",
