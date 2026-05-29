@@ -104,7 +104,7 @@ Array of domain or cluster entries.
   "release_status": "published_signed" | "published_unsigned" | "pending_v0.7_republish",
   "authoring": {
     "created_by": "kdna-studio" | "kdna-studio-cli" | "kdna-studio-sdk" | "third-party-studio-compatible" | "manual-dev-source",
-    "compiler": "@aikdna/kdna-studio",
+    "compiler": "@aikdna/kdna-studio-core",
     "compiler_version": "0.3.0",
     "asset_uid": "uuidv7",
     "project_uid": "uuidv7",

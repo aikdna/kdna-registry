@@ -43,7 +43,7 @@ You don't need to be a developer to contribute your judgment to KDNA.
 
 **If you are a domain expert** (writer, caregiver, designer, community operator, florist, product builder, or any practitioner with real judgment in a specific field), here's your path:
 
-1. **Start with an interview, not a JSON file.** [KDNA Studio](https://github.com/aikdna/kdna-studio-core) (`@aikdna/kdna-studio`) asks you questions about your expertise — what you reject, what beginners get wrong, what signals you watch for — and generates a structured KDNA domain from your answers.
+1. **Start with an interview, not a JSON file.** [KDNA Studio CLI](https://github.com/aikdna/kdna-studio-cli) (`@aikdna/kdna-studio-cli`) and Studio-compatible apps use `@aikdna/kdna-studio-core` to ask questions about your expertise — what you reject, what beginners get wrong, what signals you watch for — and generate a structured KDNA domain from your answers.
 2. **Don't worry about JSON.** The Studio interview mode handles the encoding. You focus on what you know, not on formatting.
 3. **Create through Studio.** Use KDNA Studio or a Studio-compatible compiler to Human Lock, compile, and export a `.kdna` file with authoring provenance.
 4. **Publish when ready.** When your `.kdna` passes verification and you're satisfied with the judgment content, `kdna publish <file.kdna>` prepares the registry metadata.
@@ -152,7 +152,8 @@ The gate checks that quality badges, review status, tested evidence, yanked stat
 
 - [KDNA main](https://github.com/aikdna/kdna) — Protocol, specification, governance
 - [kdna-cli](https://github.com/aikdna/kdna-cli) — CLI toolchain
-- [kdna-studio-core](https://github.com/aikdna/kdna-studio-core) — Authoring kernel (`@aikdna/kdna-studio`)
+- [kdna-studio-core](https://github.com/aikdna/kdna-studio-core) — Authoring kernel (`@aikdna/kdna-studio-core`)
+- [kdna-studio-cli](https://github.com/aikdna/kdna-studio-cli) — Command-line authoring entry (`@aikdna/kdna-studio-cli`, `kdna-studio`)
 - [kdna-skills](https://github.com/aikdna/kdna-skills) — Ready-to-use agent skill integrations
 - [kdna-vscode](https://github.com/aikdna/kdna-vscode) — VS Code extension for KDNA authoring
 - [kdna-website](https://github.com/aikdna/kdna-website) — Main project website
