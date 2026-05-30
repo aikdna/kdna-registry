@@ -192,6 +192,12 @@
         "parent_asset_uid": null,
         "parent_version": "0.7.6",
         "parent_asset_digest": "sha256:c1a51c43e10003827a688006643747ac1ce147f8c299fa74905bd861eade70b7"
+      },
+      "publish_audit": {
+        "published_by": "kdna-team",
+        "published_at": "2026-05-30T00:00:00Z",
+        "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
       }
     },
     {
@@ -284,6 +290,12 @@
         "parent_asset_uid": null,
         "parent_version": "0.7.3",
         "parent_asset_digest": "sha256:ea5e3dea1f156a45f82590f3be02cc669db6f558a265e2cd5389e138350276a7"
+      },
+      "publish_audit": {
+        "published_by": "kdna-team",
+        "published_at": "2026-05-30T00:00:00Z",
+        "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
       }
     },
     {
@@ -448,6 +460,12 @@
         "parent_asset_uid": null,
         "parent_version": "0.7.6",
         "parent_asset_digest": "sha256:ef77aa302c1097564687405c9564b3cbdbda07053ddb3bfdece5aabd7d947ab8"
+      },
+      "publish_audit": {
+        "published_by": "kdna-team",
+        "published_at": "2026-05-30T00:00:00Z",
+        "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
       }
     },
     {
@@ -611,6 +629,12 @@
         "parent_asset_uid": null,
         "parent_version": "0.7.7",
         "parent_asset_digest": "sha256:1c6dd34b0c2615746ebd06254e356b7df1baf74b014a2bcec5f71382622eb201"
+      },
+      "publish_audit": {
+        "published_by": "kdna-team",
+        "published_at": "2026-05-30T00:00:00Z",
+        "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
       }
     },
     {
@@ -1290,6 +1314,12 @@
         "parent_asset_uid": null,
         "parent_version": "0.7.6",
         "parent_asset_digest": "sha256:8be83c545e162d9761047ea36e3b9a330ff3bbb598ce31a646bf8e01195b9744"
+      },
+      "publish_audit": {
+        "published_by": "kdna-team",
+        "published_at": "2026-05-30T00:00:00Z",
+        "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
       }
     }
   ],
