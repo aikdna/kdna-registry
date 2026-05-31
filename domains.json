@@ -45,9 +45,9 @@
           "display_name": "Decision State"
         },
         "zh-CN": {
-          "display_name": "\u51b3\u7b56\u72b6\u6001\u5224\u65ad",
-          "description": "\u5224\u65ad\u4e00\u6b21\u4f1a\u8bae\u6216\u8ba8\u8bba\u662f\u5426\u4ea7\u751f\u4e86\u53ef\u6267\u884c\u7684\u51b3\u7b56\u2014\u2014\u800c\u4e0d\u53ea\u662f\u8ba8\u8bba\u3002",
-          "core_insight": "\u8ba8\u8bba\u4e0d\u662f\u51b3\u7b56\u3002\u5e7f\u6cdb\u5171\u8bc6\u4e0d\u662f\u627f\u8bfa\u3002"
+          "display_name": "决策状态判断",
+          "description": "判断一次会议或讨论是否产生了可执行的决策——而不只是讨论。",
+          "core_insight": "讨论不是决策。广泛共识不是承诺。"
         }
       },
       "signature": "ed25519:6f6fccb7b484df4d8780c40008841a8087fb91c36ef370686fca51e4bfc1c8c54f367fd908bd775aab1423d85818a015c7e1dc946403d49e71b79a04dec4c909",
@@ -61,7 +61,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Judge whether a meeting or discussion produced an actionable decision \u2014 or just discussion.",
+      "description": "Judge whether a meeting or discussion produced an actionable decision — or just discussion.",
       "core_insight": "Discussion is not decision. Broad agreement is not commitment.",
       "keywords": [
         "decision",
@@ -120,9 +120,9 @@
           "display_name": "Agent Safety"
         },
         "zh-CN": {
-          "display_name": "\u667a\u80fd\u4f53\u5b89\u5168\u5224\u65ad",
-          "description": "\u5728\u6267\u884c\u4e0d\u53ef\u9006\u64cd\u4f5c\u524d\u6682\u505c\u2014\u2014\u9a8c\u8bc1\u6388\u6743\u3001\u5907\u4efd\u548c\u53ef\u9006\u6027\u3002",
-          "core_insight": "\u5de5\u5177\u8ba9Agent\u6709\u80fd\u529b\u3002\u5b89\u5168\u5224\u65ad\u8ba9Agent\u5728\u4e0d\u53ef\u9006\u64cd\u4f5c\u524d\u4fdd\u6301\u8c28\u614e\u3002"
+          "display_name": "智能体安全判断",
+          "description": "在执行不可逆操作前暂停——验证授权、备份和可逆性。",
+          "core_insight": "工具让Agent有能力。安全判断让Agent在不可逆操作前保持谨慎。"
         }
       },
       "signature": "ed25519:f95578932215d1d99d7cca88082420b55d5b2dca6a35a72933b09aadaba97fa053e65ce0c56f8313379505b88a79e4cb0ac92aac13f0e96e17f147029a8cf000",
@@ -136,7 +136,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Halt before irreversible actions \u2014 verify authorization, backup, and reversibility.",
+      "description": "Halt before irreversible actions — verify authorization, backup, and reversibility.",
       "core_insight": "Tools make agents capable. Safety judgment makes agents cautious before irreversible action.",
       "keywords": [
         "agent safety",
@@ -169,7 +169,7 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-agent_safety/releases/download/v0.7.6/agent_safety-0.7.6.kdna",
-      "asset_digest": "sha256:a33bb0833a16223dfaf3b85445081e7644165f5970e51662fd0d749eba379042",
+      "asset_digest": "sha256:2d8bc87fa1f41f1409119f60392eb8f4075416e2aaaa4cee185c8acd7dd9edc7",
       "evals_url": "https://github.com/aikdna/kdna-agent_safety/tree/main/evals",
       "benchmark_report_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/benchmarks/report.md",
       "media_type": "application/vnd.aikdna.kdna+zip",
@@ -197,7 +197,7 @@
         "published_by": "kdna-team",
         "published_at": "2026-05-30T00:00:00Z",
         "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
-        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna → approve → lock → export"
       }
     },
     {
@@ -218,9 +218,9 @@
           "display_name": "Writing Judgment"
         },
         "zh-CN": {
-          "display_name": "\u5199\u4f5c\u5224\u65ad",
-          "description": "\u8bca\u65ad\u5185\u5bb9\u662f\u5426\u6709\u771f\u5b9e\u89c2\u70b9\u3001\u8ba4\u77e5\u94a9\u5b50\u548c\u8bc1\u636e\u5bc6\u5ea6\uff0c\u800c\u4e0d\u662f\u53ea\u505a\u6587\u5b57\u6da6\u8272\u3002",
-          "core_insight": "\u5927\u591a\u6570\u5199\u4f5c\u95ee\u9898\u4e0d\u662f\u8bed\u8a00\u95ee\u9898\uff0c\u800c\u662f\u7ed3\u6784\u548c\u89c2\u70b9\u5c42\u9762\u7684\u95ee\u9898\u3002"
+          "display_name": "写作判断",
+          "description": "诊断内容是否有真实观点、认知钩子和证据密度，而不是只做文字润色。",
+          "core_insight": "大多数写作问题不是语言问题，而是结构和观点层面的问题。"
         }
       },
       "signature": "ed25519:5923a859d188b752939a8e4c90aba38466265bfef34ac8f17bc1a067dde3db2e7396058f51d42e5db8d3d5db620be42443e6889eab21ad78494eccab293f0306",
@@ -234,7 +234,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Diagnose whether content has a real argument, a cognitive hook, and evidence density \u2014 not just language polish.",
+      "description": "Diagnose whether content has a real argument, a cognitive hook, and evidence density — not just language polish.",
       "core_insight": "Most writing problems are structural and argument-level, not language-level.",
       "keywords": [
         "writing",
@@ -267,7 +267,7 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-writing/releases/download/v0.7.3/writing-0.7.3.kdna",
-      "asset_digest": "sha256:bbe4178fb4824e49ad67b81246088c7c90b7d7206d5bdad3ea60dafe51355fc6",
+      "asset_digest": "sha256:f2b1e62b9edd5ad959cd8b836a106732b6044c23a37531c6becc2aa5e28a6b6a",
       "content_digest": "sha256:c75646410a3cd67097a9f82f725f905e41dbd86c446dce5fd6a7ff4572422ccb",
       "evals_url": "https://github.com/aikdna/kdna-writing/tree/main/evals",
       "benchmark_report_url": "https://github.com/aikdna/kdna-writing/blob/main/benchmarks/report.md",
@@ -295,7 +295,7 @@
         "published_by": "kdna-team",
         "published_at": "2026-05-30T00:00:00Z",
         "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
-        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna → approve → lock → export"
       }
     },
     {
@@ -316,9 +316,9 @@
           "display_name": "Content Strategy"
         },
         "zh-CN": {
-          "display_name": "\u5185\u5bb9\u7b56\u7565\u5224\u65ad",
-          "description": "\u8bc4\u4f30\u9009\u9898\u4ef7\u503c\u2014\u2014\u7279\u5b9a\u53d7\u4f17\u3001\u8ba4\u77e5\u5dee\u5f02\u3001\u53ef\u8ba8\u8bba\u6027\u548c\u7406\u89e3\u95e8\u69db\u3002",
-          "core_insight": "\u60f3\u6cd5\u5f88\u5ec9\u4ef7\u3002\u771f\u6b63\u7a00\u7f3a\u7684\u662f\u503c\u5f97\u88ab\u8ba8\u8bba\u7684\u8bdd\u9898\u3002"
+          "display_name": "内容策略判断",
+          "description": "评估选题价值——特定受众、认知差异、可讨论性和理解门槛。",
+          "core_insight": "想法很廉价。真正稀缺的是值得被讨论的话题。"
         }
       },
       "signature": "ed25519:8746b0f655f19d3cda063aa87f9da9e1cce5aa8e43ed37c2fad58f274c1e4aabecca9d6a6831daa6dc93e419ed18fff0d85db53e800953df51e7c68f2b77f108",
@@ -332,7 +332,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Evaluate topic worthiness \u2014 specific audience, cognitive contrast, discussability, and comprehension barrier.",
+      "description": "Evaluate topic worthiness — specific audience, cognitive contrast, discussability, and comprehension barrier.",
       "core_insight": "Ideas are cheap. Worthiness is rare. Filter topics by who they are for and what assumption they challenge.",
       "keywords": [
         "content strategy",
@@ -390,9 +390,9 @@
           "display_name": "Prompt Diagnosis"
         },
         "zh-CN": {
-          "display_name": "\u63d0\u793a\u8bca\u65ad",
-          "description": "\u8bca\u65ad\u63d0\u793a\u5931\u8d25\u7684\u6839\u672c\u539f\u56e0\u2014\u2014\u901a\u5e38\u662f\u4efb\u52a1\u6df7\u5408\u3001\u76ee\u6807\u6a21\u7cca\u6216\u4e0a\u4e0b\u6587\u7f3a\u53e3\uff0c\u800c\u975e\u683c\u5f0f\u95ee\u9898\u3002",
-          "core_insight": "\u5927\u591a\u6570\u63d0\u793a\u5931\u8d25\u662f\u4efb\u52a1\u6df7\u5408\u548c\u76ee\u6807\u6a21\u7cca\uff0c\u800c\u975e\u7f3a\u5c11\u683c\u5f0f\u5143\u7d20\u3002"
+          "display_name": "提示诊断",
+          "description": "诊断提示失败的根本原因——通常是任务混合、目标模糊或上下文缺口，而非格式问题。",
+          "core_insight": "大多数提示失败是任务混合和目标模糊，而非缺少格式元素。"
         }
       },
       "signature": "ed25519:922c00c9881e84bacab40129bb2ca72d41ec41347bc3b6ce7c7e64a058e56eada79dc0f96f1870da93ef541e005cb56c6d59dfcac35a4c2af52fec2a9b937b0a",
@@ -406,7 +406,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Diagnose why a prompt failed \u2014 root cause is task mixing, goal ambiguity, or context gap \u2014 not just format issues.",
+      "description": "Diagnose why a prompt failed — root cause is task mixing, goal ambiguity, or context gap — not just format issues.",
       "core_insight": "Most prompt failures are task mixing and goal ambiguity, not missing format elements.",
       "keywords": [
         "prompt",
@@ -439,7 +439,7 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-prompt_diagnosis/releases/download/v0.7.6/prompt_diagnosis-0.7.6.kdna",
-      "asset_digest": "sha256:bb4b872f394f35759179b17253617b0fbb73cf5b39c0119c7e6925f1626933db",
+      "asset_digest": "sha256:f1a1445d529d12e7d183999e9f214c230e37588e8361513a79a7e07fcd78963c",
       "media_type": "application/vnd.aikdna.kdna+zip",
       "content_digest": "sha256:f72ce5c8a84d5782086bd83ed722644c2575e48c629bfe26ffe60752cf2fd27f",
       "authoring": {
@@ -465,7 +465,7 @@
         "published_by": "kdna-team",
         "published_at": "2026-05-30T00:00:00Z",
         "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
-        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna → approve → lock → export"
       }
     },
     {
@@ -486,9 +486,9 @@
           "display_name": "Knowledge Management"
         },
         "zh-CN": {
-          "display_name": "\u77e5\u8bc6\u7ba1\u7406\u5224\u65ad",
-          "description": "\u533a\u5206\u77e5\u8bc6\u8d44\u4ea7\u548c\u539f\u59cb\u6750\u6599\u2014\u2014\u77e5\u8bc6\u9700\u8981\u6709\u547d\u9898\u3001\u8fb9\u754c\u3001\u53cd\u4f8b\u548c\u6f14\u8fdb\u8bb0\u5f55\u3002",
-          "core_insight": "\u5927\u591a\u6570\u77e5\u8bc6\u5e93\u53ea\u662f\u539f\u59cb\u6750\u6599\u96c6\u5408\u3002\u77e5\u8bc6\u9700\u8981\u68c0\u9a8c\uff0c\u800c\u975e\u4ec5\u4ec5\u4fdd\u5b58\u3002"
+          "display_name": "知识管理判断",
+          "description": "区分知识资产和原始材料——知识需要有命题、边界、反例和演进记录。",
+          "core_insight": "大多数知识库只是原始材料集合。知识需要检验，而非仅仅保存。"
         }
       },
       "signature": "ed25519:c4a51ea4752407709a261ee53fe0a396da1fd545618b363ec9bec80252e4b4c64d957e01f71322158f989da4f5cb8691abc2c39089c684ac4899150a76858f07",
@@ -502,7 +502,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Distinguish knowledge assets from raw material \u2014 knowledge needs proposition, boundary, counter-example, and evolution record.",
+      "description": "Distinguish knowledge assets from raw material — knowledge needs proposition, boundary, counter-example, and evolution record.",
       "core_insight": "Most 'knowledge bases' are raw material collections. Knowledge requires testing, not just saving.",
       "keywords": [
         "knowledge",
@@ -560,9 +560,9 @@
           "display_name": "KDNA Authoring"
         },
         "zh-CN": {
-          "display_name": "KDNA \u521b\u4f5c\u5224\u65ad",
-          "description": "\u5143\u8ba4\u77e5\u2014\u2014\u6559 Agent \u5982\u4f55\u901a\u8fc7\u8bbf\u8c08\u4f18\u5148\u7684\u521b\u4f5c\u65b9\u5f0f\u548c\u8d28\u91cf\u5ba1\u6838\u6765\u7f16\u5199\u9ad8\u8d28\u91cf KDNA\u3002",
-          "core_insight": "KDNA\u7f16\u7801\u7684\u662f\u5224\u65ad\uff0c\u4e0d\u662f\u4fe1\u606f\u3002\u901a\u8fc7\u8bbf\u8c08\u63d0\u53d6\u7684\u4e13\u5bb6\u533a\u5206\u70b9\u662f\u552f\u4e00\u6709\u6548\u7684\u539f\u59cb\u7d20\u6750\u3002"
+          "display_name": "KDNA 创作判断",
+          "description": "元认知——教 Agent 如何通过访谈优先的创作方式和质量审核来编写高质量 KDNA。",
+          "core_insight": "KDNA编码的是判断，不是信息。通过访谈提取的专家区分点是唯一有效的原始素材。"
         }
       },
       "signature": "ed25519:372182b63064cd637719cb7c4d32fe262620feb64ecb0f4c20f6953d9ed35fc38fff64f6eed17d764d093e2004392f88835cf2ded15a1876df686b4e162fdf08",
@@ -576,7 +576,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Meta-cognition \u2014 teach agents how to author high-quality KDNA through interview-first authoring and quality auditing.",
+      "description": "Meta-cognition — teach agents how to author high-quality KDNA through interview-first authoring and quality auditing.",
       "core_insight": "KDNA encodes judgment, not information. Expert distinctions extracted through interview are the only valid raw material.",
       "keywords": [
         "kdna authoring",
@@ -608,7 +608,7 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-authoring/releases/download/v0.7.7/kdna_authoring-0.7.7.kdna",
-      "asset_digest": "sha256:526b6a5bb05159503e30b85a006a966dceda662f8b04a315f810b58bdc3ddbe0",
+      "asset_digest": "sha256:2d8bf47cf2fa3f97a22a9b5f1932bb1bdd3a5f6434029ef25b1a74d1cdf998a4",
       "media_type": "application/vnd.aikdna.kdna+zip",
       "content_digest": "sha256:1277c1fb32d8f6c949b92e0c8fab69d7e2664606c87a2ecbdd6b09558987ae50",
       "authoring": {
@@ -634,7 +634,7 @@
         "published_by": "kdna-team",
         "published_at": "2026-05-30T00:00:00Z",
         "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
-        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna → approve → lock → export"
       }
     },
     {
@@ -655,9 +655,9 @@
           "display_name": "Open Source Project"
         },
         "zh-CN": {
-          "display_name": "\u5f00\u6e90\u9879\u76ee\u5224\u65ad",
-          "description": "\u8bca\u65ad\u9879\u76ee\u4e3a\u4ec0\u4e48\u6ca1\u6709\u83b7\u5f97\u91c7\u7eb3\u2014\u2014\u6839\u672c\u539f\u56e0\u662f\u4ef7\u503c\u5165\u53e3\u6e05\u6670\u5ea6\uff0c\u800c\u975e\u6587\u6863\u6216\u529f\u80fd\u7f3a\u53e3\u3002",
-          "core_insight": "\u91c7\u7eb3\u5931\u8d25\u662f\u4ef7\u503c\u5165\u53e3\u95ee\u9898\uff1a\u8bbf\u5ba2\u572830\u79d2\u5185\u65e0\u6cd5\u786e\u5b9a\u95ee\u9898\u548c\u66ff\u4ee3\u65b9\u6848\u3002"
+          "display_name": "开源项目判断",
+          "description": "诊断项目为什么没有获得采纳——根本原因是价值入口清晰度，而非文档或功能缺口。",
+          "core_insight": "采纳失败是价值入口问题：访客在30秒内无法确定问题和替代方案。"
         }
       },
       "signature": "ed25519:0cd7fe668c8a53cc35c94c94687240f13ba423e46f7b1264e40c7f8df04971edd1d594fb26b69a419c8c2bc35473f6fda9e4b023e47e2926e3bc9965d7cde501",
@@ -671,7 +671,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Diagnose why a project isn't gaining adoption \u2014 root cause is value-entry clarity, not documentation or feature gaps.",
+      "description": "Diagnose why a project isn't gaining adoption — root cause is value-entry clarity, not documentation or feature gaps.",
       "core_insight": "Adoption failure is a value-entry problem: visitors cannot determine the problem and alternative in 30 seconds.",
       "keywords": [
         "open source",
@@ -732,7 +732,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "World-class animation judgment cluster: seven domains teaching agents what quality means, what to reject, and when to choose restraint \u2014 before they write a line of code. Clusters provide discovery and composition rules, not direct downloads \u2014 individual sub-domains are downloadable separately.",
+      "description": "World-class animation judgment cluster: seven domains teaching agents what quality means, what to reject, and when to choose restraint — before they write a line of code. Clusters provide discovery and composition rules, not direct downloads — individual sub-domains are downloadable separately.",
       "core_insight": "Animation is not an API problem. It is an attention, timing, restraint, performance, and taste judgment problem.",
       "keywords": [
         "animation",
@@ -828,7 +828,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "Motion design master domain \u2014 taste, timing, restraint judgment for UI animation.",
+      "description": "Motion design master domain — taste, timing, restraint judgment for UI animation.",
       "keywords": [
         "motion design",
         "animation",
@@ -889,7 +889,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "GSAP mastery \u2014 ScrollTrigger, timeline, tween, stagger judgment.",
+      "description": "GSAP mastery — ScrollTrigger, timeline, tween, stagger judgment.",
       "keywords": [
         "GSAP",
         "ScrollTrigger",
@@ -950,7 +950,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "Motion Canvas mastery \u2014 programmatic video, scene composition, explainer animation judgment.",
+      "description": "Motion Canvas mastery — programmatic video, scene composition, explainer animation judgment.",
       "keywords": [
         "Motion Canvas",
         "programmatic video",
@@ -1010,7 +1010,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "Web animation performance \u2014 jank diagnosis, frame rate, GPU composition judgment.",
+      "description": "Web animation performance — jank diagnosis, frame rate, GPU composition judgment.",
       "keywords": [
         "web animation",
         "performance",
@@ -1071,7 +1071,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "Frontend motion system \u2014 design tokens, motion primitives, system-level consistency judgment.",
+      "description": "Frontend motion system — design tokens, motion primitives, system-level consistency judgment.",
       "keywords": [
         "motion system",
         "design tokens",
@@ -1131,7 +1131,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "AI animation workflow \u2014 agent-generated animation quality judgment.",
+      "description": "AI animation workflow — agent-generated animation quality judgment.",
       "keywords": [
         "AI animation",
         "agent-generated",
@@ -1191,7 +1191,7 @@
       "license": {
         "type": "MIT"
       },
-      "description": "Animation review master \u2014 critique, diagnosis, quality assessment judgment.",
+      "description": "Animation review master — critique, diagnosis, quality assessment judgment.",
       "keywords": [
         "animation review",
         "critique",
@@ -1245,9 +1245,9 @@
           "display_name": "Code Review"
         },
         "zh-CN": {
-          "display_name": "\u4ee3\u7801\u5ba1\u67e5\u5224\u65ad",
-          "description": "\u884c\u4e3a\u4f18\u5148\u5ba1\u67e5\u3001\u8bc4\u8bba\u5206\u7c7b\u548c\u53cd\u6a61\u76ae\u56fe\u7ae0\u539f\u5219\u3002",
-          "core_insight": "\u6bcf\u6761\u8981\u6c42\u4fee\u6539\u7684\u5ba1\u67e5\u610f\u89c1\u5fc5\u987b\u5f15\u7528\u5177\u4f53\u7684\u5931\u8d25\u6a21\u5f0f\u3002"
+          "display_name": "代码审查判断",
+          "description": "行为优先审查、评论分类和反橡皮图章原则。",
+          "core_insight": "每条要求修改的审查意见必须引用具体的失败模式。"
         }
       },
       "signature": "ed25519:e16eb2b3344a6c215b666134173b8ac5274781c16bb892fab01009d58f943d06ac22cd01ccefbcb32cbd2037e3dccb8713645470b45f999f947d5ed678f01306",
@@ -1261,7 +1261,7 @@
       "license": {
         "type": "CC-BY-4.0"
       },
-      "description": "Reference domain for code review judgment \u2014 behavior-first review, comment classification, and anti-rubber-stamp principles.",
+      "description": "Reference domain for code review judgment — behavior-first review, comment classification, and anti-rubber-stamp principles.",
       "core_insight": "Every review comment that requests a change must cite a specific failure mode.",
       "keywords": [
         "code review",
@@ -1293,7 +1293,7 @@
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-code_review/releases/download/v0.7.6/code_review-0.7.6.kdna",
-      "asset_digest": "sha256:d16a939647eb5ec60461b4b7a379be63067074a0613e1e76f62a1c564d22c703",
+      "asset_digest": "sha256:a2d9e7275dc8f298e9df0d9482bb07f6b77a18dbae2af36ee7ea823fec3ab4bc",
       "media_type": "application/vnd.aikdna.kdna+zip",
       "content_digest": "sha256:5a7834cf67df37f66d702b79d2012dd7f6a46e01f53859746aff6835dc123661",
       "authoring": {
@@ -1319,7 +1319,7 @@
         "published_by": "kdna-team",
         "published_at": "2026-05-30T00:00:00Z",
         "pipeline": "kdna-studio-cli v0.2.0 + kdna-studio-core v1.4.2",
-        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna \u2192 approve \u2192 lock \u2192 export"
+        "commit_note": "Republished with Studio provenance via kdna-studio create --from-kdna → approve → lock → export"
       }
     }
   ],
