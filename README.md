@@ -1,6 +1,6 @@
 # KDNA Registry
 
-[![CI](https://github.com/aikdna/kdna-registry/actions/workflows/ci.yml/badge.svg)](https://github.com/aikdna/kdna-registry/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
+[![Validate](https://github.com/aikdna/kdna-registry/actions/workflows/validate.yml/badge.svg)](https://github.com/aikdna/kdna-registry/actions/workflows/validate.yml) [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
 
 Static registry for KDNA cognition assets. The `kdna` CLI reads this for asset discovery, `.kdna` download URLs, asset digests, signature verification, and revocation status.
 
