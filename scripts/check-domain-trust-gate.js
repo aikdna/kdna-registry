@@ -128,8 +128,11 @@ for (const entry of registry.domains || []) {
     if (entry.fidelity_calibration_valid !== true) {
       fail(`${name}: ${badge} requires fidelity_calibration_valid === true`);
     }
-    if (entry.fidelity_blind_delta !== undefined && entry.fidelity_blind_delta <= 0) {
-      fail(`${name}: ${badge} requires positive fidelity_blind_delta (KDNA must outperform best prompt)`);
+    if (entry.fidelity_blind_delta === undefined || entry.fidelity_blind_delta === null || entry.fidelity_blind_delta <= 0) {
+      fail(`${name}: ${badge} requires fidelity_blind_delta > 0 (KDNA must outperform best prompt)`);
+    }
+    if (!entry.fidelity_protocol_version || typeof entry.fidelity_protocol_version !== 'string' || entry.fidelity_protocol_version.trim().length === 0) {
+      fail(`${name}: ${badge} requires fidelity_protocol_version (semver of Fidelity Protocol used)`);
     }
   }
 
