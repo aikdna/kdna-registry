@@ -176,6 +176,12 @@ Array of domain or cluster entries.
   "quality_badge": "untested" | "tested" | "validated" | "expert_reviewed" | "production_ready",
   "eval_score": 0-100,
 
+  "fidelity_score": 0.85,
+  "fidelity_report_url": "https://...",
+  "fidelity_calibration_valid": true,
+  "fidelity_blind_delta": 0.23,
+  "fidelity_protocol_version": "1.0.0",
+
   "deprecated": false,
   "yanked": false,
   "replaced_by": null | "@scope/name",
@@ -387,3 +393,32 @@ Commercial assets passing through the validator must satisfy:
 4. public `personal_judgment` or `creator_style` → `verified_author.verified` must be `true`
 5. `subscription.model` is one of the valid subscription model values
 6. `license.type` is `KCL-1.0` when `access` is `licensed` or `runtime`
+
+## Fidelity Requirements (per RFC-0010)
+
+Domains claiming `quality_badge` of `validated` or higher MUST include fidelity
+measurement evidence. The fidelity protocol measures whether domain judgment
+actually transferred into generated output — distinct from structural validity
+(kdna verify) and output quality (eval cases).
+
+### Required fidelity fields for `validated`+
+
+| Field | Type | Requirement |
+|-------|------|-------------|
+| `fidelity_score` | `number` (0-1) | ≥ 0.70 |
+| `fidelity_report_url` | `string` (URL) | Public link to full fidelity report |
+| `fidelity_calibration_valid` | `boolean` | Must be `true` (both positive and negative anchors passed) |
+| `fidelity_blind_delta` | `number` | Must be > 0 (KDNA outperforms best-prompt control in blind comparison) |
+| `fidelity_protocol_version` | `string` (semver) | Version of Fidelity Protocol used |
+
+### Trust gate enforcement
+
+The registry trust gate (`scripts/check-domain-trust-gate.js`) enforces:
+
+- `validated`, `expert_reviewed`, `production_ready`: all fidelity fields required
+- `tested`: fidelity fields optional but warns if score < 0.70 (not eligible for promotion)
+- `untested`: fidelity not required
+
+This is an incremental revision — existing badge definitions in KDNA SPEC §3.3.2
+are unchanged. Fidelity is additional evidence for higher badge tiers, not a
+replacement for eval cases or structural validation.

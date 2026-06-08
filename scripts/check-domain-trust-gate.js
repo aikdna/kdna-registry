@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Registry trust gate.
+ * Registry trust gate — includes fidelity requirements (RFC-0010).
  *
  * This check protects user trust by making quality claims auditable. It does
  * not judge domain content correctness; it enforces that registry metadata does
- * not over-claim quality, review, or limitations evidence.
+ * not over-claim quality, review, limitations, or fidelity evidence.
  */
 
 const fs = require('fs');
@@ -116,6 +116,27 @@ for (const entry of registry.domains || []) {
 
   if (badgeRank[badge] >= badgeRank.tested && !hasStudioCompatibleAuthoring(entry)) {
     warn(`${name}: ${badge} has no Studio-compatible authoring provenance; cannot be promoted to verified/reviewed/trusted`);
+  }
+
+  if (badgeRank[badge] >= badgeRank.validated) {
+    if (typeof entry.fidelity_score !== 'number' || entry.fidelity_score < 0.70) {
+      fail(`${name}: ${badge} requires fidelity_score >= 0.70 (per RFC-0010 Fidelity Protocol)`);
+    }
+    if (!entry.fidelity_report_url || typeof entry.fidelity_report_url !== 'string' || entry.fidelity_report_url.trim().length === 0) {
+      fail(`${name}: ${badge} requires a public fidelity_report_url`);
+    }
+    if (entry.fidelity_calibration_valid !== true) {
+      fail(`${name}: ${badge} requires fidelity_calibration_valid === true`);
+    }
+    if (entry.fidelity_blind_delta !== undefined && entry.fidelity_blind_delta <= 0) {
+      fail(`${name}: ${badge} requires positive fidelity_blind_delta (KDNA must outperform best prompt)`);
+    }
+  }
+
+  if (badgeRank[badge] >= badgeRank.tested) {
+    if (typeof entry.fidelity_score === 'number' && entry.fidelity_score < 0.70) {
+      warn(`${name}: fidelity_score ${entry.fidelity_score} is below 0.70 — not eligible for validated+ promotion`);
+    }
   }
 
   if (badgeRank[badge] >= badgeRank.expert_reviewed && !entry.reviewed_by) {
