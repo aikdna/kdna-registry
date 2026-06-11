@@ -109,7 +109,8 @@
         "build_id": "build_019e7605-a137-7fb9-b28d-d06e5a4e2490",
         "compiled_at": "2026-05-29T23:15:40.983Z",
         "human_confirmed": true,
-        "human_lock_count": 12
+        "human_lock_count": 12,
+        "domain_id": "agent_safety"
       },
       "lineage": {
         "type": "fork",
@@ -207,7 +208,8 @@
         "build_id": "build_019e7603-1bf6-74ed-8262-5c3ea7e381cf",
         "compiled_at": "2026-05-29T23:12:55.798Z",
         "human_confirmed": true,
-        "human_lock_count": 15
+        "human_lock_count": 15,
+        "domain_id": "writing"
       },
       "lineage": {
         "type": "fork",
@@ -303,7 +305,8 @@
         "build_id": "build_019e7605-4b4e-746d-b15f-fc5fcae7679b",
         "compiled_at": "2026-05-29T23:15:18.990Z",
         "human_confirmed": true,
-        "human_lock_count": 12
+        "human_lock_count": 12,
+        "domain_id": "prompt_diagnosis"
       },
       "lineage": {
         "type": "fork",
@@ -398,7 +401,8 @@
         "build_id": "build_019e7605-52aa-734a-948f-cb8961e1eacd",
         "compiled_at": "2026-05-29T23:15:20.875Z",
         "human_confirmed": true,
-        "human_lock_count": 22
+        "human_lock_count": 22,
+        "domain_id": "kdna_authoring"
       },
       "lineage": {
         "type": "fork",
@@ -493,7 +497,8 @@
         "build_id": "build_019e7605-586c-7900-92a6-1994e2b6b60d",
         "compiled_at": "2026-05-29T23:15:22.349Z",
         "human_confirmed": true,
-        "human_lock_count": 16
+        "human_lock_count": 16,
+        "domain_id": "code_review"
       },
       "lineage": {
         "type": "fork",
@@ -532,7 +537,7 @@
           "core_insight": "实现是测试需求最昂贵的方式。先Grill再Build。"
         }
       },
-      "release_status": "published_dev",
+      "release_status": "pending_v0.7_republish",
       "repo": "https://github.com/aikdna/kdna-requirement_alignment",
       "author": {
         "name": "KDNA Team",
@@ -569,23 +574,24 @@
       "risk_level": "R0",
       "review_status": "community",
       "provenance_required": true,
-      "signature_required": true,
+      "signature_required": false,
       "known_limitations_url": null,
       "replaced_by": null,
       "created": "2026-05-31",
       "updated": "2026-05-31",
       "judgment_version": "2026.05",
       "kdna_file_count": 6,
-      "asset_url": "https://github.com/aikdna/kdna-requirement_alignment/releases/download/v0.1.0/requirement_alignment-0.1.0.kdna",
-      "asset_digest": "sha256:950be27a9a3226cda340be278d4412e2ed9d28ee422dd7a41dc4e5be6ee90208",
-      "media_type": "application/vnd.aikdna.kdna+zip",
+      "asset_url": null,
+      "asset_digest": null,
+      "media_type": null,
       "authoring": {
         "created_by": "kdna-studio-sdk",
         "source_mode": "source_folder",
         "compiler": "@aikdna/kdna-studio-core",
         "compiler_version": "1.4.2",
         "human_confirmed": true,
-        "human_lock_count": 5
+        "human_lock_count": 5,
+        "domain_id": "requirement_alignment"
       }
     }
   ],

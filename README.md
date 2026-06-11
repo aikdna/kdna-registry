@@ -1,6 +1,6 @@
 # KDNA Registry
 
-[![CI](https://github.com/aikdna/kdna-registry/actions/workflows/ci.yml/badge.svg)](https://github.com/aikdna/kdna-registry/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
+[![Validate](https://github.com/aikdna/kdna-registry/actions/workflows/validate.yml/badge.svg)](https://github.com/aikdna/kdna-registry/actions/workflows/validate.yml) [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
 
 Static registry for KDNA cognition assets. The `kdna` CLI reads this for asset discovery, `.kdna` download URLs, asset digests, signature verification, and revocation status.
 
@@ -158,7 +158,6 @@ The gate checks that quality badges, review status, tested evidence, yanked stat
 - [kdna-studio-cli](https://github.com/aikdna/kdna-studio-cli) — Command-line authoring entry (`@aikdna/kdna-studio-cli`, `kdna-studio`)
 - [kdna-skills](https://github.com/aikdna/kdna-skills) — Ready-to-use agent skill integrations
 - [kdna-vscode](https://github.com/aikdna/kdna-vscode) — VS Code extension for KDNA authoring
-- [kdna-website](https://github.com/aikdna/kdna-website) — Main project website
 
 ## Ecosystem
 
