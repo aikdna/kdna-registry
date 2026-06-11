@@ -1,7 +1,7 @@
 {
   "schema_version": "3.0",
-  "registry_version": "3.0.0",
-  "updated": "2026-05-31T00:00:00Z",
+  "registry_version": "4.0.0",
+  "updated": "2026-06-11T11:13:48.379Z",
   "_note": "Cleaned registry: 12 yanked entries removed. 5 official reference domains active. review_status upgraded to verified.",
   "governance": {
     "yank_policy": "Domains with severe safety issues may be yanked. Yanked domains are blocked from new installations. See registry-policy.md.",
@@ -51,7 +51,7 @@
         }
       },
       "signature": "ed25519:f95578932215d1d99d7cca88082420b55d5b2dca6a35a72933b09aadaba97fa053e65ce0c56f8313379505b88a79e4cb0ac92aac13f0e96e17f147029a8cf000",
-      "release_status": "published_signed",
+      "release_status": "published_v2",
       "repo": "https://github.com/aikdna/kdna-agent_safety",
       "author": {
         "name": "KDNA Team",
@@ -90,11 +90,11 @@
       "known_limitations_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
-      "updated": "2026-05-29",
-      "judgment_version": "2026.05",
+      "updated": "2026-06-11",
+      "judgment_version": "2026.06",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-agent_safety/releases/download/v0.7.6/agent_safety-0.7.6.kdna",
-      "asset_digest": "sha256:2d8bc87fa1f41f1409119f60392eb8f4075416e2aaaa4cee185c8acd7dd9edc7",
+      "asset_digest": "sha256:fb073b8e96edb9088d93514f9ad26bb42082d51f76a626bb6256eb0ab4d48566",
       "evals_url": "https://github.com/aikdna/kdna-agent_safety/tree/main/evals",
       "benchmark_report_url": "https://github.com/aikdna/kdna-agent_safety/blob/main/benchmarks/report.md",
       "media_type": "application/vnd.aikdna.kdna+zip",
@@ -150,7 +150,7 @@
         }
       },
       "signature": "ed25519:5923a859d188b752939a8e4c90aba38466265bfef34ac8f17bc1a067dde3db2e7396058f51d42e5db8d3d5db620be42443e6889eab21ad78494eccab293f0306",
-      "release_status": "published_signed",
+      "release_status": "published_v2",
       "repo": "https://github.com/aikdna/kdna-writing",
       "author": {
         "name": "KDNA Team",
@@ -189,11 +189,11 @@
       "known_limitations_url": "https://github.com/aikdna/kdna-writing/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
-      "updated": "2026-05-29",
-      "judgment_version": "2026.05",
+      "updated": "2026-06-11",
+      "judgment_version": "2026.06",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-writing/releases/download/v0.7.3/writing-0.7.3.kdna",
-      "asset_digest": "sha256:f2b1e62b9edd5ad959cd8b836a106732b6044c23a37531c6becc2aa5e28a6b6a",
+      "asset_digest": "sha256:f2ee80d9b654b37c32fe1b7c293ab5c71daf0ce84ad362bd6381f3491660c25c",
       "content_digest": "sha256:c75646410a3cd67097a9f82f725f905e41dbd86c446dce5fd6a7ff4572422ccb",
       "evals_url": "https://github.com/aikdna/kdna-writing/tree/main/evals",
       "benchmark_report_url": "https://github.com/aikdna/kdna-writing/blob/main/benchmarks/report.md",
@@ -249,7 +249,7 @@
         }
       },
       "signature": "ed25519:922c00c9881e84bacab40129bb2ca72d41ec41347bc3b6ce7c7e64a058e56eada79dc0f96f1870da93ef541e005cb56c6d59dfcac35a4c2af52fec2a9b937b0a",
-      "release_status": "published_signed",
+      "release_status": "published_v2",
       "repo": "https://github.com/aikdna/kdna-prompt_diagnosis",
       "author": {
         "name": "KDNA Team",
@@ -288,11 +288,11 @@
       "known_limitations_url": "https://github.com/aikdna/kdna-prompt_diagnosis/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
-      "updated": "2026-05-29",
-      "judgment_version": "2026.05",
+      "updated": "2026-06-11",
+      "judgment_version": "2026.06",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-prompt_diagnosis/releases/download/v0.7.6/prompt_diagnosis-0.7.6.kdna",
-      "asset_digest": "sha256:f1a1445d529d12e7d183999e9f214c230e37588e8361513a79a7e07fcd78963c",
+      "asset_digest": "sha256:c4ab199b444321805041cc8a8d4229e69295105a28507fb1fb26426406c3e279",
       "media_type": "application/vnd.aikdna.kdna+zip",
       "content_digest": "sha256:f72ce5c8a84d5782086bd83ed722644c2575e48c629bfe26ffe60752cf2fd27f",
       "authoring": {
@@ -346,7 +346,7 @@
         }
       },
       "signature": "ed25519:372182b63064cd637719cb7c4d32fe262620feb64ecb0f4c20f6953d9ed35fc38fff64f6eed17d764d093e2004392f88835cf2ded15a1876df686b4e162fdf08",
-      "release_status": "published_signed",
+      "release_status": "published_v2",
       "repo": "https://github.com/aikdna/kdna-authoring",
       "author": {
         "name": "KDNA Team",
@@ -384,11 +384,11 @@
       "known_limitations_url": "https://github.com/aikdna/kdna-authoring/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
-      "updated": "2026-05-29",
-      "judgment_version": "2026.05",
+      "updated": "2026-06-11",
+      "judgment_version": "2026.06",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-authoring/releases/download/v0.7.7/kdna_authoring-0.7.7.kdna",
-      "asset_digest": "sha256:2d8bf47cf2fa3f97a22a9b5f1932bb1bdd3a5f6434029ef25b1a74d1cdf998a4",
+      "asset_digest": "sha256:93d2affc44f6b49ac19f4255b46e0518bd987869ff503bb0946dc48bcf925075",
       "media_type": "application/vnd.aikdna.kdna+zip",
       "content_digest": "sha256:1277c1fb32d8f6c949b92e0c8fab69d7e2664606c87a2ecbdd6b09558987ae50",
       "authoring": {
@@ -442,7 +442,7 @@
         }
       },
       "signature": "ed25519:e16eb2b3344a6c215b666134173b8ac5274781c16bb892fab01009d58f943d06ac22cd01ccefbcb32cbd2037e3dccb8713645470b45f999f947d5ed678f01306",
-      "release_status": "published_signed",
+      "release_status": "published_v2",
       "repo": "https://github.com/aikdna/kdna-code_review",
       "author": {
         "name": "KDNA Team",
@@ -480,11 +480,11 @@
       "known_limitations_url": "https://github.com/aikdna/kdna-code_review/blob/main/docs/known-limitations.md",
       "replaced_by": null,
       "created": "2026-05-20",
-      "updated": "2026-05-29",
-      "judgment_version": "2026.05",
+      "updated": "2026-06-11",
+      "judgment_version": "2026.06",
       "kdna_file_count": 6,
       "asset_url": "https://github.com/aikdna/kdna-code_review/releases/download/v0.7.6/code_review-0.7.6.kdna",
-      "asset_digest": "sha256:a2d9e7275dc8f298e9df0d9482bb07f6b77a18dbae2af36ee7ea823fec3ab4bc",
+      "asset_digest": "sha256:16a1f4f8b9b1abbfebfbbb7b13f5cd7e09b7528b4bb82ad6c437b25578693f9b",
       "media_type": "application/vnd.aikdna.kdna+zip",
       "content_digest": "sha256:5a7834cf67df37f66d702b79d2012dd7f6a46e01f53859746aff6835dc123661",
       "authoring": {
@@ -537,7 +537,7 @@
           "core_insight": "实现是测试需求最昂贵的方式。先Grill再Build。"
         }
       },
-      "release_status": "pending_v0.7_republish",
+      "release_status": "published_v2",
       "repo": "https://github.com/aikdna/kdna-requirement_alignment",
       "author": {
         "name": "KDNA Team",
@@ -578,12 +578,12 @@
       "known_limitations_url": null,
       "replaced_by": null,
       "created": "2026-05-31",
-      "updated": "2026-05-31",
-      "judgment_version": "2026.05",
+      "updated": "2026-06-11",
+      "judgment_version": "2026.06",
       "kdna_file_count": 6,
-      "asset_url": null,
-      "asset_digest": null,
-      "media_type": null,
+      "asset_url": "https://github.com/aikdna/kdna-requirement_alignment/releases/download/v0.1.0/requirement_alignment-0.1.0.kdna",
+      "asset_digest": "sha256:e42f4fd959e685f61fb01d9eb78fb3f767628fcfe35dd845e9c13cec6d868fac",
+      "media_type": "application/vnd.aikdna.kdna+zip",
       "authoring": {
         "created_by": "kdna-studio-sdk",
         "source_mode": "source_folder",
